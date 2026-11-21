@@ -1,0 +1,9 @@
+node_modules/
+__pycache__/
+*.pyc
+.cache/
+output/
+video/out/
+video/public/job/
+jobs/test-*/
+.env

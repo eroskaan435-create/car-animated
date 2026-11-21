@@ -1,0 +1,110 @@
+{
+  "sports": {
+    "label": "Sports / Supercar",
+    "beatFrames": 14,
+    "music": "trap",
+    "introBeats": 8,
+    "shotBeats": 3,
+    "tagline": "PURE ADRENALINE",
+    "moves": ["punch", "panLR", "depth", "pushIn", "panRL", "pullOut", "slide"],
+    "transitions": ["whip", "flash", "glitch", "zoom"],
+    "voiceSpeed": 1.08,
+    "heroLine": "Unleash the {title}.",
+    "theme": {
+      "accent": "#ff2a2a", "accent2": "#ff8a00", "bg": "#0a0000",
+      "fontDisplay": "Anton", "fontBody": "Rajdhani",
+      "grade": {"contrast": 1.18, "saturate": 1.25, "brightness": 1.0, "tint": "#ff3b00", "tintOpacity": 0.12},
+      "fx": {"shake": 1.0, "glitch": true, "speedLines": true, "particles": "sparks", "lightSweep": true, "flash": 0.9, "grain": 0.07, "beatPulse": 0.035, "floor": "grid"}
+    }
+  },
+  "luxury": {
+    "label": "Luxury",
+    "beatFrames": 20,
+    "music": "ambient",
+    "introBeats": 4,
+    "shotBeats": 4,
+    "tagline": "ELEGANCE REDEFINED",
+    "moves": ["pushIn", "depth", "panLR", "pullOut", "depth", "panRL"],
+    "transitions": ["fade", "flash", "fade", "zoom"],
+    "voiceSpeed": 0.95,
+    "heroLine": "Experience the {title}.",
+    "theme": {
+      "accent": "#d4af37", "accent2": "#f5e6b8", "bg": "#07060a",
+      "fontDisplay": "Cinzel", "fontBody": "Montserrat",
+      "grade": {"contrast": 1.08, "saturate": 0.95, "brightness": 1.02, "tint": "#c89b3c", "tintOpacity": 0.1},
+      "fx": {"shake": 0.15, "glitch": false, "speedLines": false, "particles": "bokeh", "lightSweep": true, "flash": 0.45, "grain": 0.05, "beatPulse": 0.0, "floor": "spot"}
+    }
+  },
+  "suv": {
+    "label": "SUV / 4x4",
+    "beatFrames": 16,
+    "music": "rock",
+    "introBeats": 8,
+    "shotBeats": 4,
+    "tagline": "GO ANYWHERE",
+    "moves": ["pushIn", "panLR", "punch", "depth", "pullOut", "panRL"],
+    "transitions": ["whip", "flash", "zoom", "whip"],
+    "voiceSpeed": 1.02,
+    "heroLine": "Go anywhere in the {title}.",
+    "theme": {
+      "accent": "#ffb000", "accent2": "#ff6a00", "bg": "#0b0804",
+      "fontDisplay": "BebasNeue", "fontBody": "Oswald",
+      "grade": {"contrast": 1.14, "saturate": 1.1, "brightness": 1.0, "tint": "#d98a2b", "tintOpacity": 0.12},
+      "fx": {"shake": 0.8, "glitch": false, "speedLines": false, "particles": "dust", "lightSweep": true, "flash": 0.8, "grain": 0.08, "beatPulse": 0.025, "floor": "spot"}
+    }
+  },
+  "truck": {
+    "label": "Truck / Pickup",
+    "beatFrames": 15,
+    "music": "rock",
+    "introBeats": 8,
+    "shotBeats": 4,
+    "tagline": "BUILT TOUGH",
+    "moves": ["punch", "pushIn", "panLR", "depth", "pullOut", "panRL"],
+    "transitions": ["flash", "whip", "zoom", "glitch"],
+    "voiceSpeed": 1.0,
+    "heroLine": "Built tough. The {title}.",
+    "theme": {
+      "accent": "#ffd400", "accent2": "#ff7b00", "bg": "#080808",
+      "fontDisplay": "Anton", "fontBody": "Oswald",
+      "grade": {"contrast": 1.2, "saturate": 1.05, "brightness": 0.98, "tint": "#ffb300", "tintOpacity": 0.08},
+      "fx": {"shake": 1.0, "glitch": false, "speedLines": true, "particles": "sparks", "lightSweep": true, "flash": 0.9, "grain": 0.09, "beatPulse": 0.03, "floor": "grid"}
+    }
+  },
+  "ev": {
+    "label": "Electric",
+    "beatFrames": 15,
+    "music": "synthwave",
+    "introBeats": 8,
+    "shotBeats": 3,
+    "tagline": "THE FUTURE IS ELECTRIC",
+    "moves": ["depth", "panLR", "pushIn", "punch", "pullOut", "slide"],
+    "transitions": ["glitch", "flash", "zoom", "whip"],
+    "voiceSpeed": 1.04,
+    "heroLine": "The future is electric. Meet the {title}.",
+    "theme": {
+      "accent": "#00e5ff", "accent2": "#7c4dff", "bg": "#02060c",
+      "fontDisplay": "Orbitron", "fontBody": "Rajdhani",
+      "grade": {"contrast": 1.12, "saturate": 1.15, "brightness": 1.0, "tint": "#00b8ff", "tintOpacity": 0.12},
+      "fx": {"shake": 0.5, "glitch": true, "speedLines": true, "particles": "neon", "lightSweep": true, "flash": 0.7, "grain": 0.05, "beatPulse": 0.025, "floor": "grid"}
+    }
+  },
+  "sedan": {
+    "label": "Sedan / Family",
+    "beatFrames": 16,
+    "music": "edm",
+    "introBeats": 8,
+    "shotBeats": 4,
+    "tagline": "DRIVE YOUR WAY",
+    "moves": ["pushIn", "panLR", "depth", "pullOut", "panRL", "punch"],
+    "transitions": ["whip", "flash", "zoom", "fade"],
+    "voiceSpeed": 1.0,
+    "heroLine": "Meet the {title}.",
+    "theme": {
+      "accent": "#2f80ff", "accent2": "#00d4ff", "bg": "#03060d",
+      "fontDisplay": "Teko", "fontBody": "Montserrat",
+      "grade": {"contrast": 1.1, "saturate": 1.12, "brightness": 1.02, "tint": "#2f6bff", "tintOpacity": 0.08},
+      "fx": {"shake": 0.6, "glitch": false, "speedLines": false, "particles": "bokeh", "lightSweep": true, "flash": 0.75, "grain": 0.05, "beatPulse": 0.02, "floor": "spot"}
+    }
+  }
+}

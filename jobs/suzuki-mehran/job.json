@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "title": "Suzuki Mehran",
+  "tagline": "PAKISTAN'S FAMILY CAR",
+  "vehicleType": "sedan",
+  "mode": "long",
+  "stage": "render",
+  "pace": "fast",
+  "burnCaptions": true,
+  "alsoShort": false,
+  "thumbnailText": "SUZUKI MEHRAN",
+  "thumbnailBadge": "1988 - 2012",
+  "price": "",
+  "priceLabel": "",
+  "dealer": "",
+  "contact": "",
+  "cta": "Subscribe for more",
+  "specs": [
+    {
+      "label": "Produced",
+      "value": "1988 - 2012"
+    },
+    {
+      "label": "Engine",
+      "value": "796cc 3-cylinder"
+    },
+    {
+      "label": "Seats",
+      "value": "5 (officially!)"
+    }
+  ],
+  "voice": {
+    "enabled": true,
+    "voice": "am_michael",
+    "speed": 1.05
+  },
+  "ttsOverrides": [
+    {
+      "match": "Fuel average bhi achi hai",
+      "text": "فیول ایوریج بھی اچھی ہے، اور مینٹیننس بھی سستی!",
+      "edgeVoice": "ur-PK-AsadNeural",
+      "speed": 1.05
+    },
+    {
+      "match": "Ustad, Mehran hai",
+      "text": "استاد، مہران ہے، انجن سے آواز آ رہی ہے۔",
+      "edgeVoice": "ur-PK-AsadNeural",
+      "speed": 1.05
+    }
+  ],
+  "images": [
+    {
+      "file": "01.jpg",
+      "caption": "",
+      "category": "exterior"
+    },
+    {
+      "file": "02.jpg",
+      "caption": "",
+      "category": "exterior"
+    },
+    {
+      "file": "03.jpg",
+      "caption": "",
+      "category": "exterior"
+    },
+    {
+      "file": "04.jpg",
+      "caption": "",
+      "category": "exterior"
+    },
+    {
+      "file": "05.jpg",
+      "caption": "",
+      "category": "interior"
+    },
+    {
+      "file": "06.jpg",
+      "caption": "",
+      "category": "detail"
+    },
+    {
+      "file": "07.jpg",
+      "caption": "",
+      "category": "interior"
+    },
+    {
+      "file": "08.jpg",
+      "caption": "",
+      "category": "detail"
+    }
+  ],
+  "heroIndex": 0,
+  "facts": {},
+  "pros": "",
+  "cons": ""
+}

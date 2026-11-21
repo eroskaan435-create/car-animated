@@ -1,0 +1,9 @@
+# Install CPU torch first (see .github/workflows/render.yml), then:
+numpy<2.3
+scipy
+Pillow
+rembg[cpu]>=2.0.60
+transformers>=4.46,<5
+kokoro>=0.9.4
+soundfile
+edge-tts

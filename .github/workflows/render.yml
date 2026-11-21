@@ -1,0 +1,330 @@
+name: Render car video
+
+on:
+  push:
+    paths:
+      - 'jobs/*/job.json'
+  workflow_dispatch:
+    inputs:
+      job:
+        description: 'Job folder name inside jobs/'
+        required: true
+
+permissions:
+  contents: write
+
+env:
+  LONG_CHUNKS: '12'          # parallel runners for a 13-15 min video
+  OLLAMA_MODEL: 'qwen2.5:7b' # free script-writing model
+
+jobs:
+  # ------------------------------------------------------------------ what changed?
+  find:
+    runs-on: ubuntu-latest
+    outputs:
+      scripts: ${{ steps.f.outputs.scripts }}
+      shorts: ${{ steps.f.outputs.shorts }}
+      longs: ${{ steps.f.outputs.longs }}
+      chunks: ${{ steps.f.outputs.chunks }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          filter: blob:none
+      - id: f
+        shell: bash
+        env:
+          EVENT: ${{ github.event_name }}
+          INPUT_JOB: ${{ github.event.inputs.job }}
+          BEFORE: ${{ github.event.before }}
+          SHA: ${{ github.sha }}
+        run: |
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            list="$INPUT_JOB"
+          else
+            if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+              files=$(git diff-tree --no-commit-id --name-only -r HEAD)
+            else
+              files=$(git diff --name-only --diff-filter=AM "$BEFORE" "$SHA")
+            fi
+            list=$(echo "$files" | grep -E '^jobs/[^/]+/job\.json$' | cut -d/ -f2 | sort -u || true)
+          fi
+          JOBS="$list" python3 - <<'EOF' >> "$GITHUB_OUTPUT"
+          import json, os
+          scripts, shorts, longs, chunks = [], [], [], []
+          n = int(os.environ.get("LONG_CHUNKS", "12"))
+          manual = os.environ["EVENT"] == "workflow_dispatch"
+          for j in os.environ["JOBS"].split():
+              p = f"jobs/{j}/job.json"
+              if not os.path.exists(p):
+                  continue
+              d = json.load(open(p, encoding="utf-8"))
+              stage = d.get("stage", "render")
+              if d.get("mode") == "long":
+                  if stage == "script":
+                      scripts.append(j)
+                  elif stage == "render" or (manual and stage == "review"):
+                      longs.append(j)
+                      chunks += [{"job": j, "chunk": i} for i in range(n)]
+                      if d.get("alsoShort"):
+                          shorts.append(j)
+              else:
+                  shorts.append(j)
+          for k, v in (("scripts", scripts), ("shorts", shorts), ("longs", longs), ("chunks", chunks)):
+              print(f"{k}={json.dumps(v)}")
+          EOF
+          cat "$GITHUB_OUTPUT"
+
+  # ------------------------------------------------------------------ 1) free AI script (long videos)
+  script:
+    needs: find
+    if: needs.find.outputs.scripts != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        job: ${{ fromJson(needs.find.outputs.scripts) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Ollama model
+        uses: actions/cache@v4
+        with:
+          path: ~/.ollama/models
+          key: ollama-${{ env.OLLAMA_MODEL }}
+      - name: Start Ollama
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sh
+          sudo systemctl stop ollama 2>/dev/null || true
+          nohup ollama serve > /tmp/ollama.log 2>&1 &
+          for i in $(seq 1 30); do curl -s http://127.0.0.1:11434/api/tags >/dev/null && break; sleep 1; done
+          ollama pull "$OLLAMA_MODEL"
+      - name: Write script
+        run: python3 pipeline/script_gen.py "jobs/${{ matrix.job }}"
+      - name: Commit script for review
+        run: |
+          python3 - <<'EOF'
+          import json
+          p = "jobs/${{ matrix.job }}/job.json"
+          d = json.load(open(p, encoding="utf-8")); d["stage"] = "review"
+          json.dump(d, open(p, "w", encoding="utf-8"), indent=2)
+          EOF
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "jobs/${{ matrix.job }}/script.md" "jobs/${{ matrix.job }}/job.json"
+          git commit -m "Script ready for review: ${{ matrix.job }}"
+          for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
+
+  # ------------------------------------------------------------------ 2) short promo videos
+  short:
+    needs: find
+    if: needs.find.outputs.shorts != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        job: ${{ fromJson(needs.find.outputs.shorts) }}
+    env:
+      HF_HOME: ${{ github.workspace }}/.cache/huggingface
+      U2NET_HOME: ${{ github.workspace }}/.cache/u2net
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - name: System packages
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng > /dev/null
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: pipeline/requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: .cache
+          key: ai-models-v1
+      - name: Python deps (CPU torch)
+        run: |
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -q -r pipeline/requirements.txt
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: video/package-lock.json
+      - name: Node deps
+        working-directory: video
+        run: npm ci --no-audit --no-fund && npx remotion browser ensure
+      - name: AI prep
+        run: python pipeline/prep.py "jobs/${{ matrix.job }}" --out video/public/job --mode short
+      - name: Render
+        working-directory: video
+        env:
+          GL: swangle
+          CONCURRENCY: '4'
+        run: node scripts/render-all.mjs ../output
+      - uses: actions/upload-artifact@v4
+        with:
+          name: short-${{ matrix.job }}
+          path: output/*
+          retention-days: 30
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="video-${{ matrix.job }}"
+          if [ "$(jq -r '.mode // "short"' "jobs/${{ matrix.job }}/job.json")" = "long" ]; then tag="$tag-short"; fi
+          gh release delete "$tag" --yes --cleanup-tag 2>/dev/null || true
+          { echo "Rendered from \`jobs/${{ matrix.job }}\` (run #${{ github.run_number }})."; echo; echo '```'; cat video/public/job/voiceover.txt; echo; echo '```'; } > notes.md
+          gh release create "$tag" output/* --title "${{ matrix.job }}$( [ "${tag%-short}" != "$tag" ] && echo ' (Short)')" --notes-file notes.md --target "${{ github.sha }}"
+
+  # ------------------------------------------------------------------ 3) long video: prep once
+  long-prep:
+    needs: find
+    if: needs.find.outputs.longs != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        job: ${{ fromJson(needs.find.outputs.longs) }}
+    env:
+      HF_HOME: ${{ github.workspace }}/.cache/huggingface
+      U2NET_HOME: ${{ github.workspace }}/.cache/u2net
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - name: System packages
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng > /dev/null
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: pipeline/requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: .cache
+          key: ai-models-v1
+      - name: Python deps (CPU torch)
+        run: |
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -q -r pipeline/requirements.txt
+      - name: AI prep (cutouts, depth, categories, 14-min voice-over, soundtrack)
+        run: python pipeline/prep.py "jobs/${{ matrix.job }}" --out video/public/job --mode long
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prep-${{ matrix.job }}
+          path: video/public/job
+          retention-days: 2
+
+  # ------------------------------------------------------------------ 4) long video: render slices in parallel
+  long-chunk:
+    needs: [find, long-prep]
+    if: needs.find.outputs.chunks != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    strategy:
+      fail-fast: true
+      max-parallel: 12
+      matrix:
+        include: ${{ fromJson(needs.find.outputs.chunks) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: video/package-lock.json
+      - name: Node deps
+        working-directory: video
+        run: npm ci --no-audit --no-fund && npx remotion browser ensure
+      - uses: actions/download-artifact@v4
+        with:
+          name: prep-${{ matrix.job }}
+          path: video/public/job
+      - name: Render slice ${{ matrix.chunk }}
+        working-directory: video
+        env:
+          GL: swangle
+          CONCURRENCY: '4'
+          CHUNK: ${{ matrix.chunk }}
+          CHUNKS: ${{ env.LONG_CHUNKS }}
+        run: node scripts/render-all.mjs ../chunks
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chunk-${{ matrix.job }}-${{ matrix.chunk }}
+          path: chunks/*.mp4
+          retention-days: 1
+          if-no-files-found: ignore
+
+  # ------------------------------------------------------------------ 5) long video: join, mux audio, thumbnail, publish
+  long-final:
+    needs: [find, long-chunk]
+    if: needs.find.outputs.longs != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        job: ${{ fromJson(needs.find.outputs.longs) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: System packages
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: video/package-lock.json
+      - name: Node deps
+        working-directory: video
+        run: npm ci --no-audit --no-fund && npx remotion browser ensure
+      - uses: actions/download-artifact@v4
+        with:
+          name: prep-${{ matrix.job }}
+          path: video/public/job
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: chunk-${{ matrix.job }}-*
+          path: chunks
+          merge-multiple: true
+      - name: Join slices + add soundtrack
+        run: |
+          mkdir -p output
+          name=$(jq -r '.[0].output' video/public/job/renders.json)
+          (cd chunks && ls chunk-*.mp4 | sort | sed "s/.*/file '&'/" > list.txt && cat list.txt)
+          ffmpeg -v error -f concat -safe 0 -i chunks/list.txt -i video/public/job/mix.wav \
+            -map 0:v -map 1:a -c:v copy -c:a aac -b:a 256k -shortest -movflags +faststart "output/$name"
+          size=$(stat -c %s "output/$name")
+          if [ "$size" -gt 1950000000 ]; then
+            echo "File is $size bytes (> GitHub's 2 GB release limit), re-encoding smaller..."
+            ffmpeg -v error -i "output/$name" -c:v libx264 -preset medium -crf 24 -c:a copy -movflags +faststart output/small.mp4
+            mv output/small.mp4 "output/$name"
+          fi
+          ffprobe -v error -show_entries format=duration,size -of compact "output/$name"
+      - name: Thumbnail
+        working-directory: video
+        env:
+          GL: swangle
+          THUMB_ONLY: '1'
+        run: node scripts/render-all.mjs ../output
+      - name: YouTube extras
+        run: |
+          cp video/public/job/captions.srt video/public/job/chapters.txt video/public/job/description.txt output/
+          cp "jobs/${{ matrix.job }}/script.md" output/ || true
+          ls -la output
+      - uses: actions/upload-artifact@v4
+        with:
+          name: youtube-${{ matrix.job }}
+          path: output/*
+          retention-days: 30
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="video-${{ matrix.job }}"
+          gh release delete "$tag" --yes --cleanup-tag 2>/dev/null || true
+          { echo "YouTube long-form video rendered from \`jobs/${{ matrix.job }}\` (run #${{ github.run_number }})."; echo;
+            echo "Upload \`captions.srt\` as subtitles and paste \`description.txt\` (includes chapters)."; echo;
+            echo '```'; cat output/description.txt; echo '```'; } > notes.md
+          gh release create "$tag" output/* --title "${{ matrix.job }} (YouTube)" --notes-file notes.md --target "${{ github.sha }}"
