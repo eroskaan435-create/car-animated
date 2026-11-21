@@ -43,7 +43,7 @@ jobs:
             list="$INPUT_JOB"
           else
             if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
-              files=$(git diff-tree --no-commit-id --name-only -r HEAD)
+              files=$(git diff-tree --root --no-commit-id --name-only -r HEAD)
             else
               files=$(git diff --name-only --diff-filter=AM "$BEFORE" "$SHA")
             fi
