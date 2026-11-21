@@ -496,8 +496,9 @@ def build(job: dict, images: list[dict], preset: dict, script_text: str, tts_fn,
 def description(job: dict, chapters, chap_lines) -> str:
     title = job.get("title", "").strip()
     first = next((p for c in chapters if not is_hook(c["title"]) for p in c["paragraphs"]), [])
-    intro = " ".join(first[:2])
-    lines = [f"{title} — Full Review" + (f" | {job['dealer']}" if job.get("dealer") else ""), "", intro, "", "⏱️ Chapters", *chap_lines, ""]
+    intro = (job.get("descriptionIntro") or "").strip() or " ".join(first[:2])
+    heading = (job.get("descriptionTitle") or "").strip() or f"{title} — Full Review"
+    lines = [heading + (f" | {job['dealer']}" if job.get("dealer") else ""), "", intro, "", "⏱️ Chapters", *chap_lines, ""]
     specs = [s for s in job.get("specs", []) if s.get("value")]
     if specs:
         lines += ["📋 Key specs", *[f"• {s.get('label', '')}: {s['value']}" for s in specs], ""]

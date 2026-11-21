@@ -92,6 +92,8 @@ Add `"pace": "fast"` to a long job's `job.json` for an energetic edit instead of
 - Shots cut every 2–4 beats with the preset's whip/flash/zoom transitions. Chapter cards are one bar long
   and every chapter starts on a bar line.
 - `"shotScale": 2` doubles every shot length if the cuts feel too fast.
+- `"descriptionTitle"` and `"descriptionIntro"` replace the first two lines of `description.txt`
+  (default: "<title> — Full Review" and the first sentences of the script). These two fields work in any long job.
 - `"ttsOverrides"` lets a line be spoken differently from how it's captioned. For example, Roman Urdu on
   screen can be voiced from Urdu script by `ur-PK-AsadNeural` (any edge-tts voice works).
 
