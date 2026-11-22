@@ -321,10 +321,12 @@ $('myConnect').onclick = async () => {
   location.href = 'https://accounts.google.com/o/oauth2/v2/auth?' + p;
 };
 
-function loadScript(src) { return new Promise((ok, no) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = () => no(new Error('could not load ' + src)); document.head.appendChild(s); }); }
-
 async function setSecret(name, value) {
-  if (!window.sodium) await loadScript('https://cdn.jsdelivr.net/npm/libsodium-wrappers@0.7.13/dist/browsers/sodium.js');
+  // jsDelivr no longer serves libsodium's browser build, so import the ES module bundle from esm.sh instead.
+  if (!window.sodium) {
+    try { window.sodium = (await import('https://esm.sh/libsodium-wrappers@0.7.13?bundle')).default; }
+    catch (e) { throw new Error('could not load the encryption library (libsodium): ' + e.message); }
+  }
   await window.sodium.ready;
   const so = window.sodium;
   const key = await gh('/actions/secrets/public-key');
