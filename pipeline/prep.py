@@ -220,6 +220,7 @@ def run_long(job, job_dir, preset, images, common, out, rel, name, music_file, a
     words = (job.get("thumbnailText") or "").strip()
     props = {**common, **plan, "mode": "long", "width": 1920, "height": 1080, "format": "16:9",
              "burnCaptions": bool(job.get("burnCaptions", True)),
+             "decor": job.get("decor") or None,
              "thumbnail": {"text": words or job.get("title", ""), "badge": (job.get("thumbnailBadge") or "FULL REVIEW").strip()}}
     (out / "props-long.json").write_text(json.dumps(props), encoding="utf-8")
     renders = [{"format": "16:9", "props": "props-long.json", "output": f"{name}-youtube.mp4", "poster": f"{name}-thumbnail.jpg",

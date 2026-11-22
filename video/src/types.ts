@@ -84,4 +84,5 @@ export type Manifest = {
 	chapters?: {index: number; title: string; from: number; to: number; hidden?: boolean}[];
 	pulseUntil?: number;
 	thumbnail?: {text: string; badge: string};
+	decor?: {frame?: boolean; stickers?: boolean; stickerEvery?: number; maxStickers?: number};
 };

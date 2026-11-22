@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Html5Audio, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Grain, Vignette} from './fx/fx';
+import {FRAME_SCALE, SizzleFrame, Stickers} from './fx/decor';
 import {LongOverlays} from './fx/overlays';
 import {TransitionWrap} from './fx/layers';
 import {Hero} from './scenes/Hero';
@@ -76,6 +77,7 @@ export const CarAd: React.FC<Manifest> = (m) => {
 	return (
 		<ManifestContext.Provider value={m}>
 			<AbsoluteFill style={{background: '#000', overflow: 'hidden'}}>
+				<AbsoluteFill style={{transform: m.decor?.frame ? `scale(${FRAME_SCALE})` : undefined, overflow: 'hidden'}}>
 				<AbsoluteFill style={{transform: cam.transform}}>
 					{m.scenes.map((s, i) => frame < s.from - 30 || frame > s.from + s.duration ? null : (
 						<Sequence key={i} from={s.from} durationInFrames={s.duration} premountFor={15} name={`${s.type}${s.move ? `:${s.move}` : ''}`}>
@@ -88,6 +90,9 @@ export const CarAd: React.FC<Manifest> = (m) => {
 				<Vignette />
 				<Grain src={m.grain} amount={m.theme.fx.grain} />
 				{m.mode === 'long' ? <LongOverlays m={m} /> : null}
+				</AbsoluteFill>
+				{m.decor?.frame ? <SizzleFrame accent={m.theme.accent} accent2={m.theme.accent2} /> : null}
+				{m.decor?.stickers ? <Stickers m={m} decor={m.decor} /> : null}
 				<AbsoluteFill style={{background: '#fff', opacity: Math.min(1, cam.flash), pointerEvents: 'none'}} />
 				{m.audio ? <Html5Audio src={staticFile(m.audio)} /> : null}
 			</AbsoluteFill>

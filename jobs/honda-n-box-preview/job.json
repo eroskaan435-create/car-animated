@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "title": "ホンダ N-BOX",
+  "tagline": "軽自動車の定番",
+  "vehicleType": "sedan",
+  "mode": "long",
+  "stage": "render",
+  "pace": "fast",
+  "language": "ja",
+  "burnCaptions": true,
+  "alsoShort": false,
+  "thumbnailText": "ホンダ N-BOX",
+  "thumbnailBadge": "徹底解剖",
+  "price": "約165万円〜",
+  "priceLabel": "価格",
+  "dealer": "",
+  "contact": "",
+  "cta": "チャンネル登録お願いします",
+  "specs": [
+    {
+      "label": "エンジン",
+      "value": "658cc 直列3気筒"
+    },
+    {
+      "label": "全長",
+      "value": "3,395mm"
+    },
+    {
+      "label": "ターボ",
+      "value": "64馬力"
+    },
+    {
+      "label": "燃費",
+      "value": "20km/L超 (WLTC)"
+    }
+  ],
+  "voice": {
+    "enabled": true,
+    "voice": "am_michael",
+    "edgeVoice": "ja-JP-KeitaNeural",
+    "speed": 1.08
+  },
+  "images": [
+    {
+      "file": "01.jpg",
+      "caption": "",
+      "category": "exterior"
+    },
+    {
+      "file": "02.jpg",
+      "caption": "",
+      "category": "exterior"
+    },
+    {
+      "file": "03.jpg",
+      "caption": "",
+      "category": "exterior"
+    },
+    {
+      "file": "04.jpg",
+      "caption": "",
+      "category": "exterior"
+    },
+    {
+      "file": "05.jpg",
+      "caption": "",
+      "category": "exterior"
+    },
+    {
+      "file": "06.jpg",
+      "caption": "",
+      "category": "exterior"
+    },
+    {
+      "file": "07.jpg",
+      "caption": "",
+      "category": "exterior"
+    },
+    {
+      "file": "08.jpg",
+      "caption": "",
+      "category": "exterior"
+    },
+    {
+      "file": "09.jpg",
+      "caption": "",
+      "category": "exterior"
+    }
+  ],
+  "heroIndex": 0,
+  "facts": {},
+  "pros": "圧倒的に広い室内\n使いやすいスライドドア\nホンダセンシング標準装備\n低い維持費",
+  "cons": "上位グレードは価格が高め\n自然吸気は高速で非力",
+  "descriptionTitle": "【プレビュー】ホンダN-BOX徹底解剖！大人気軽自動車の全貌 | DM AutoReviews",
+  "descriptionIntro": "日本で最も売れている軽自動車の常連、ホンダN-BOX。3代目へと進化したN-BOXのエクステリア、広い室内空間、インテリア、エンジンと走り、ホンダセンシング、燃費と維持費、N-BOX JOY、価格までを徹底解説します。買う前にぜひご覧ください。チャンネル登録と高評価をお忘れなく！",
+  "hashtags": [
+    "#ホンダNBOX",
+    "#NBOX",
+    "#軽自動車レビュー",
+    "#DMAutoReviews",
+    "#ホンダ",
+    "#HondaSensing",
+    "#日本車レビュー"
+  ],
+  "credits": [
+    "\"3rd generation Honda N-BOX Custom Turbo\" by TTTNIS / CC0, cropped (Wikimedia Commons)",
+    "\"Honda N-BOX normal and Custom (3rd-gen)\" by Oq10pass / CC0 (Wikimedia Commons)",
+    "\"Honda N-BOX (6BA-JF5)\" by Tokumeigakarinoaoshima / CC BY-SA 4.0 (Wikimedia Commons)",
+    "\"Honda N-BOX JOY TURBO 2WD (6BA-JF5) front\" by Tokumeigakarinoaoshima / CC0 (Wikimedia Commons)",
+    "\"Honda N-BOX (3rd generation)\" by Tokumeigakarinoaoshima / CC BY-SA 4.0 (Wikimedia Commons)",
+    "\"Honda N-BOX CUSTOM TURBO COORDINATE STYLE (6BA-JF5) rear\" by Tokumeigakarinoaoshima / CC BY-SA 4.0 (Wikimedia Commons)",
+    "\"Hond N-BOX Joy Turbo 2WD (6BA-JF5) with Active Leisure Style\" by Tokumeigakarinoaoshima / CC BY-SA 4.0 (Wikimedia Commons)",
+    "\"Honda N-BOX JOY TURBO 2WD (6BA-JF5)\" by Tokumeigakarinoaoshima / CC BY-SA 4.0 (Wikimedia Commons)",
+    "\"Honda N-BOX JOY TURBO 2WD (6BA-JF5) rear\" by Tokumeigakarinoaoshima / CC0 (Wikimedia Commons)"
+  ],
+  "decor": {
+    "frame": true,
+    "stickers": true,
+    "stickerEvery": 60,
+    "maxStickers": 3
+  }
+}

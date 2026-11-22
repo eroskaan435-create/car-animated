@@ -544,6 +544,14 @@ def build(job: dict, images: list[dict], preset: dict, script_text: str, tts_fn,
             plan = layout(gs, gp, {i: per for i in idxs})
             log(f"added {len(idxs)} music galleries of {per / FPS:.0f}s")
     total = plan["total"]
+    decor = job.get("decor") or {}
+    if decor.get("stickers"):  # a pop for every sticker that appears (see video/src/fx/decor.tsx)
+        every = max(5, float(decor.get("stickerEvery", 60))) * FPS
+        end = next((c["from"] for c in plan["chapters"] if c.get("hidden")), total)
+        k = 0
+        while k * every + 6 < end:
+            plan["events"].append({"type": "pop", "frame": int(k * every + 6), "strength": 0.9})
+            k += 1
     log(f"final length: {total / FPS / 60:.2f} min ({total} frames)")
 
     # ---- soundtrack
