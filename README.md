@@ -4,7 +4,7 @@ Upload car photos and get a fast-paced, beat-synced promo video with an AI voice
 All rendering runs on **GitHub Actions**, so your own computer does no heavy work.
 
 ```
-docs/index.html (upload page)
+docs/expert.html (upload page)
       │  commits photos + job.json via GitHub API
       ▼
 jobs/<name>/           ──►  GitHub Actions  (.github/workflows/render.yml)
@@ -52,8 +52,41 @@ The music is generated fresh for every video, so it's royalty-free, and every cu
 4. **Create a token** at <https://github.com/settings/personal-access-tokens/new> (fine-grained):
    - Repository access: *Only select repositories →* your repo
    - Permissions: **Contents: Read and write**, **Actions: Read-only**
-5. Open the page, expand **GitHub connection**, enter owner, repo and token, then click **Test connection**.
+5. Open `expert.html`, expand **GitHub connection**, enter owner, repo and token, then click **Test connection**.
    The token is kept only in your browser.
+
+## 📺 Channel autopilot (`docs/index.html`)
+Turns a reference YouTube channel into a queue of videos for your own channel, oldest first:
+
+1. **Reference channel:** paste its URL and press Connect. `.github/workflows/channel.yml` lists every video (yt-dlp)
+   into `channel/queue.json` and gives each one a daily publish slot (18:00 JST by default, see `channel/config.json`).
+   You can change any publish time on the page, including for videos that are already scheduled on YouTube.
+2. **Queue:** every 6 hours (or right away with **Make now**), the next video due within 48 h is built:
+   - the free LLM (Qwen 2.5 via Ollama) works out which car the reference video is about. Only its title and description are used.
+   - free-licence photos come from Wikimedia Commons and are credited in the description
+   - the free LLM writes a new Japanese script, which is voiced by `ja-JP-KeitaNeural`
+   - the frame + sticker decor and the quiet transition whooshes are added, then the video is rendered.
+   **Check the scripts:** a 7B model can get facts wrong.
+3. **Intro per video (optional):** attach a video clip (it goes in front of the video; captions and chapters shift to match)
+   or an audio clip (it plays at the start, before the narration).
+4. **My channel:** after rendering, the video is uploaded to your channel as *private + scheduled* (`publishAt`),
+   with its thumbnail, Japanese title, description (chapters, credits) and tags, in category *Autos & Vehicles*.
+   Without a connected channel, videos are only published to **Releases** and listed as *Made*.
+
+**One-time setup for "Connect my channel":**
+1. In [Google Cloud Console](https://console.cloud.google.com/), create a project and enable **YouTube Data API v3**.
+2. Set up the *OAuth consent screen* (External) and add your Google account as a test user.
+3. Create credentials → *OAuth client ID* → **Web application**. Add `https://<you>.github.io` as an authorized
+   JavaScript origin and the page URL `https://<you>.github.io/car-animated/` as an authorized redirect URI.
+4. On the page, press ⚙. Enter the GitHub owner, repo and token, plus the Google client ID and secret.
+   The token needs the fine-grained permissions **Contents: Read and write**, **Actions: Read and write** and
+   **Secrets: Read and write**.
+5. Press **Connect my channel**. The refresh token is stored as encrypted GitHub Actions secrets
+   (`YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN`) and never in the repo.
+
+> YouTube keeps videos uploaded through an **unverified** API project private (locked) until the project passes
+> YouTube's [API audit](https://support.google.com/youtube/contact/yt_api_form). Until then, scheduled videos won't go public.
+> Each upload uses 1,600 of the default 10,000 daily API quota units, so about 6 uploads a day at most.
 
 ## Making a video
 1. Drop in 3–10 photos. The first one is the hero shot; drag to reorder and add optional captions.

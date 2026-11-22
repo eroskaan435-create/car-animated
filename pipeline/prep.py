@@ -171,6 +171,8 @@ def main():
         mf = job_dir / job["music"]
         music_file = mf if mf.exists() else None
     name = slug(job.get("title") or job_dir.name)
+    if name == "car":  # e.g. an all-Japanese title
+        name = slug(job_dir.name)
     common = {"theme": theme, "car": car, "images": images, "audio": f"{rel}/mix.wav", "grain": f"{rel}/grain.png", "fps": FPS}
 
     if mode == "long":
@@ -214,7 +216,10 @@ def run_long(job, job_dir, preset, images, common, out, rel, name, music_file, a
     job = dict(job)
     if music_file:
         job["_music_path"] = str(music_file)
-    plan = longform.build(job, images, preset, script_path.read_text(encoding="utf-8"), tts_fn, out, rel, log)
+    intro_audio = None
+    if job.get("introAudio") and (job_dir / job["introAudio"]).exists():
+        intro_audio = audio._load_audio(job_dir / job["introAudio"]).mean(axis=1)  # mono, like the voice clips
+    plan = longform.build(job, images, preset, script_path.read_text(encoding="utf-8"), tts_fn, out, rel, log, intro_audio)
     theme = common["theme"]
     theme["fx"]["grain"] = min(theme["fx"]["grain"], 0.025)  # grain kills compression on long videos
     words = (job.get("thumbnailText") or "").strip()

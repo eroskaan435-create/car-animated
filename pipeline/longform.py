@@ -28,6 +28,7 @@ CALM_MOVES = ["pushIn", "panLR", "depth", "pullOut", "panRL", "depth", "pushIn",
 TRANSPOSE = [0, 2, -2, 3, -3, 5, 0, 2, -2, 3, -3, 5]
 WPS = 2.7            # placeholder speech rate (words/sec) when TTS is skipped
 FAST_PATTERN = [4, 4, 2, 2, 4, 2, 2, 4]  # shot lengths in beats for pace="fast"
+INTRO = "\x00intro"  # placeholder "sentence" for an intro audio clip (job "introAudio"): voiced, never captioned
 CJK = re.compile(r"[\u3000-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff00-\uffef]")
 CJK_PER_WORD = 2.0   # Japanese has no spaces: ~2 kana/kanji count as one "word" for length estimates
 
@@ -144,7 +145,7 @@ def is_hook(title: str) -> bool:
 
 
 def word_count(chapters) -> int:
-    return int(sum(units(s) for c in chapters for p in c["paragraphs"] for s in p))
+    return int(sum(units(s) for c in chapters for p in c["paragraphs"] for s in p if s != INTRO))
 
 
 # --------------------------------------------------------------------------- photos per chapter
@@ -212,6 +213,8 @@ def callout_candidates(job: dict) -> list[dict]:
 
 
 def find_callout(sentence: str, cands: list[dict]):
+    if sentence == INTRO:
+        return None
     s = sentence.lower()
     for c in cands:
         if c["used"] >= 2:
@@ -248,6 +251,8 @@ def cjk_groups(text: str, max_chars=30) -> list[str]:
 
 
 def caption_chunks(text: str, f0: int, f1: int, max_words=9) -> list[dict]:
+    if text == INTRO:
+        return []
     if is_cjk(text):
         groups = cjk_groups(text)
         total = sum(len(g) for g in groups) or 1
@@ -284,10 +289,14 @@ def yt_time(frames: int) -> str:
 
 
 # --------------------------------------------------------------------------- main planner
-def build(job: dict, images: list[dict], preset: dict, script_text: str, tts_fn, out: Path, rel: str, log) -> dict:
+def build(job: dict, images: list[dict], preset: dict, script_text: str, tts_fn, out: Path, rel: str, log,
+          intro_audio: np.ndarray | None = None) -> dict:
     chapters = parse_script(script_text)
     if not chapters:
         raise SystemExit("Script is empty. Generate or paste a script first.")
+    if intro_audio is not None and len(intro_audio):
+        chapters[0]["paragraphs"].insert(0, [INTRO])  # plays first, before the script narration
+        log(f"intro audio: {len(intro_audio) / SR:.1f}s")
     words = word_count(chapters)
     log(f"script: {len(chapters)} chapters, {words} words")
     fast = (job.get("pace") or "").lower() == "fast"
@@ -308,7 +317,10 @@ def build(job: dict, images: list[dict], preset: dict, script_text: str, tts_fn,
             for p in c["paragraphs"]:
                 row = []
                 for s in p:
-                    clip = tts_fn(s, speed) if voice_on else None
+                    if s == INTRO:
+                        clip = intro_audio
+                    else:
+                        clip = tts_fn(s, speed) if voice_on else None
                     if clip is None:
                         clip = np.zeros(int(units(s) / (WPS * speed) * SR))
                     row.append(clip)

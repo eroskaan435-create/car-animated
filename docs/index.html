@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Channel Autopilot</title>
+<style>
+  :root { --bg:#0b0c10; --panel:#14161d; --line:#262a35; --text:#e9ecf2; --mute:#8a91a3; --acc:#ff3b30; --acc2:#ff9500; --ok:#30d158; --blue:#0a84ff; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif; background: radial-gradient(1200px 600px at 80% -10%, #2a0c0c 0%, var(--bg) 60%); color: var(--text); min-height: 100vh; }
+  header { max-width: 1100px; margin: 0 auto; padding: 24px 24px 8px; display:flex; align-items:center; gap: 12px; }
+  h1 { margin:0; font-size: 24px; flex:1; }
+  h1 span { background: linear-gradient(90deg, var(--acc), var(--acc2)); -webkit-background-clip:text; background-clip:text; color: transparent; }
+  main { max-width: 1100px; margin: 0 auto; padding: 8px 24px 60px; }
+  section { background: var(--panel); border:1px solid var(--line); border-radius: 16px; padding: 16px; margin-bottom: 16px; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .12em; color: var(--mute); margin: 0 0 12px; display:flex; align-items:center; gap:8px; }
+  h2 .count { background:#232733; color: var(--text); border-radius: 999px; padding: 2px 8px; font-size: 11px; letter-spacing: 0; }
+  input[type=text], input[type=password], input[type=datetime-local] { padding: 9px 11px; border-radius: 10px; border:1px solid var(--line); background:#0e1016; color: var(--text); font: inherit; font-size: 14px; color-scheme: dark; }
+  input:focus { outline: none; border-color: var(--acc); }
+  button, .btn { cursor:pointer; border:0; border-radius: 10px; padding: 9px 14px; font: inherit; font-size: 14px; font-weight: 700; color:#fff; background: #2a2f3c; text-decoration: none; display:inline-block; }
+  button.primary { background: linear-gradient(135deg, var(--acc), var(--acc2)); }
+  button.small, .btn.small { padding: 6px 10px; font-size: 12px; border-radius: 8px; }
+  button:disabled { opacity: .5; cursor: default; }
+  .cards { display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 800px) { .cards { grid-template-columns: 1fr; } }
+  .connect { display:flex; gap: 8px; }
+  .connect input { flex:1; min-width: 0; }
+  .who { display:flex; align-items:center; gap: 10px; margin-top: 10px; min-height: 36px; font-weight: 700; }
+  .who img { width: 36px; height: 36px; border-radius: 50%; }
+  .who .sub { color: var(--mute); font-weight: 400; font-size: 13px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--mute); flex: none; }
+  .dot.ok { background: var(--ok); } .dot.run { background: var(--acc2); animation: pulse 1s infinite; }
+  @keyframes pulse { 50% { opacity: .3; } }
+  .list { display:grid; gap: 8px; }
+  .row { display:grid; grid-template-columns: 34px 120px 1fr auto; gap: 12px; align-items:center; padding: 8px; border:1px solid var(--line); border-radius: 12px; background:#11131a; }
+  .row.dirty { border-color: var(--acc2); }
+  .row .n { color: var(--mute); font-size: 12px; text-align: center; }
+  .row img.t { width: 120px; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px; background:#000; display:block; }
+  .row .main { min-width: 0; }
+  .row .title { font-size: 14px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .row .title a { color: var(--text); text-decoration: none; }
+  .row .meta { display:flex; gap: 8px; align-items:center; flex-wrap: wrap; margin-top: 6px; font-size: 12px; color: var(--mute); }
+  .row .side { display:flex; gap: 6px; align-items:center; flex-wrap: wrap; justify-content: flex-end; }
+  @media (max-width: 800px) { .row { grid-template-columns: 90px 1fr; } .row .n { display:none; } .row img.t { width: 90px; } .row .side { grid-column: 1 / -1; justify-content: flex-start; } }
+  .badge { font-size: 11px; font-weight: 800; padding: 3px 8px; border-radius: 999px; background:#2a2f3c; color: var(--text); white-space: nowrap; }
+  .badge.queued { background:#232733; color: var(--mute); }
+  .badge.requested, .badge.making { background: rgba(255,149,0,.18); color: var(--acc2); }
+  .badge.made { background: rgba(10,132,255,.18); color: #64b5ff; }
+  .badge.scheduled { background: rgba(48,209,88,.15); color: var(--ok); }
+  .badge.published { background: var(--ok); color: #04210c; }
+  .badge.failed { background: rgba(255,59,48,.18); color: #ff6961; }
+  .intro { display:inline-flex; align-items:center; gap: 6px; padding: 4px 8px; border-radius: 8px; background:#1b1e27; font-size: 12px; color: var(--text); }
+  .intro button { padding: 0 4px; background: none; color: var(--mute); font-size: 14px; }
+  label.file { cursor:pointer; font-size: 12px; color: var(--mute); border:1px dashed var(--line); padding: 4px 8px; border-radius: 8px; }
+  label.file input { display:none; }
+  .bar { position: sticky; bottom: 12px; display:none; justify-content: center; }
+  .bar.on { display:flex; }
+  .bar button { box-shadow: 0 8px 30px rgba(255,59,48,.35); padding: 12px 22px; }
+  dialog { background: var(--panel); color: var(--text); border:1px solid var(--line); border-radius: 16px; padding: 18px; width: min(460px, 92vw); }
+  dialog::backdrop { background: rgba(0,0,0,.6); }
+  dialog input { width: 100%; margin-bottom: 8px; }
+  dialog h3 { margin: 4px 0 8px; font-size: 13px; color: var(--mute); text-transform: uppercase; letter-spacing: .1em; }
+  .msg { font-size: 13px; color: var(--mute); margin-top: 8px; min-height: 18px; }
+  .msg.err { color: #ff6961; }
+  .more { text-align:center; margin-top: 10px; }
+  a { color: var(--acc2); }
+  .empty { color: var(--mute); font-size: 13px; padding: 8px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🎬 <span>Channel Autopilot</span></h1>
+  <a class="btn small" href="expert.html">Expert</a>
+  <button class="small" id="gear" title="Settings">⚙</button>
+</header>
+
+<main>
+  <div class="cards">
+    <section>
+      <h2>Reference channel</h2>
+      <div class="connect">
+        <input type="text" id="refUrl" placeholder="https://www.youtube.com/@channel">
+        <button class="primary" id="refConnect">Connect</button>
+      </div>
+      <div class="who" id="refWho"></div>
+    </section>
+    <section>
+      <h2>My channel</h2>
+      <div class="connect"><button class="primary" id="myConnect" style="width:100%">Connect my channel</button></div>
+      <div class="who" id="myWho"></div>
+    </section>
+  </div>
+
+  <section>
+    <h2>Queue <span class="count" id="qCount">0</span></h2>
+    <div class="list" id="queue"><div class="empty">—</div></div>
+    <div class="more"><button class="small" id="qMore" hidden>Show more</button></div>
+  </section>
+
+  <section>
+    <h2>Made <span class="count" id="mCount">0</span></h2>
+    <div class="list" id="made"><div class="empty">—</div></div>
+  </section>
+
+  <div class="msg" id="msg"></div>
+  <div class="bar" id="bar"><button class="primary" id="save">Save changes</button></div>
+</main>
+
+<dialog id="settings">
+  <h3>GitHub</h3>
+  <input type="text" id="owner" placeholder="owner">
+  <input type="text" id="repo" placeholder="repository">
+  <input type="password" id="token" placeholder="github_pat_…">
+  <h3>Google (YouTube)</h3>
+  <input type="text" id="gid" placeholder="OAuth client ID">
+  <input type="password" id="gsecret" placeholder="OAuth client secret">
+  <div style="display:flex; gap:8px; justify-content:flex-end; margin-top:6px">
+    <button class="small" id="close">Close</button>
+    <button class="small primary" id="saveSettings">Save</button>
+  </div>
+  <div class="msg" id="smsg"></div>
+</dialog>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const S = JSON.parse(localStorage.getItem('autopilot') || '{}');
+const guess = location.hostname.endsWith('github.io') ? {owner: location.hostname.split('.')[0], repo: location.pathname.split('/')[1]} : {};
+for (const k of ['owner', 'repo', 'token', 'gid', 'gsecret']) $(k).value = S[k] ?? guess[k] ?? '';
+const saveSettings = () => { for (const k of ['owner', 'repo', 'token', 'gid', 'gsecret']) S[k] = $(k).value.trim(); localStorage.setItem('autopilot', JSON.stringify(S)); };
+const msg = (t, err) => { $('msg').textContent = t || ''; $('msg').className = 'msg' + (err ? ' err' : ''); };
+
+$('gear').onclick = () => $('settings').showModal();
+$('close').onclick = () => $('settings').close();
+$('saveSettings').onclick = async () => {
+  saveSettings();
+  try { const r = await gh(''); $('smsg').textContent = '✓ ' + r.full_name; $('smsg').className = 'msg'; load(); }
+  catch (e) { $('smsg').textContent = e.message; $('smsg').className = 'msg err'; }
+};
+
+// ------------------------------------------------------------------ GitHub
+const gh = async (path, opts = {}) => {
+  const res = await fetch(`https://api.github.com/repos/${S.owner}/${S.repo}${path}`, {
+    ...opts, headers: {'Accept': 'application/vnd.github+json', 'Authorization': `Bearer ${S.token}`, 'X-GitHub-Api-Version': '2022-11-28',
+      ...(opts.body ? {'Content-Type': 'application/json'} : {})},
+  });
+  if (res.status === 404 && opts.allow404) return null;
+  if (!res.ok) throw new Error(`GitHub ${res.status}: ${(await res.text()).slice(0, 160)}`);
+  return res.status === 204 ? null : res.json();
+};
+const ready = () => S.owner && S.repo && S.token;
+const b64 = (blob) => new Promise((ok) => { const r = new FileReader(); r.onload = () => ok(r.result.split(',')[1]); r.readAsDataURL(blob); });
+const utf8 = (s) => new Blob([s], {type: 'application/json'});
+async function readJson(path) {
+  const r = await gh(`/contents/${path}?t=${Date.now()}`, {allow404: true});
+  if (!r) return null;
+  const bytes = Uint8Array.from(atob(r.content.replace(/\n/g, '')), (c) => c.charCodeAt(0));
+  return JSON.parse(new TextDecoder().decode(bytes));
+}
+async function commit(files, message) {  // files: [{path, blob}] or [{path, remove: true}]
+  const repo = await gh('');
+  const branch = repo.default_branch;
+  const ref = await gh(`/git/ref/heads/${branch}`);
+  const base = await gh(`/git/commits/${ref.object.sha}`);
+  const tree = [];
+  for (const f of files) {
+    if (f.remove) { tree.push({path: f.path, mode: '100644', type: 'blob', sha: null}); continue; }
+    const blob = await gh('/git/blobs', {method: 'POST', body: JSON.stringify({content: await b64(f.blob), encoding: 'base64'})});
+    tree.push({path: f.path, mode: '100644', type: 'blob', sha: blob.sha});
+  }
+  const t = await gh('/git/trees', {method: 'POST', body: JSON.stringify({base_tree: base.tree.sha, tree})});
+  const c = await gh('/git/commits', {method: 'POST', body: JSON.stringify({message, tree: t.sha, parents: [ref.object.sha]})});
+  await gh(`/git/refs/heads/${branch}`, {method: 'PATCH', body: JSON.stringify({sha: c.sha})});
+}
+
+// ------------------------------------------------------------------ state
+let cfg = {}, queue = {items: []}, shown = 30, timer = null;
+const edits = {};      // id -> {publishAt?, status?, introFile?, introRemove?}
+const filesTouched = () => Object.keys(edits).length > 0;
+
+async function load() {
+  if (!ready()) { msg('⚙'); return; }
+  try {
+    cfg = (await readJson('channel/config.json')) || {};
+    queue = (await readJson('channel/queue.json')) || {items: []};
+    if (!$('refUrl').matches(':focus')) $('refUrl').value = cfg.reference?.url || '';
+    render();
+    msg('');
+  } catch (e) { msg(e.message, true); }
+  clearTimeout(timer);
+  timer = setTimeout(load, (queue.items || []).some((i) => ['making', 'requested'].includes(i.status)) ? 30000 : 120000);
+}
+
+const pad = (n) => String(n).padStart(2, '0');
+const toLocal = (iso) => { if (!iso) return ''; const d = new Date(iso); return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`; };
+const fmt = (iso) => iso ? new Date(iso).toLocaleString([], {dateStyle: 'medium', timeStyle: 'short'}) : '';
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+const LABEL = {queued: 'Queued', requested: 'Next up', making: 'Making…', made: 'Made', scheduled: 'Scheduled', published: 'Published', failed: 'Failed'};
+
+function render() {
+  const ref = queue.reference;
+  $('refWho').innerHTML = ref ? `<span class="dot ok"></span>${esc(ref.name)} <span class="sub">· ${ref.count} videos</span>`
+    : (cfg.reference?.url ? '<span class="dot run"></span><span class="sub">syncing…</span>' : '');
+  const me = {...(cfg.mine || {}), ...(queue.mine || {})};
+  $('myWho').innerHTML = me?.name ? `${me.thumb ? `<img src="${esc(me.thumb)}">` : '<span class="dot ok"></span>'}${esc(me.name)}` : '';
+  $('myConnect').textContent = me?.name ? 'Reconnect' : 'Connect my channel';
+
+  const items = (queue.items || []).slice().sort((a, b) => a.order - b.order);
+  const view = (it) => ({...it, ...(edits[it.id] || {})});
+  const q = items.filter((i) => ['queued', 'requested', 'making', 'failed'].includes(view(i).status));
+  const m = items.filter((i) => ['made', 'scheduled', 'published'].includes(i.status)).reverse();
+  $('qCount').textContent = q.length; $('mCount').textContent = m.length;
+  $('queue').innerHTML = q.slice(0, shown).map((i) => rowHtml(view(i), true)).join('') || '<div class="empty">—</div>';
+  $('qMore').hidden = q.length <= shown;
+  $('made').innerHTML = m.map((i) => rowHtml(view(i), false)).join('') || '<div class="empty">—</div>';
+  $('bar').classList.toggle('on', filesTouched());
+}
+
+function rowHtml(it, inQueue) {
+  const e = edits[it.id] || {};
+  const st = it.status;
+  const intro = e.introRemove ? null : (e.introFile ? {name: e.introFile.name, type: e.introFile.type.startsWith('audio') ? 'audio' : 'video'} : (it.intro ? {name: it.intro.split('/').pop(), type: it.introType} : null));
+  const editable = inQueue && st !== 'making';
+  const when = editable ? `<input type="datetime-local" data-id="${it.id}" data-k="when" value="${toLocal(it.publishAt)}">`
+    : (it.publishAt ? `🕒 ${fmt(it.publishAt)}` : '');
+  const introHtml = intro ? `<span class="intro">${intro.type === 'audio' ? '🎵' : '🎞'} ${esc(intro.name)}${editable ? `<button data-id="${it.id}" data-k="unintro" title="Remove">×</button>` : ''}</span>`
+    : (editable ? `<label class="file">＋ Intro<input type="file" accept="video/*,audio/*" data-id="${it.id}" data-k="intro"></label>` : '');
+  const links = [
+    it.myVideoId ? `<a class="btn small" href="https://youtu.be/${it.myVideoId}" target="_blank" rel="noopener">▶ YouTube</a>` : '',
+    it.release ? `<a class="btn small" href="${esc(it.release)}" target="_blank" rel="noopener">⬇ Video</a>` : '',
+  ].join('');
+  const action = !inQueue ? '' : st === 'queued' ? `<button class="small" data-id="${it.id}" data-k="make">Make now</button>`
+    : st === 'failed' ? `<button class="small" data-id="${it.id}" data-k="make">Retry</button>`
+    : st === 'requested' && edits[it.id]?.status ? `<button class="small" data-id="${it.id}" data-k="unmake">Cancel</button>` : '';
+  return `<div class="row${edits[it.id] ? ' dirty' : ''}">
+    <div class="n">${it.order}</div>
+    <a href="${esc(it.url)}" target="_blank" rel="noopener"><img class="t" loading="lazy" src="https://i.ytimg.com/vi/${it.id}/mqdefault.jpg" alt=""></a>
+    <div class="main">
+      <div class="title"><a href="${esc(it.url)}" target="_blank" rel="noopener" title="${esc(it.title)}">${esc(it.myTitle || it.title)}</a></div>
+      <div class="meta"><span class="badge ${st}">${LABEL[st] || st}</span>${when}${introHtml}${it.note ? `<span title="${esc(it.note)}">⚠ ${esc(it.note).slice(0, 80)}</span>` : ''}</div>
+    </div>
+    <div class="side">${links}${action}</div>
+  </div>`;
+}
+
+const edit = (id, patch) => { edits[id] = {...(edits[id] || {}), ...patch}; render(); };
+document.addEventListener('change', (ev) => {
+  const t = ev.target, id = t.dataset.id;
+  if (!id) return;
+  if (t.dataset.k === 'when' && t.value) edit(id, {publishAt: new Date(t.value).toISOString().replace('.000Z', 'Z')});
+  if (t.dataset.k === 'intro' && t.files[0]) {
+    if (t.files[0].size > 95e6) { msg('Intro must be under 95 MB', true); return; }
+    edit(id, {introFile: t.files[0], introRemove: false});
+  }
+});
+document.addEventListener('click', (ev) => {
+  const t = ev.target.closest('button'); if (!t || !t.dataset.id) return;
+  const id = t.dataset.id;
+  if (t.dataset.k === 'make') edit(id, {status: 'requested'});
+  if (t.dataset.k === 'unmake') { const e = {...edits[id]}; delete e.status; edits[id] = e; if (!Object.keys(e).length) delete edits[id]; render(); }
+  if (t.dataset.k === 'unintro') edit(id, {introFile: null, introRemove: true});
+});
+$('qMore').onclick = () => { shown += 50; render(); };
+
+$('save').onclick = async () => {
+  if (!ready()) { $('settings').showModal(); return; }
+  $('save').disabled = true; msg('Saving…');
+  try {
+    const latest = (await readJson('channel/queue.json')) || {items: []};   // merge onto the newest queue (the bot edits it too)
+    const files = [];
+    for (const [id, e] of Object.entries(edits)) {
+      const it = latest.items.find((x) => x.id === id); if (!it) continue;
+      if (e.publishAt) it.publishAt = e.publishAt;
+      if (e.status && ['queued', 'failed'].includes(it.status)) { it.status = e.status; it.note = ''; }
+      const old = it.intro;
+      if (e.introRemove || e.introFile) {
+        if (old) files.push({path: `channel/${old}`, remove: true});
+        delete it.intro; delete it.introType;
+      }
+      if (e.introFile) {
+        const ext = (e.introFile.name.split('.').pop() || 'mp4').toLowerCase();
+        const path = `intros/${id}.${ext}`;
+        if (old === path) files.pop();  // same name: just overwrite
+        files.push({path: `channel/${path}`, blob: e.introFile});
+        it.intro = path; it.introType = e.introFile.type.startsWith('audio') ? 'audio' : 'video';
+      }
+    }
+    files.push({path: 'channel/queue.json', blob: utf8(JSON.stringify(latest, null, 1) + '\n')});
+    await commit(files, 'Channel: queue edits from the page');
+    for (const k of Object.keys(edits)) delete edits[k];
+    queue = latest; render(); msg('Saved ✓');
+  } catch (e) { msg(e.message, true); }
+  $('save').disabled = false;
+};
+
+// ------------------------------------------------------------------ reference channel
+$('refConnect').onclick = async () => {
+  if (!ready()) { $('settings').showModal(); return; }
+  const url = $('refUrl').value.trim();
+  if (!/^https?:\/\/(www\.)?youtube\.com\/(@|channel\/|c\/|user\/)/.test(url)) { msg('YouTube channel URL', true); return; }
+  try {
+    cfg = (await readJson('channel/config.json')) || {};
+    cfg.reference = {url};
+    await commit([{path: 'channel/config.json', blob: utf8(JSON.stringify(cfg, null, 2) + '\n')}], 'Channel: reference channel');
+    queue.reference = null; render(); msg('');
+  } catch (e) { msg(e.message, true); }
+};
+
+// ------------------------------------------------------------------ my channel (Google OAuth -> GitHub Actions secrets)
+const redirect = location.origin + location.pathname;
+const rand = (n) => Array.from(crypto.getRandomValues(new Uint8Array(n)), (b) => b.toString(16).padStart(2, '0')).join('');
+const b64url = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+
+$('myConnect').onclick = async () => {
+  if (!ready() || !S.gid || !S.gsecret) { $('settings').showModal(); return; }
+  const state = rand(16), verifier = rand(32);
+  sessionStorage.setItem('oauth', JSON.stringify({state, verifier}));
+  const challenge = b64url(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(verifier)));
+  const p = new URLSearchParams({client_id: S.gid, redirect_uri: redirect, response_type: 'code', access_type: 'offline', prompt: 'consent',
+    scope: 'https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube', state,
+    code_challenge: challenge, code_challenge_method: 'S256', include_granted_scopes: 'true'});
+  location.href = 'https://accounts.google.com/o/oauth2/v2/auth?' + p;
+};
+
+function loadScript(src) { return new Promise((ok, no) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = () => no(new Error('could not load ' + src)); document.head.appendChild(s); }); }
+
+async function setSecret(name, value) {
+  if (!window.sodium) await loadScript('https://cdn.jsdelivr.net/npm/libsodium-wrappers@0.7.13/dist/browsers/sodium.js');
+  await window.sodium.ready;
+  const so = window.sodium;
+  const key = await gh('/actions/secrets/public-key');
+  const sealed = so.crypto_box_seal(so.from_string(value), so.from_base64(key.key, so.base64_variants.ORIGINAL));
+  await gh(`/actions/secrets/${name}`, {method: 'PUT', body: JSON.stringify({encrypted_value: so.to_base64(sealed, so.base64_variants.ORIGINAL), key_id: key.key_id})});
+}
+
+async function finishOAuth() {
+  const p = new URLSearchParams(location.search);
+  if (!p.get('code') && !p.get('error')) return;
+  history.replaceState(null, '', redirect);
+  const saved = JSON.parse(sessionStorage.getItem('oauth') || '{}');
+  sessionStorage.removeItem('oauth');
+  if (p.get('error')) { msg('Google: ' + p.get('error'), true); return; }
+  if (p.get('state') !== saved.state) { msg('Sign-in state mismatch, try again', true); return; }
+  msg('Connecting…');
+  try {
+    const res = await fetch('https://oauth2.googleapis.com/token', {method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams({code: p.get('code'), client_id: S.gid, client_secret: S.gsecret, redirect_uri: redirect,
+        grant_type: 'authorization_code', code_verifier: saved.verifier})});
+    const tok = await res.json();
+    if (!res.ok) throw new Error('Google: ' + (tok.error_description || tok.error));
+    if (!tok.refresh_token) throw new Error('Google returned no refresh token; remove the app at myaccount.google.com/permissions and connect again');
+    const ch = await (await fetch('https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true', {headers: {Authorization: 'Bearer ' + tok.access_token}})).json();
+    const c = ch.items?.[0];
+    if (!c) throw new Error('No YouTube channel on this Google account');
+    await setSecret('YT_CLIENT_ID', S.gid);
+    await setSecret('YT_CLIENT_SECRET', S.gsecret);
+    await setSecret('YT_REFRESH_TOKEN', tok.refresh_token);
+    cfg = (await readJson('channel/config.json')) || {};
+    cfg.mine = {id: c.id, name: c.snippet.title, thumb: c.snippet.thumbnails?.default?.url || ''};
+    await commit([{path: 'channel/config.json', blob: utf8(JSON.stringify(cfg, null, 2) + '\n')}], 'Channel: my channel connected');
+    msg(''); render();
+  } catch (e) { msg(e.message, true); }
+}
+
+(async () => { await finishOAuth(); load(); if (!ready()) $('settings').showModal(); })();
+</script>
+</body>
+</html>

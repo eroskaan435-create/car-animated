@@ -1,0 +1,20 @@
+{
+  "reference": {
+    "url": "https://www.youtube.com/@DmAutoreviews-p9m"
+  },
+  "mine": {},
+  "language": "ja",
+  "voice": "ja-JP-KeitaNeural",
+  "voiceSpeed": 1.08,
+  "timezone": "Asia/Tokyo",
+  "publishTime": "18:00",
+  "everyDays": 1,
+  "leadHours": 48,
+  "decor": {
+    "frame": true,
+    "stickers": true,
+    "stickerEvery": 60,
+    "maxStickers": 1
+  },
+  "transitionSfx": 0.35
+}

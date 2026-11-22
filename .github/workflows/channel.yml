@@ -1,0 +1,101 @@
+name: Channel autopilot
+
+# Syncs the reference channel into channel/queue.json, applies publish-time edits to videos already scheduled
+# on my channel, and builds + renders the next video (pipeline/channel.py). The page docs/index.html drives it.
+on:
+  push:
+    paths:
+      - 'channel/config.json'
+      - 'channel/queue.json'
+      - 'channel/intros/**'
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: channel
+  cancel-in-progress: false
+
+env:
+  OLLAMA_MODEL: 'qwen2.5:7b'
+  PIP_DISABLE_PIP_VERSION_CHECK: '1'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      next: ${{ steps.s.outputs.next }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -q -U yt-dlp
+      - id: s
+        name: Sync queue
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python pipeline/channel.py sync
+      - name: Commit queue
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add channel/queue.json
+          git diff --cached --quiet && exit 0
+          git commit -q -m "Channel queue sync"
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep 5; done
+
+  make:
+    needs: sync
+    if: needs.sync.outputs.next != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q -U yt-dlp
+      - name: Cache Ollama model
+        uses: actions/cache@v4
+        with:
+          path: ~/.ollama/models
+          key: ollama-${{ env.OLLAMA_MODEL }}
+      - name: Start Ollama
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sh
+          sudo systemctl stop ollama 2>/dev/null || true
+          nohup ollama serve > /tmp/ollama.log 2>&1 &
+          for i in $(seq 1 30); do curl -s http://127.0.0.1:11434/api/tags >/dev/null && break; sleep 1; done
+          ollama pull "$OLLAMA_MODEL"
+      - name: Build job (car, photos, Japanese script)
+        id: make
+        run: python pipeline/channel.py make "${{ needs.sync.outputs.next }}"
+      - name: Commit job + queue
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add channel/queue.json "jobs/yt-${{ needs.sync.outputs.next }}" 2>/dev/null || git add channel/queue.json
+          git diff --cached --quiet && exit 0
+          git commit -q -m "Channel: build yt-${{ needs.sync.outputs.next }}"
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep 5; done
+      - name: Start render
+        if: steps.make.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run render.yml --ref "${{ github.event.repository.default_branch }}" -f job="yt-${{ needs.sync.outputs.next }}"

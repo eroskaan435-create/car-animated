@@ -314,6 +314,10 @@ jobs:
         run: |
           cp video/public/job/captions.srt video/public/job/chapters.txt video/public/job/description.txt output/
           cp "jobs/${{ matrix.job }}/script.md" output/ || true
+          intro=$(jq -r '.introVideo // empty' "jobs/${{ matrix.job }}/job.json")
+          if [ -n "$intro" ] && [ -f "jobs/${{ matrix.job }}/$intro" ]; then
+            python3 pipeline/intro.py output/*-youtube.mp4 "jobs/${{ matrix.job }}/$intro" output
+          fi
           ls -la output
       - uses: actions/upload-artifact@v4
         with:
@@ -330,3 +334,20 @@ jobs:
             echo "Upload \`captions.srt\` as subtitles and paste \`description.txt\` (includes chapters)."; echo;
             echo '```'; cat output/description.txt; echo '```'; } > notes.md
           gh release create "$tag" output/* --title "${{ matrix.job }} (YouTube)" --notes-file notes.md --target "${{ github.sha }}"
+      - name: Upload to my channel (scheduled)
+        if: hashFiles(format('jobs/{0}/job.json', matrix.job)) != ''
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          RELEASE_URL: ${{ github.server_url }}/${{ github.repository }}/releases/tag/video-${{ matrix.job }}
+        run: |
+          jq -e '.youtube.queueId' "jobs/${{ matrix.job }}/job.json" > /dev/null || { echo "not a channel video"; exit 0; }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull -q --rebase origin "${{ github.event.repository.default_branch }}"
+          python3 pipeline/youtube.py upload "jobs/${{ matrix.job }}" output
+          git add channel/queue.json
+          git diff --cached --quiet && exit 0
+          git commit -q -m "Channel: ${{ matrix.job }} done"
+          for i in 1 2 3 4 5; do git pull --rebase -q origin "${{ github.event.repository.default_branch }}" && git push -q origin HEAD:"${{ github.event.repository.default_branch }}" && break; sleep 5; done
