@@ -2,7 +2,7 @@
   "version": 1,
   "title": "トヨタ ヴェルファイア",
   "tagline": "",
-  "vehicleType": "luxury",
+  "vehicleType": "sedan",
   "mode": "long",
   "stage": "render",
   "pace": "fast",
@@ -32,87 +32,628 @@
     {
       "file": "02.jpg",
       "caption": "",
-      "category": "auto"
+      "category": "interior"
     },
     {
       "file": "03.jpg",
       "caption": "",
-      "category": "auto"
+      "category": "interior"
     },
     {
       "file": "04.jpg",
       "caption": "",
-      "category": "auto"
+      "category": "interior"
     },
     {
       "file": "05.jpg",
       "caption": "",
-      "category": "auto"
+      "category": "interior"
     },
     {
       "file": "06.jpg",
       "caption": "",
-      "category": "auto"
+      "category": "interior"
     },
     {
       "file": "07.jpg",
       "caption": "",
-      "category": "auto"
+      "category": "interior"
     },
     {
       "file": "08.jpg",
       "caption": "",
-      "category": "auto"
+      "category": "interior"
     },
     {
       "file": "09.jpg",
       "caption": "",
-      "category": "auto"
+      "category": "interior"
     },
     {
       "file": "10.jpg",
       "caption": "",
-      "category": "auto"
+      "category": "interior"
     },
     {
       "file": "11.jpg",
       "caption": "",
-      "category": "auto"
+      "category": "interior"
     },
     {
       "file": "12.jpg",
       "caption": "",
+      "category": "interior"
+    },
+    {
+      "file": "13.jpg",
+      "caption": "",
+      "category": "interior"
+    },
+    {
+      "file": "14.jpg",
+      "caption": "",
+      "category": "interior"
+    },
+    {
+      "file": "15.jpg",
+      "caption": "",
+      "category": "interior"
+    },
+    {
+      "file": "16.jpg",
+      "caption": "",
+      "category": "interior"
+    },
+    {
+      "file": "17.jpg",
+      "caption": "",
+      "category": "detail"
+    },
+    {
+      "file": "18.jpg",
+      "caption": "",
+      "category": "detail"
+    },
+    {
+      "file": "19.jpg",
+      "caption": "",
+      "category": "interior"
+    },
+    {
+      "file": "20.jpg",
+      "caption": "",
+      "category": "detail"
+    },
+    {
+      "file": "21.jpg",
+      "caption": "",
+      "category": "detail"
+    },
+    {
+      "file": "22.jpg",
+      "caption": "",
+      "category": "detail"
+    },
+    {
+      "file": "23.jpg",
+      "caption": "",
+      "category": "detail"
+    },
+    {
+      "file": "24.jpg",
+      "caption": "",
+      "category": "detail"
+    },
+    {
+      "file": "25.jpg",
+      "caption": "",
       "category": "auto"
+    },
+    {
+      "file": "26.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "27.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "28.jpg",
+      "caption": "",
+      "category": "exterior"
+    },
+    {
+      "file": "29.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "30.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "31.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "32.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "33.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "34.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "35.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "36.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "37.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "38.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "39.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "40.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "41.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "42.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "43.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "44.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "45.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "46.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "47.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "48.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "49.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "50.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "51.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "52.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "53.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "54.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "55.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "56.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "57.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "58.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "59.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "60.jpg",
+      "caption": "",
+      "category": "auto"
+    }
+  ],
+  "remoteImages": [
+    {
+      "file": "01.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/TOYOTA_VELLFIRE_%28AH30%29_HONG_KONG_%2833%29.jpg/1920px-TOYOTA_VELLFIRE_%28AH30%29_HONG_KONG_%2833%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/f/fe/TOYOTA_VELLFIRE_%28AH30%29_HONG_KONG_%2833%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "02.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Toyota_5BA-TAHA40W_Vellfire_Z_Premier_%2840%E3%83%B4%E3%82%A7%E3%83%AB%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2_FORTE_SPECIAL%29_%28Ent_No.22503%29_-_Toyota_3BA-AGH40W_Alphard_Z_%2840%E3%82%A2%E3%83%AB%E3%83%95%E3%82%A1%E3%83%BC%E3%83%89_FORTE_SPECIAL%29_%28Ent_No.22502%29_%2824021012500%29.jpg/1920px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Toyota_5BA-TAHA40W_Vellfire_Z_Premier_%2840%E3%83%B4%E3%82%A7%E3%83%AB%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2_FORTE_SPECIAL%29_%28Ent_No.22503%29_-_Toyota_3BA-AGH40W_Alphard_Z_%2840%E3%82%A2%E3%83%AB%E3%83%95%E3%82%A1%E3%83%BC%E3%83%89_FORTE_SPECIAL%29_%28Ent_No.22502%29_%2824021012500%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "03.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Toyota_VELLFIRE_TURBO_Z_Premier_2WD_%285BA-TAHA40W-PFZTT%29_interior.jpg/1920px-Toyota_VELLFIRE_TURBO_Z_Premier_2WD_%285BA-TAHA40W-PFZTT%29_interior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/5/53/Toyota_VELLFIRE_TURBO_Z_Premier_2WD_%285BA-TAHA40W-PFZTT%29_interior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "04.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Toyota_VELLFIRE_Z_G_EDITION_%28DBA-AGH30W-NFXSK%29_interior.jpg/1920px-Toyota_VELLFIRE_Z_G_EDITION_%28DBA-AGH30W-NFXSK%29_interior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/8/84/Toyota_VELLFIRE_Z_G_EDITION_%28DBA-AGH30W-NFXSK%29_interior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "05.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Toyota_VELLFIRE_X_2WD_%28DBA-AGH30W-NRXGK%29_interior.jpg/1920px-Toyota_VELLFIRE_X_2WD_%28DBA-AGH30W-NRXGK%29_interior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Toyota_VELLFIRE_X_2WD_%28DBA-AGH30W-NRXGK%29_interior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "06.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/The_interior_of_Toyota_VELLFIRE_V_2WD_%28AGH30W%29_with_%22TRD_Customize_Parts%22.JPG/1920px-The_interior_of_Toyota_VELLFIRE_V_2WD_%28AGH30W%29_with_%22TRD_Customize_Parts%22.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/3/3c/The_interior_of_Toyota_VELLFIRE_V_2WD_%28AGH30W%29_with_%22TRD_Customize_Parts%22.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "07.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Toyota_VELLFIRE_Z_2WD_7-Seater_%28DBA-AGH30W-NFXSK%29_interior.jpg/1920px-Toyota_VELLFIRE_Z_2WD_7-Seater_%28DBA-AGH30W-NFXSK%29_interior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/7/74/Toyota_VELLFIRE_Z_2WD_7-Seater_%28DBA-AGH30W-NFXSK%29_interior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "08.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Toyota_VELLFIRE_Z_%22G_Edition%22_%28AGH30W%29_interior.JPG/1920px-Toyota_VELLFIRE_Z_%22G_Edition%22_%28AGH30W%29_interior.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/3/32/Toyota_VELLFIRE_Z_%22G_Edition%22_%28AGH30W%29_interior.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "09.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Toyota_Vellfire_Hybrid_interior.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/5/57/Toyota_Vellfire_Hybrid_interior.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "10.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Osaka_Auto_Messe_2017_%2832%29_-_Toyota_VELLFIRE_%28AH30W%29_tuned_by_grace_CAR_INTERIOR_TREATMENT_SYSTEM.jpg/1920px-Osaka_Auto_Messe_2017_%2832%29_-_Toyota_VELLFIRE_%28AH30W%29_tuned_by_grace_CAR_INTERIOR_TREATMENT_SYSTEM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/8/83/Osaka_Auto_Messe_2017_%2832%29_-_Toyota_VELLFIRE_%28AH30W%29_tuned_by_grace_CAR_INTERIOR_TREATMENT_SYSTEM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "11.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Osaka_Auto_Messe_2017_%2831%29_-_Toyota_VELLFIRE_%28AH30W%29_tuned_by_grace_CAR_INTERIOR_TREATMENT_SYSTEM.jpg/1920px-Osaka_Auto_Messe_2017_%2831%29_-_Toyota_VELLFIRE_%28AH30W%29_tuned_by_grace_CAR_INTERIOR_TREATMENT_SYSTEM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Osaka_Auto_Messe_2017_%2831%29_-_Toyota_VELLFIRE_%28AH30W%29_tuned_by_grace_CAR_INTERIOR_TREATMENT_SYSTEM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "12.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Toyota_3BA-AGH3XW_Alphard_%28%E3%80%9C%E3%83%A1%E3%83%83%E3%82%BB%E3%81%8B%E3%82%89%E5%A7%8B%E3%81%BE%E3%82%8B%E4%BB%81%E7%BE%A9%E3%81%AA%E3%81%8D%E6%88%A6%E3%81%84%E3%80%9C%E3%81%93%E3%82%8C%E3%81%8C%E4%BF%BA%E3%82%89%E3%81%AE%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%80%9C%29_%28Ent_No.20702%29_%2824021012372%29.jpg/1920px-Toyota_3BA-AGH3XW_Alphard_%28%E3%80%9C%E3%83%A1%E3%83%83%E3%82%BB%E3%81%8B%E3%82%89%E5%A7%8B%E3%81%BE%E3%82%8B%E4%BB%81%E7%BE%A9%E3%81%AA%E3%81%8D%E6%88%A6%E3%81%84%E3%80%9C%E3%81%93%E3%82%8C%E3%81%8C%E4%BF%BA%E3%82%89%E3%81%AE%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%80%9C%29_%28Ent_No.20702%29_%2824021012372%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/6/69/Toyota_3BA-AGH3XW_Alphard_%28%E3%80%9C%E3%83%A1%E3%83%83%E3%82%BB%E3%81%8B%E3%82%89%E5%A7%8B%E3%81%BE%E3%82%8B%E4%BB%81%E7%BE%A9%E3%81%AA%E3%81%8D%E6%88%A6%E3%81%84%E3%80%9C%E3%81%93%E3%82%8C%E3%81%8C%E4%BF%BA%E3%82%89%E3%81%AE%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%80%9C%29_%28Ent_No.20702%29_%2824021012372%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "13.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Toyota_DBA-AGH30W_Alphard_%28%E3%81%8A%E3%81%A3%E3%81%95%E3%82%93%E6%9C%80%E5%BE%8C%E3%81%AE%E6%82%AA%E3%81%82%E3%81%8C%E3%81%8D%29_%28Ent_No.20703%29_%2824021012370%29.jpg/1920px-Toyota_DBA-AGH30W_Alphard_%28%E3%81%8A%E3%81%A3%E3%81%95%E3%82%93%E6%9C%80%E5%BE%8C%E3%81%AE%E6%82%AA%E3%81%82%E3%81%8C%E3%81%8D%29_%28Ent_No.20703%29_%2824021012370%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/0/04/Toyota_DBA-AGH30W_Alphard_%28%E3%81%8A%E3%81%A3%E3%81%95%E3%82%93%E6%9C%80%E5%BE%8C%E3%81%AE%E6%82%AA%E3%81%82%E3%81%8C%E3%81%8D%29_%28Ent_No.20703%29_%2824021012370%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "14.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Toyota_3BA-AGH40W_Alphard_Z_%2840%E3%82%A2%E3%83%AB%E3%83%95%E3%82%A1%E3%83%BC%E3%83%89_FORTE_SPECIAL%29_%28Ent_No.22502%29_%2824021012504%29.jpg/1920px-Toyota_3BA-AGH40W_Alphard_Z_%2840%E3%82%A2%E3%83%AB%E3%83%95%E3%82%A1%E3%83%BC%E3%83%89_FORTE_SPECIAL%29_%28Ent_No.22502%29_%2824021012504%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/2/21/Toyota_3BA-AGH40W_Alphard_Z_%2840%E3%82%A2%E3%83%AB%E3%83%95%E3%82%A1%E3%83%BC%E3%83%89_FORTE_SPECIAL%29_%28Ent_No.22502%29_%2824021012504%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "15.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Toyota_3BA-AGH40W_Alphard_Z_%28KFW_40_ALPHARD%29_%28Ent_No.22001%29_%2824021012524%29.jpg/1920px-Toyota_3BA-AGH40W_Alphard_Z_%28KFW_40_ALPHARD%29_%28Ent_No.22001%29_%2824021012524%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/3/30/Toyota_3BA-AGH40W_Alphard_Z_%28KFW_40_ALPHARD%29_%28Ent_No.22001%29_%2824021012524%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "16.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Parked_Alphard_white.jpg/1920px-Parked_Alphard_white.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Parked_Alphard_white.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "17.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Moscow%2C_Toyota_Alphard_%28AH30%29_grille%2C_Sept_2025_01.jpg/1920px-Moscow%2C_Toyota_Alphard_%28AH30%29_grille%2C_Sept_2025_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Moscow%2C_Toyota_Alphard_%28AH30%29_grille%2C_Sept_2025_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "18.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/The_tire_wheel_of_Toyota_ALPHARD_Z_2WD_%283BA-AGH40W-PFXLK%29.jpg/1920px-The_tire_wheel_of_Toyota_ALPHARD_Z_2WD_%283BA-AGH40W-PFXLK%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/3/38/The_tire_wheel_of_Toyota_ALPHARD_Z_2WD_%283BA-AGH40W-PFXLK%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "19.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Toyota_ALPHARD_Z_2WD_%283BA-AGH40W-PFXLK%29_interior.jpg/1920px-Toyota_ALPHARD_Z_2WD_%283BA-AGH40W-PFXLK%29_interior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Toyota_ALPHARD_Z_2WD_%283BA-AGH40W-PFXLK%29_interior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "20.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Osaka_Auto_Messe_2022_%28533%29_-_Lexus_LM_350_%28GGH31%29_with_ADVAN_Racing_Oni2_wheel.jpg/1920px-Osaka_Auto_Messe_2022_%28533%29_-_Lexus_LM_350_%28GGH31%29_with_ADVAN_Racing_Oni2_wheel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/0/04/Osaka_Auto_Messe_2022_%28533%29_-_Lexus_LM_350_%28GGH31%29_with_ADVAN_Racing_Oni2_wheel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "21.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Osaka_Auto_Messe_2022_%28534%29_-_Lexus_LM_350_%28GGH31%29_with_ADVAN_Racing_Oni2_wheel.jpg/1920px-Osaka_Auto_Messe_2022_%28534%29_-_Lexus_LM_350_%28GGH31%29_with_ADVAN_Racing_Oni2_wheel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/7/73/Osaka_Auto_Messe_2022_%28534%29_-_Lexus_LM_350_%28GGH31%29_with_ADVAN_Racing_Oni2_wheel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "22.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/The_tire_wheel_of_Toyota_ALPHARD_SA_%28DBA-GGH30W-PFTRK%29.jpg/1920px-The_tire_wheel_of_Toyota_ALPHARD_SA_%28DBA-GGH30W-PFTRK%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/8/80/The_tire_wheel_of_Toyota_ALPHARD_SA_%28DBA-GGH30W-PFTRK%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "23.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/The_tire_wheel_of_Toyota_ALPHARD_S%22A_Package%22_%28DBA-AGH30W-PFXSK%29.jpg/1920px-The_tire_wheel_of_Toyota_ALPHARD_S%22A_Package%22_%28DBA-AGH30W-PFXSK%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/5/5d/The_tire_wheel_of_Toyota_ALPHARD_S%22A_Package%22_%28DBA-AGH30W-PFXSK%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "24.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Nissan_Note_e-POWER_SMART_ROOM_MIRROR.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/6/63/Nissan_Note_e-POWER_SMART_ROOM_MIRROR.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "25.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Toyota_Vellfire_%28AH20%29_spotted_in_University_of_British_Columbia%2C_Vancouver%2C_British_Columbia%2C_Canada.jpg/1920px-Toyota_Vellfire_%28AH20%29_spotted_in_University_of_British_Columbia%2C_Vancouver%2C_British_Columbia%2C_Canada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/a/af/Toyota_Vellfire_%28AH20%29_spotted_in_University_of_British_Columbia%2C_Vancouver%2C_British_Columbia%2C_Canada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "26.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%2831%29.jpg/1920px-TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%2831%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/f/f0/TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%2831%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "27.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/TOYOTA_CROWN_VELLFIRE_%28AH30%29_China_%2829%29.jpg/1920px-TOYOTA_CROWN_VELLFIRE_%28AH30%29_China_%2829%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/e/e1/TOYOTA_CROWN_VELLFIRE_%28AH30%29_China_%2829%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "28.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Toyota_Vellfire_Executive_Lounge_Hybrid_E-Four_cutaway_front.jpg/1920px-Toyota_Vellfire_Executive_Lounge_Hybrid_E-Four_cutaway_front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/1/18/Toyota_Vellfire_Executive_Lounge_Hybrid_E-Four_cutaway_front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "29.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/TOYOTA_CROWN_VELLFIRE_%28AH30%29%2C_TOYOTA_ALPHARD_HYBRID_%28AH30%29%2C_TOYOTA_ALPHARD_HYBRID_%28AH40%29_China.jpg/1920px-TOYOTA_CROWN_VELLFIRE_%28AH30%29%2C_TOYOTA_ALPHARD_HYBRID_%28AH30%29%2C_TOYOTA_ALPHARD_HYBRID_%28AH40%29_China.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/a/ae/TOYOTA_CROWN_VELLFIRE_%28AH30%29%2C_TOYOTA_ALPHARD_HYBRID_%28AH30%29%2C_TOYOTA_ALPHARD_HYBRID_%28AH40%29_China.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "30.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%2820%29.jpg/1920px-TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%2820%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/3/30/TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%2820%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "31.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%2818%29.jpg/1920px-TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%2818%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/f/f2/TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%2818%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "32.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%2814%29.jpg/1920px-TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%2814%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/a/ab/TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%2814%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "33.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/TOYOTA_VELLFIRE_%28AH20%29_HONG_KONG_%2814%29.jpg/1920px-TOYOTA_VELLFIRE_%28AH20%29_HONG_KONG_%2814%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/4/45/TOYOTA_VELLFIRE_%28AH20%29_HONG_KONG_%2814%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "34.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%2810%29.jpg/1920px-TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%2810%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/3/3d/TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%2810%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "35.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%287%29.jpg/1920px-TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%287%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/2/26/TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%287%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "36.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%288%29.jpg/1920px-TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%288%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/f/f5/TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%288%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "37.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%286%29.jpg/1920px-TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%286%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/c/c7/TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%286%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "38.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/TOYOTA_CROWN_VELLFIRE_%28AH30%29_China_%2820%29.jpg/1920px-TOYOTA_CROWN_VELLFIRE_%28AH30%29_China_%2820%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/4/42/TOYOTA_CROWN_VELLFIRE_%28AH30%29_China_%2820%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "39.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%2827%29.jpg/1920px-TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%2827%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/f/f0/TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%2827%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "40.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Toyota_Vellfire_2.5_%28IV%29_%E2%80%93_f_22032025.jpg/1920px-Toyota_Vellfire_2.5_%28IV%29_%E2%80%93_f_22032025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Toyota_Vellfire_2.5_%28IV%29_%E2%80%93_f_22032025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "41.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Toyota_Vellfire_Z_Premier.jpg/1920px-Toyota_Vellfire_Z_Premier.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Toyota_Vellfire_Z_Premier.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "42.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%282%29.jpg/1920px-TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/f/fb/TOYOTA_CROWN_VELLFIRE_%28AH40%29_China_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "43.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Toyota_Alphard_and_Vellfire_vans_in_Taishan%2C_GD.jpg/1920px-Toyota_Alphard_and_Vellfire_vans_in_Taishan%2C_GD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/8/80/Toyota_Alphard_and_Vellfire_vans_in_Taishan%2C_GD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "44.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/TOYOTA_VELLFIRE_%28AH20%29_China.jpg/1920px-TOYOTA_VELLFIRE_%28AH20%29_China.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/9/9b/TOYOTA_VELLFIRE_%28AH20%29_China.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "45.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%2821%29.jpg/1920px-TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%2821%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/e/ec/TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%2821%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "46.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/TOYOTA_VELLFIRE_%28AH20%29_HONG_KONG_%286%29_%28cropped%29.jpg/1920px-TOYOTA_VELLFIRE_%28AH20%29_HONG_KONG_%286%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/e/e3/TOYOTA_VELLFIRE_%28AH20%29_HONG_KONG_%286%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "47.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Toyota_Vellfire%2C_Johor_Bahru_%28P1110137%29.jpg/1920px-Toyota_Vellfire%2C_Johor_Bahru_%28P1110137%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Toyota_Vellfire%2C_Johor_Bahru_%28P1110137%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "48.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/TOYOTA_VELLFIRE_%28AH30%29_MACAU.jpg/1920px-TOYOTA_VELLFIRE_%28AH30%29_MACAU.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/4/41/TOYOTA_VELLFIRE_%28AH30%29_MACAU.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "49.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%2813%29.jpg/1920px-TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%2813%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/a/a4/TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%2813%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "50.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%2812%29.jpg/1920px-TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%2812%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/8/85/TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%2812%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "51.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/TOYOTA_VELLFIRE_%28AH20%29_HONG_KONG_%284%29.jpg/1920px-TOYOTA_VELLFIRE_%28AH20%29_HONG_KONG_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/6/6e/TOYOTA_VELLFIRE_%28AH20%29_HONG_KONG_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "52.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%288%29.jpg/1920px-TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%288%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/3/3e/TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%288%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "53.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%287%29.jpg/1920px-TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%287%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/c/cf/TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%287%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "54.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/TOYOTA_CROWN_VELLFIRE_%28AH30%29_China_%286%29.jpg/1920px-TOYOTA_CROWN_VELLFIRE_%28AH30%29_China_%286%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/2/2a/TOYOTA_CROWN_VELLFIRE_%28AH30%29_China_%286%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "55.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/TOYOTA_CROWN_VELLFIRE_%28AH30%29_China_%284%29.jpg/1920px-TOYOTA_CROWN_VELLFIRE_%28AH30%29_China_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/d/da/TOYOTA_CROWN_VELLFIRE_%28AH30%29_China_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "56.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/TOYOTA_VELLFIRE_%28AH20%29_HONG_KONG_%283%29.jpg/1920px-TOYOTA_VELLFIRE_%28AH20%29_HONG_KONG_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/4/45/TOYOTA_VELLFIRE_%28AH20%29_HONG_KONG_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "57.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/TOYOTA_VELLFIRE_%28AH20%29_HONG_KONG_%282%29.jpg/1920px-TOYOTA_VELLFIRE_%28AH20%29_HONG_KONG_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/3/3f/TOYOTA_VELLFIRE_%28AH20%29_HONG_KONG_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "58.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/TOYOTA_VELLFIRE_%28AH30%29_HONG_KONG_%282%29.jpg/1920px-TOYOTA_VELLFIRE_%28AH30%29_HONG_KONG_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/d/dd/TOYOTA_VELLFIRE_%28AH30%29_HONG_KONG_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "59.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%283%29.jpg/1920px-TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/e/eb/TOYOTA_VELLFIRE_HYBRID_%28AH30%29_China_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "60.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/TOYOTA_CROWN_VELLFIRE_AERO_%28AH30%29_China.jpg/1920px-TOYOTA_CROWN_VELLFIRE_AERO_%28AH30%29_China.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/a/af/TOYOTA_CROWN_VELLFIRE_AERO_%28AH30%29_China.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     }
   ],
   "heroIndex": 0,
   "facts": {},
   "pros": "",
   "cons": "",
-  "descriptionTitle": "トヨタ 新型ヴェルファイア 乗車レビュー！魅力と注意点を徹底解説",
+  "descriptionTitle": "トヨタ 新ヴェルファイア 2026乗車レビュー！",
   "hashtags": [
     "#トヨタヴェルファイア",
-    "#ヴェルファイア",
     "#Vellfire",
     "#ToyotaVellfire",
-    "#トヨタ",
+    "#Toyota",
     "#新型車",
     "#車レビュー",
     "#自動車"
   ],
   "credits": [
-    "\"TOYOTA VELLFIRE (AH30) HONG KONG (33)\" by Dinkun Chen / CC BY-SA 4.0 (Wikimedia Commons)",
-    "\"TOYOTA VELLFIRE HYBRID (AH30) China (33)\" by Dinkun Chen / CC BY-SA 4.0 (Wikimedia Commons)",
-    "\"Toyota Vellfire (AH20) spotted in University of British Columbia, Vancouver, British Columbia, Canada\" by Teriyaki Boyz-Tokyo Drift (Fast & Furious) / CC BY 4.0 (Wikimedia Commons)",
-    "\"Toyota Alphard (AH20) spotted in Lansdowne Mall, Richmond, British Columbia, Canada\" by Teriyaki Boyz-Tokyo Drift (Fast & Furious) / CC BY 4.0 (Wikimedia Commons)",
-    "\"TOYOTA VELLFIRE HYBRID (AH30) China (31)\" by Dinkun Chen / CC BY-SA 4.0 (Wikimedia Commons)",
-    "\"TOYOTA VELLFIRE HYBRID (AH30) China (32)\" by Dinkun Chen / CC BY-SA 4.0 (Wikimedia Commons)",
-    "\"TOYOTA CROWN VELLFIRE (AH30), TOYOTA ALPHARD HYBRID (AH30), TOYOTA ALPHARD HYBRID (AH40) China\" by Dinkun Chen / CC BY-SA 4.0 (Wikimedia Commons)",
-    "\"TOYOTA CROWN VELLFIRE (AH40) China (20)\" by Dinkun Chen / CC BY-SA 4.0 (Wikimedia Commons)",
-    "\"TOYOTA CROWN VELLFIRE (AH40) China (18)\" by Dinkun Chen / CC BY-SA 4.0 (Wikimedia Commons)",
-    "\"TOYOTA CROWN VELLFIRE (AH40) China (14)\" by Dinkun Chen / CC BY-SA 4.0 (Wikimedia Commons)",
-    "\"TOYOTA VELLFIRE (AH20) HONG KONG (14)\" by Dinkun Chen / CC BY-SA 4.0 (Wikimedia Commons)",
-    "\"The frontview of Toyota VELLFIRE HEV Executive Lounge E-Four (6AA-AAHH45W-PFXZB)\" by Tokumeigakarinoaoshima / CC0 (Wikimedia Commons)"
+    "Dinkun Chen (Wikimedia Commons): CC BY-SA 4.0 ×31",
+    "先従隗始 (Wikimedia Commons): CC0 ×5",
+    "Tokumeigakarinoaoshima (Wikimedia Commons): CC BY-SA 4.0 ×12, CC0 ×3",
+    "Ominae (Wikimedia Commons): CC BY-SA 4.0",
+    "Retired electrician (Wikimedia Commons): CC0",
+    "Project Kei (Wikimedia Commons): CC BY-SA 4.0",
+    "Teriyaki Boyz-Tokyo Drift (Fast & Furious) (Wikimedia Commons): CC BY 4.0",
+    "TTTNIS (Wikimedia Commons): CC0 ×2",
+    "© M 93 (Wikimedia Commons): CC BY-SA 3.0 de",
+    "Evan0512 (Wikimedia Commons): CC BY-SA 4.0",
+    "Matti Blume (Wikimedia Commons): CC BY-SA 4.0",
+    "全写真クレジット: https://github.com/zaars59208/car-animated/blob/main/jobs/yt-XiZ6FGrdQMo/credits.txt"
   ],
   "decor": {
     "frame": true,
@@ -124,13 +665,12 @@
   "sourceVideo": "XiZ6FGrdQMo",
   "youtube": {
     "queueId": "XiZ6FGrdQMo",
-    "title": "トヨタ 新型ヴェルファイア 乗車レビュー！魅力と注意点を徹底解説",
+    "title": "トヨタ 新ヴェルファイア 2026乗車レビュー！",
     "tags": [
       "トヨタヴェルファイア",
-      "ヴェルファイア",
       "Vellfire",
       "ToyotaVellfire",
-      "トヨタ",
+      "Toyota",
       "新型車",
       "車レビュー",
       "自動車"
