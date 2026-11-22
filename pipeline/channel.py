@@ -341,8 +341,12 @@ def make(vid: str):
         shutil.rmtree(job_dir)
     job_dir.mkdir(parents=True)
 
-    meta = ytdlp(it["url"])
-    title, desc = meta.get("title", it.get("title", "")), meta.get("description", "")
+    try:
+        meta = ytdlp(it["url"])
+    except subprocess.CalledProcessError as e:  # e.g. YouTube's bot check on CI IPs: the queued title is enough
+        log(f"yt-dlp metadata failed ({(e.stderr or '').strip()[:200]}); using the queued title")
+        meta = {}
+    title, desc = meta.get("title") or it.get("title", ""), meta.get("description") or ""
     it["refPublished"] = meta.get("upload_date")
     car = identify(title, desc)
     log(f"car: {car}")
@@ -405,4 +409,15 @@ if __name__ == "__main__":
             with open(os.environ["GITHUB_OUTPUT"], "a") as f:
                 f.write(f"next={n}\n")
     elif sys.argv[1] == "make":
-        make(sys.argv[2])
+        try:
+            make(sys.argv[2])
+        except BaseException as e:  # show why on the page (queue note) instead of only in the Actions log
+            import traceback
+            traceback.print_exc()
+            shutil.rmtree(Path("jobs") / f"yt-{sys.argv[2]}", ignore_errors=True)
+            q = load_queue()
+            for it in q.get("items", []):
+                if it["id"] == sys.argv[2] and it.get("status") != "failed":
+                    it.update(status="failed", note=f"{type(e).__name__}: {e}"[:300])
+            save_queue(q)
+            sys.exit(1)
