@@ -116,8 +116,8 @@ export const SizzleFrame: React.FC<{accent: string; accent2: string}> = ({accent
 					fill="url(#asphalt)"
 					d={`M0 0H${W}V${H}H0Z M${inner.x} ${inner.y}V${inner.y + inner.h}H${inner.x + inner.w}V${inner.y}Z`}
 				/>
-				{/* moving road centre line */}
-				<rect x={mid.x} y={mid.y} width={mid.w} height={mid.h} fill="none" stroke="#ffd400" strokeWidth={4} strokeDasharray="34 26" strokeDashoffset={-f * 4} opacity={0.85} />
+				{/* road centre line */}
+				<rect x={mid.x} y={mid.y} width={mid.w} height={mid.h} fill="none" stroke="#ffd400" strokeWidth={4} strokeDasharray="34 26" opacity={0.85} />
 				{corner(0, 0, 'tl')}
 				{corner(W - 3 * cs, 0, 'tr')}
 				{corner(0, H - 3 * cs, 'bl')}

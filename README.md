@@ -108,8 +108,8 @@ See `jobs/honda-n-box/`:
 
 ### Sizzling frame + kawaii car stickers
 Add `"decor": {"frame": true, "stickers": true, "stickerEvery": 60, "maxStickers": 3}` to a long job
-(see `jobs/honda-n-box-preview/`):
-- `frame`: the picture is inset inside an animated frame with an asphalt band, a moving road line, checkered-flag corners,
+(see `jobs/honda-n-box-preview/`). `"transitionSfx": 0.35` makes the photo-transition whooshes quieter.
+- `frame`: the picture is inset inside an animated frame with an asphalt band, a road line, checkered-flag corners,
   a flickering neon edge, two headlight "comets" racing around it, sparks and electric crackles.
 - `stickers`: a cute car sticker pops in (with a pop sound) every `stickerEvery` seconds and stays on screen. At most
   `maxStickers` show at once, and the end screen is kept clear. There are 8 original SVG designs in `video/src/fx/decor.tsx`,

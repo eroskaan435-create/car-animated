@@ -651,13 +651,14 @@ def build_long_mix(plan: dict, preset: dict, total: int, out_path: Path, job: di
         log(f"  music {seg['kind']} {t0:6.1f}s -> {t1:6.1f}s")
 
     sfx = np.zeros((N, 2), dtype=np.float32)
+    whoosh_vol = float(job.get("transitionSfx", 1.0))  # e.g. 0.35 for quieter whooshes on photo transitions
     for ev in plan["events"]:
         t = ev["frame"] / FPS
         g = ev.get("strength", 1.0)
         if ev["type"] == "impact":
             put(sfx, audio.impact(g), t, 0.5 * g)
         elif ev["type"] == "whoosh":
-            put(sfx, audio.whoosh(0.42), t - 0.3, 0.45 * g)
+            put(sfx, audio.whoosh(0.42), t - 0.3, 0.45 * g * whoosh_vol)
         elif ev["type"] == "pop":
             put(sfx, np.stack([audio.pop()] * 2, axis=1), t, 0.3 * g)
         elif ev["type"] == "riser":

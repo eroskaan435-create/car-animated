@@ -117,6 +117,7 @@
     "frame": true,
     "stickers": true,
     "stickerEvery": 60,
-    "maxStickers": 3
-  }
+    "maxStickers": 1
+  },
+  "transitionSfx": 0.35
 }
