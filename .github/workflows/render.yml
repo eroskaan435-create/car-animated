@@ -155,6 +155,8 @@ jobs:
       - name: Node deps
         working-directory: video
         run: npm ci --no-audit --no-fund && npx remotion browser ensure
+      - name: Download photos
+        run: python pipeline/photos.py fetch "jobs/${{ matrix.job }}"
       - name: AI prep
         run: python pipeline/prep.py "jobs/${{ matrix.job }}" --out video/public/job --mode short
       - name: Render
@@ -209,6 +211,8 @@ jobs:
         run: |
           pip install -q torch --index-url https://download.pytorch.org/whl/cpu
           pip install -q -r pipeline/requirements.txt
+      - name: Download photos (channel jobs keep only URLs in the repo)
+        run: python pipeline/photos.py fetch "jobs/${{ matrix.job }}"
       - name: AI prep (cutouts, depth, categories, 14-min voice-over, soundtrack)
         run: python pipeline/prep.py "jobs/${{ matrix.job }}" --out video/public/job --mode long
       - uses: actions/upload-artifact@v4
@@ -314,6 +318,7 @@ jobs:
         run: |
           cp video/public/job/captions.srt video/public/job/chapters.txt video/public/job/description.txt output/
           cp "jobs/${{ matrix.job }}/script.md" output/ || true
+          cp "jobs/${{ matrix.job }}/credits.txt" output/ 2>/dev/null || true
           intro=$(jq -r '.introVideo // empty' "jobs/${{ matrix.job }}/job.json")
           if [ -n "$intro" ] && [ -f "jobs/${{ matrix.job }}/$intro" ]; then
             python3 pipeline/intro.py output/*-youtube.mp4 "jobs/${{ matrix.job }}/$intro" output

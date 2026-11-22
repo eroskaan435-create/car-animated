@@ -28,6 +28,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).parent))
+import photos  # noqa: E402
 import youtube  # noqa: E402
 
 CFG = Path("channel/config.json")
@@ -284,105 +285,6 @@ def write_script_ja(car: dict, job_dir: Path):
     return sum(len(t) for _, t in parts)
 
 
-# --------------------------------------------------------------------------- photos (Wikimedia Commons)
-FREE = re.compile(r"^(cc0|public domain|pd|cc by(-sa)? \d(\.\d)?( [a-z]+)?)$", re.I)
-
-
-def commons(params: dict) -> dict:
-    url = "https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode({**params, "format": "json"})
-    with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=60) as r:
-        return json.loads(r.read())
-
-
-def wiki(lang: str, params: dict) -> dict:
-    url = f"https://{lang}.wikipedia.org/w/api.php?" + urllib.parse.urlencode({**params, "format": "json"})
-    with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=60) as r:
-        return json.loads(r.read())
-
-
-def wiki_articles(car: dict) -> list[tuple[str, str]]:
-    """Find the car's Japanese Wikipedia article (robust to katakana) and its English counterpart."""
-    out = []
-    for q in [car.get("name_ja"), f"{car.get('make', '')} {car.get('model', '')}"]:
-        if not q or not q.strip():
-            continue
-        hits = wiki("ja", {"action": "query", "list": "search", "srsearch": q, "srlimit": 1}).get("query", {}).get("search", [])
-        if hits:
-            ja = hits[0]["title"]
-            out.append(("ja", ja))
-            pages = wiki("ja", {"action": "query", "titles": ja, "prop": "langlinks", "lllang": "en", "redirects": 1})["query"]["pages"]
-            ll = next(iter(pages.values())).get("langlinks") or []
-            if ll:
-                out.append(("en", ll[0]["*"]))
-            break
-    return out
-
-
-def find_photos(car: dict, n=12) -> list[dict]:
-    titles: list[str] = []
-    arts = wiki_articles(car)
-    log(f"wikipedia: {arts}")
-    for lang, art in arts:  # photos used in the car's Wikipedia articles (what a human would pick)
-        d = wiki(lang, {"action": "query", "titles": art, "prop": "images", "imlimit": 500, "redirects": 1})
-        for p in d["query"]["pages"].values():
-            for im in p.get("images", []):
-                t = "File:" + im["title"].split(":", 1)[1]
-                if re.search(r"\.jpe?g$", t, re.I) and t not in titles:
-                    titles.append(t)
-    ja = next((a for lang, a in arts if lang == "ja"), "")
-    if ja:  # e.g. "トヨタ・ヴェルファイア" -> "トヨタ ヴェルファイア"
-        car["name_ja"] = re.sub(r"\s*[（(].*[）)]$", "", ja).replace("・", " ")
-    en = next((a for lang, a in arts if lang == "en"), "")
-    if en:  # the English article title is a reliable romanised name, e.g. "Toyota Alphard"
-        make = car.get("make", "")
-        car["model"] = re.sub(rf"^{re.escape(make)}\s+", "", re.sub(r"\s*\(.*\)$", "", en), flags=re.I) or car.get("model", "")
-    from_articles = set(titles)
-    queries = [f"{car.get('make', '')} {car.get('model', '')}".strip(), car.get("model", "")]
-    for qs in queries:
-        if not qs:
-            continue
-        d = commons({"action": "query", "list": "search", "srsearch": f"{qs} filetype:bitmap", "srnamespace": 6, "srlimit": 60})
-        titles += [x["title"] for x in d.get("query", {}).get("search", []) if x["title"] not in titles]
-        if len(titles) >= 40:
-            break
-    model_key = re.sub(r"[^a-z0-9]", "", (car.get("model") or "").lower())
-    make_key = re.sub(r"[^a-z0-9]", "", (car.get("make") or "").lower())
-    found = []
-    for i in range(0, len(titles), 50):
-        d = commons({"action": "query", "titles": "|".join(titles[i:i + 50]), "prop": "imageinfo",
-                     "iiprop": "url|size|mime|extmetadata", "iiurlwidth": 1920})
-        for p in d.get("query", {}).get("pages", {}).values():
-            ii = (p.get("imageinfo") or [{}])[0]
-            m = ii.get("extmetadata", {})
-            lic = (m.get("LicenseShortName") or {}).get("value", "")
-            t = p["title"]
-            norm = re.sub(r"[^a-z0-9]", "", t.lower())
-            if ii.get("mime") not in ("image/jpeg", "image/png") or (ii.get("width") or 0) < 1200 or not FREE.match(lic.strip()):
-                continue
-            if t in from_articles:  # skip rivals/other makes pictured in the same article
-                if make_key and make_key not in norm and model_key not in norm:
-                    continue
-            elif model_key and model_key not in norm:
-                continue
-            artist = html.unescape(re.sub(r"<[^>]+>", "", (m.get("Artist") or {}).get("value", ""))).strip() or "unknown"
-            date = (m.get("DateTimeOriginal") or {}).get("value", "")[:10]
-            found.append({"title": t, "thumb": ii.get("thumburl"), "lic": lic, "artist": artist, "date": date,
-                          "w": ii["width"], "h": ii["height"]})
-    # current generation first: filenames like "2011-2015 Toyota Vellfire" go last; then landscape, newest photo
-    def recent(x):
-        years = [int(y) for y in re.findall(r"(?<!\d)((?:19|20)\d\d)(?!\d)", x["title"])]
-        return not years or max(years) >= now().year - 4
-    def named(x):  # the model's own photos before siblings/rivals pictured in the same article
-        return bool(model_key) and model_key in re.sub(r"[^a-z0-9]", "", x["title"].lower())
-    found.sort(key=lambda x: (named(x), recent(x), x["w"] >= x["h"], x["date"]), reverse=True)
-    return found[:n]
-
-
-def download(url: str, path: Path):
-    with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=120) as r:
-        path.write_bytes(r.read())
-
-
 # --------------------------------------------------------------------------- make
 def make(vid: str):
     cfg = load_cfg()
@@ -404,22 +306,19 @@ def make(vid: str):
     car = identify(title, desc)
     log(f"car: {car}")
 
-    photos = find_photos(car)
-    if len(photos) < 4:
-        it.update(status="failed", note=f"only {len(photos)} free photos of {car.get('make')} {car.get('model')} on Wikimedia Commons")
-        save_queue(q)
-        shutil.rmtree(job_dir)
-        raise SystemExit(it["note"])
-    images, credits = [], []
-    for i, ph in enumerate(photos, 1):
+    picked = photos.gather(car, target=int(cfg.get("photos", 60)))
+    if len(picked) < 8:
+        raise SystemExit(f"only {len(picked)} free photos of {car.get('make')} {car.get('model')} found")
+    # photos are downloaded at render time (render.yml -> photos.py fetch), only URLs + credits are committed
+    images, remote = [], []
+    for i, ph in enumerate(picked, 1):
         f = f"{i:02d}.jpg"
-        download(ph["thumb"], job_dir / f)
-        if ph["thumb"].lower().endswith(".png"):
-            subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(job_dir / f), "-q:v", "2", str(job_dir / "tmp.jpg")], check=True)
-            (job_dir / "tmp.jpg").replace(job_dir / f)
-        images.append({"file": f, "caption": "", "category": "auto"})
-        shown = re.sub(r"^File:|\.(jpe?g|png)$", "", ph["title"], flags=re.I)
-        credits.append(f'"{shown}" by {ph["artist"]} / {ph["lic"]} (Wikimedia Commons)')
+        images.append({"file": f, "caption": "", "category": ph["cat"]})
+        remote.append({"file": f, "url": ph["url"], "fallback": ph["fallback"]})
+    short, full = photos.credits(picked)
+    (job_dir / "credits.txt").write_text("\n".join(full) + "\n", encoding="utf-8")
+    repo = os.environ.get("GITHUB_REPOSITORY", "zaars59208/car-animated")
+    credits = short + [f"全写真クレジット: https://github.com/{repo}/blob/main/jobs/{job_name}/credits.txt"]
     log(f"photos: {len(images)}")
 
     chars = write_script_ja(car, job_dir)
@@ -440,7 +339,7 @@ def make(vid: str):
         "thumbnailText": name_ja, "thumbnailBadge": "徹底解説", "price": "", "priceLabel": "", "dealer": "", "contact": "",
         "cta": "チャンネル登録お願いします", "specs": [],
         "voice": {"enabled": True, "voice": "am_michael", "edgeVoice": cfg["voice"], "speed": cfg["voiceSpeed"]},
-        "images": images, "heroIndex": 0, "facts": {}, "pros": "", "cons": "",
+        "images": images, "remoteImages": remote, "heroIndex": 0, "facts": {}, "pros": "", "cons": "",
         "descriptionTitle": yt_title + (f" | {mine}" if mine else ""),
         "hashtags": [f"#{t}" for t in tags] + ([f"#{mine_tag}"] if mine else []),
         "credits": credits, "decor": cfg["decor"], "transitionSfx": cfg["transitionSfx"],

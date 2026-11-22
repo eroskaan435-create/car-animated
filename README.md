@@ -63,7 +63,9 @@ Turns a reference YouTube channel into a queue of videos for your own channel, o
    You can change any publish time on the page, including for videos that are already scheduled on YouTube.
 2. **Queue:** every 6 hours (or right away with **Make now**), the next video due within 48 h is built:
    - the free LLM (Qwen 2.5 via Ollama) works out which car the reference video is about. Only its title and description are used.
-   - free-licence photos come from Wikimedia Commons and are credited in the description
+   - about 60 free-licence photos per car (exterior, interior, engine, details) are found on Wikimedia Commons (the model's
+     category tree, its Wikipedia articles, search) and Openverse/Flickr (`pipeline/photos.py`). Only their URLs and credits
+     are committed (`credits.txt`), and the render downloads them
    - the free LLM writes a new Japanese script, which is voiced by `ja-JP-KeitaNeural`
    - the frame + sticker decor and the quiet transition whooshes are added, then the video is rendered.
    **Check the scripts:** a 7B model can get facts wrong.
