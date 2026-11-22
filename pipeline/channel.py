@@ -372,7 +372,9 @@ def find_photos(car: dict, n=12) -> list[dict]:
     def recent(x):
         years = [int(y) for y in re.findall(r"(?<!\d)((?:19|20)\d\d)(?!\d)", x["title"])]
         return not years or max(years) >= now().year - 4
-    found.sort(key=lambda x: (recent(x), x["w"] >= x["h"], x["date"]), reverse=True)
+    def named(x):  # the model's own photos before siblings/rivals pictured in the same article
+        return bool(model_key) and model_key in re.sub(r"[^a-z0-9]", "", x["title"].lower())
+    found.sort(key=lambda x: (named(x), recent(x), x["w"] >= x["h"], x["date"]), reverse=True)
     return found[:n]
 
 
