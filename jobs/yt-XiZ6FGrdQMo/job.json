@@ -1,0 +1,135 @@
+{
+  "version": 1,
+  "title": "トヨタ・ニュー・ヴェルファイア",
+  "tagline": "",
+  "vehicleType": "sedan",
+  "mode": "long",
+  "stage": "render",
+  "pace": "fast",
+  "language": "ja",
+  "burnCaptions": true,
+  "alsoShort": false,
+  "thumbnailText": "トヨタ・ニュー・ヴェルファイア",
+  "thumbnailBadge": "徹底解説",
+  "price": "",
+  "priceLabel": "",
+  "dealer": "",
+  "contact": "",
+  "cta": "チャンネル登録お願いします",
+  "specs": [],
+  "voice": {
+    "enabled": true,
+    "voice": "am_michael",
+    "edgeVoice": "ja-JP-KeitaNeural",
+    "speed": 1.08
+  },
+  "images": [
+    {
+      "file": "01.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "02.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "03.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "04.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "05.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "06.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "07.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "08.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "09.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "10.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "11.jpg",
+      "caption": "",
+      "category": "auto"
+    },
+    {
+      "file": "12.jpg",
+      "caption": "",
+      "category": "auto"
+    }
+  ],
+  "heroIndex": 0,
+  "facts": {},
+  "pros": "",
+  "cons": "",
+  "descriptionTitle": "トヨタ 新ヴェルファイア2026 乗車レビュー！",
+  "hashtags": [
+    "#toyota",
+    "#newverfia",
+    "#2026model",
+    "#sedanreview",
+    "#japanecar"
+  ],
+  "credits": [
+    "\"TOYOTA VELLFIRE (AH30) HONG KONG (33)\" by Dinkun Chen / CC BY-SA 4.0 (Wikimedia Commons)",
+    "\"TOYOTA VELLFIRE HYBRID (AH30) China (33)\" by Dinkun Chen / CC BY-SA 4.0 (Wikimedia Commons)",
+    "\"Toyota Vellfire (AH20) spotted in University of British Columbia, Vancouver, British Columbia, Canada\" by Teriyaki Boyz-Tokyo Drift (Fast &amp; Furious) / CC BY 4.0 (Wikimedia Commons)",
+    "\"Toyota Alphard (AH20) spotted in Lansdowne Mall, Richmond, British Columbia, Canada\" by Teriyaki Boyz-Tokyo Drift (Fast &amp; Furious) / CC BY 4.0 (Wikimedia Commons)",
+    "\"TOYOTA VELLFIRE HYBRID (AH30) China (31)\" by Dinkun Chen / CC BY-SA 4.0 (Wikimedia Commons)",
+    "\"TOYOTA VELLFIRE HYBRID (AH30) China (32)\" by Dinkun Chen / CC BY-SA 4.0 (Wikimedia Commons)",
+    "\"TOYOTA CROWN VELLFIRE (AH30), TOYOTA ALPHARD HYBRID (AH30), TOYOTA ALPHARD HYBRID (AH40) China\" by Dinkun Chen / CC BY-SA 4.0 (Wikimedia Commons)",
+    "\"TOYOTA CROWN VELLFIRE (AH40) China (20)\" by Dinkun Chen / CC BY-SA 4.0 (Wikimedia Commons)",
+    "\"TOYOTA CROWN VELLFIRE (AH40) China (18)\" by Dinkun Chen / CC BY-SA 4.0 (Wikimedia Commons)",
+    "\"TOYOTA CROWN VELLFIRE (AH40) China (14)\" by Dinkun Chen / CC BY-SA 4.0 (Wikimedia Commons)",
+    "\"TOYOTA VELLFIRE (AH20) HONG KONG (14)\" by Dinkun Chen / CC BY-SA 4.0 (Wikimedia Commons)",
+    "\"The frontview of Toyota VELLFIRE HEV Executive Lounge E-Four (6AA-AAHH45W-PFXZB)\" by Tokumeigakarinoaoshima / CC0 (Wikimedia Commons)"
+  ],
+  "decor": {
+    "frame": true,
+    "stickers": true,
+    "stickerEvery": 60,
+    "maxStickers": 1
+  },
+  "transitionSfx": 0.35,
+  "sourceVideo": "XiZ6FGrdQMo",
+  "youtube": {
+    "queueId": "XiZ6FGrdQMo",
+    "title": "トヨタ 新ヴェルファイア2026 乗車レビュー！",
+    "tags": [
+      "toyota",
+      "newverfia",
+      "2026model",
+      "sedanreview",
+      "japanecar"
+    ],
+    "categoryId": "2",
+    "publishAt": "2026-11-24T09:00:00Z"
+  }
+}

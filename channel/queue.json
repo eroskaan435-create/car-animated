@@ -17,10 +17,14 @@
    "title": "ついに公開！トヨタ・ニュー・ヴェルファイア2026 — 乗った瞬間、言葉を失った！これは車じゃない…空飛ぶ宮殿だ！【DM AutoReviews】",
    "url": "https://www.youtube.com/watch?v=XiZ6FGrdQMo",
    "durationSec": 733,
-   "status": "requested",
+   "status": "making",
    "publishAt": "2026-11-24T09:00:00Z",
    "note": "",
-   "refPublished": null
+   "refPublished": null,
+   "job": "yt-XiZ6FGrdQMo",
+   "startedAt": "2026-11-22T11:29:56+00:00",
+   "car": "Toyota Vellfire",
+   "myTitle": "トヨタ 新ヴェルファイア2026 乗車レビュー！"
   },
   {
    "id": "yEhPGAasil0",
@@ -3151,5 +3155,5 @@
   "name": "Dm Auto reviews . 78K views ",
   "count": 349
  },
- "updated": "2026-11-22T11:18:44+00:00"
+ "updated": "2026-11-22T11:29:56+00:00"
 }
