@@ -1,0 +1,3153 @@
+{
+ "items": [
+  {
+   "id": "DSZMz31cbvc",
+   "order": 1,
+   "title": "ついに公開！2027年ホンダN-BOX — 誰も見たことのない進化の全貌を徹底解剖！",
+   "url": "https://www.youtube.com/watch?v=DSZMz31cbvc",
+   "durationSec": 775,
+   "status": "made",
+   "publishAt": null,
+   "job": "honda-n-box",
+   "note": "made by hand"
+  },
+  {
+   "id": "XiZ6FGrdQMo",
+   "order": 2,
+   "title": "ついに公開！トヨタ・ニュー・ヴェルファイア2026 — 乗った瞬間、言葉を失った！これは車じゃない…空飛ぶ宮殿だ！【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=XiZ6FGrdQMo",
+   "durationSec": 733,
+   "status": "queued",
+   "publishAt": "2026-11-24T09:00:00Z"
+  },
+  {
+   "id": "yEhPGAasil0",
+   "order": 3,
+   "title": "ついに解禁！新型タント2026年フルモデルチェンジ完全暴露｜誰も知らなかった衝撃の真実",
+   "url": "https://www.youtube.com/watch?v=yEhPGAasil0",
+   "durationSec": 476,
+   "status": "queued",
+   "publishAt": "2026-11-25T09:00:00Z"
+  },
+  {
+   "id": "LnPAPc3b6pw",
+   "order": 4,
+   "title": "ついに公開！2027年トヨタGRスターレット完全復活 — 28年の沈黙を破った伝説の真実",
+   "url": "https://www.youtube.com/watch?v=LnPAPc3b6pw",
+   "durationSec": 780,
+   "status": "queued",
+   "publishAt": "2026-11-26T09:00:00Z"
+  },
+  {
+   "id": "2aWoMij4dZY",
+   "order": 5,
+   "title": "トヨタ新型スパーキーハイブリッド2026、ついに登場！キャプテンシート搭載でフリードを超えた！",
+   "url": "https://www.youtube.com/watch?v=2aWoMij4dZY",
+   "durationSec": 741,
+   "status": "queued",
+   "publishAt": "2026-11-27T09:00:00Z"
+  },
+  {
+   "id": "S79VJKt-XDk",
+   "order": 6,
+   "title": "ついに公開！2026年レクサスGX550バージョンL — 誰も知らなかった真実をすべて暴露します！",
+   "url": "https://www.youtube.com/watch?v=S79VJKt-XDk",
+   "durationSec": 644,
+   "status": "queued",
+   "publishAt": "2026-11-28T09:00:00Z"
+  },
+  {
+   "id": "TOc2XVEOPDE",
+   "order": 7,
+   "title": "ついに解禁！トヨタ ピクシス トラック2026年モデル完全公開！誰も知らなかった衝撃の真実をすべて暴露！",
+   "url": "https://www.youtube.com/watch?v=TOc2XVEOPDE",
+   "durationSec": 645,
+   "status": "queued",
+   "publishAt": "2026-11-29T09:00:00Z"
+  },
+  {
+   "id": "ja6UGAgHGOc",
+   "order": 8,
+   "title": "史上初公開！スズキが6輪軽トレーラーをついに解禁、業界に激震が走った",
+   "url": "https://www.youtube.com/watch?v=ja6UGAgHGOc",
+   "durationSec": 646,
+   "status": "queued",
+   "publishAt": "2026-11-30T09:00:00Z"
+  },
+  {
+   "id": "KTq3M4Ah6CQ",
+   "order": 9,
+   "title": "ついに公開！新型ルーミー2026年モデル完全解説｜誰も知らなかった驚愕の真実が明らかに！",
+   "url": "https://www.youtube.com/watch?v=KTq3M4Ah6CQ",
+   "durationSec": 800,
+   "status": "queued",
+   "publishAt": "2026-12-01T09:00:00Z"
+  },
+  {
+   "id": "KvFAHHBJ9mU",
+   "order": 10,
+   "title": "ついに解禁！新型トヨタ・ライズ2026 全て暴露します — デザイン、走り、価格まで完全レビュー！",
+   "url": "https://www.youtube.com/watch?v=KvFAHHBJ9mU",
+   "durationSec": 679,
+   "status": "queued",
+   "publishAt": "2026-12-02T09:00:00Z"
+  },
+  {
+   "id": "0111319lfes",
+   "order": 11,
+   "title": "ついに解禁！トヨタ アルファード2026 完全レビュー — 走る高級ホテルの全てを暴露します",
+   "url": "https://www.youtube.com/watch?v=0111319lfes",
+   "durationSec": 763,
+   "status": "queued",
+   "publishAt": "2026-12-03T09:00:00Z"
+  },
+  {
+   "id": "6oWapvbHEvg",
+   "order": 12,
+   "title": "ついに公開！2026年ダイハツ e-アトレイ — 誰も知らなかった衝撃の全貌をついに暴露",
+   "url": "https://www.youtube.com/watch?v=6oWapvbHEvg",
+   "durationSec": 684,
+   "status": "queued",
+   "publishAt": "2026-12-04T09:00:00Z"
+  },
+  {
+   "id": "bvgFJbHB_RU",
+   "order": 13,
+   "title": "ついに公開！2026年型マツダCX-5 — 日本が誇る最高傑作、その全貌を完全解説",
+   "url": "https://www.youtube.com/watch?v=bvgFJbHB_RU",
+   "durationSec": 1059,
+   "status": "queued",
+   "publishAt": "2026-12-05T09:00:00Z"
+  },
+  {
+   "id": "MkP5aIxdLjs",
+   "order": 14,
+   "title": "【衝撃】2026 Toyota Crown ついに全貌解明！340馬力ハイブリッドの王者が降臨👑DM AutoReviews",
+   "url": "https://www.youtube.com/watch?v=MkP5aIxdLjs",
+   "durationSec": 830,
+   "status": "queued",
+   "publishAt": "2026-12-06T09:00:00Z"
+  },
+  {
+   "id": "r6EyloNKTp0",
+   "order": 15,
+   "title": "信じられない…ついに公開！新型スズキ・ワゴンR 2026年モデル完全レビュー🤯🔥",
+   "url": "https://www.youtube.com/watch?v=r6EyloNKTp0",
+   "durationSec": 834,
+   "status": "queued",
+   "publishAt": "2026-12-07T09:00:00Z"
+  },
+  {
+   "id": "9SmhOpaQFok",
+   "order": 16,
+   "title": "ついに解禁！ホンダN-VAN e: 完全レビュー｜軽バン革命が始まった",
+   "url": "https://www.youtube.com/watch?v=9SmhOpaQFok",
+   "durationSec": 708,
+   "status": "queued",
+   "publishAt": "2026-12-08T09:00:00Z"
+  },
+  {
+   "id": "wNYeD77VnW4",
+   "order": 17,
+   "title": "スズキ・アルト2026年モデル、ついに全て明らかに！誰も知らなかった驚きの真実を完全公開！",
+   "url": "https://www.youtube.com/watch?v=wNYeD77VnW4",
+   "durationSec": 700,
+   "status": "queued",
+   "publishAt": "2026-12-09T09:00:00Z"
+  },
+  {
+   "id": "BqTHcg0QAQM",
+   "order": 18,
+   "title": "ついに公開！2026年型トヨタ・カローラ 完全初公開レビュー｜誰も知らなかった衝撃の真実",
+   "url": "https://www.youtube.com/watch?v=BqTHcg0QAQM",
+   "durationSec": 641,
+   "status": "queued",
+   "publishAt": "2026-12-10T09:00:00Z"
+  },
+  {
+   "id": "EE6DVrNmB58",
+   "order": 19,
+   "title": "ディーラーが隠してた！シエンタ VS ノア2026—どっちを買うべきか衝撃の真実を暴露",
+   "url": "https://www.youtube.com/watch?v=EE6DVrNmB58",
+   "durationSec": 602,
+   "status": "queued",
+   "publishAt": "2026-12-11T09:00:00Z"
+  },
+  {
+   "id": "eaLxjzm9zfE",
+   "order": 20,
+   "title": "ついに解禁！トヨタ ノア＆ヴォクシー2026年モデル 完全暴露｜誰も知らなかった衝撃の真実をDM AutoReviewsが正直レビュー！",
+   "url": "https://www.youtube.com/watch?v=eaLxjzm9zfE",
+   "durationSec": 633,
+   "status": "queued",
+   "publishAt": "2026-12-12T09:00:00Z"
+  },
+  {
+   "id": "qtOuTT904fc",
+   "order": 21,
+   "title": "ミニバンはもう終わった！2027プリウスα—7人乗り・26km/Lでこの価格、信じられない",
+   "url": "https://www.youtube.com/watch?v=qtOuTT904fc",
+   "durationSec": 780,
+   "status": "queued",
+   "publishAt": "2026-12-13T09:00:00Z"
+  },
+  {
+   "id": "lTT8zKxxa4w",
+   "order": 22,
+   "title": "ついに解禁！新型トヨタ ヤリスクロス2027年型 完全初公開 — 誰も知らなかった衝撃の全貌をDM AutoReviewsが徹底暴露！",
+   "url": "https://www.youtube.com/watch?v=lTT8zKxxa4w",
+   "durationSec": 780,
+   "status": "queued",
+   "publishAt": "2026-12-14T09:00:00Z"
+  },
+  {
+   "id": "ZJ7CMl4Mo0I",
+   "order": 23,
+   "title": "ついに解禁！新型ホンダN-BOX 2026年マイナーチェンジ｜大胆新デザイン＆軽自動車初Google搭載の衝撃全貌🔥",
+   "url": "https://www.youtube.com/watch?v=ZJ7CMl4Mo0I",
+   "durationSec": 756,
+   "status": "queued",
+   "publishAt": "2026-12-15T09:00:00Z"
+  },
+  {
+   "id": "FqIU4vJ9lt0",
+   "order": 24,
+   "title": "トヨタbZ7、ついに全貌解明！テスラを超えた走る未来のラグジュアリーEVが衝撃デビュー",
+   "url": "https://www.youtube.com/watch?v=FqIU4vJ9lt0",
+   "durationSec": 1113,
+   "status": "queued",
+   "publishAt": "2026-12-16T09:00:00Z"
+  },
+  {
+   "id": "FMffWeHrMRY",
+   "order": 25,
+   "title": "流出！ダイハツ新型軽トレーラー140万円の衝撃—この価格は本当？2回確認した真実",
+   "url": "https://www.youtube.com/watch?v=FMffWeHrMRY",
+   "durationSec": 717,
+   "status": "queued",
+   "publishAt": "2026-12-17T09:00:00Z"
+  },
+  {
+   "id": "YeSsTC-WvMc",
+   "order": 26,
+   "title": "520Nmの怪物！2027新型マツダ スポーツカー—これが本物？ロータリー復活で完全進化した真実",
+   "url": "https://www.youtube.com/watch?v=YeSsTC-WvMc",
+   "durationSec": 708,
+   "status": "queued",
+   "publishAt": "2026-12-18T09:00:00Z"
+  },
+  {
+   "id": "rzL3I4rqKyc",
+   "order": 27,
+   "title": "ついに解禁！誰も教えてくれなかったトヨタ・ルーミー新型の真実｜DM AutoReviews",
+   "url": "https://www.youtube.com/watch?v=rzL3I4rqKyc",
+   "durationSec": 795,
+   "status": "queued",
+   "publishAt": "2026-12-19T09:00:00Z"
+  },
+  {
+   "id": "FZdVSLINzts",
+   "order": 28,
+   "title": "ついに解禁！ダイハツ2026年新型軽自動車、全て暴露します【衝撃の真実】",
+   "url": "https://www.youtube.com/watch?v=FZdVSLINzts",
+   "durationSec": 691,
+   "status": "queued",
+   "publishAt": "2026-12-20T09:00:00Z"
+  },
+  {
+   "id": "U0bRa0cpu3s",
+   "order": 29,
+   "title": "これを知らずに買うと必ず後悔する！ヴォクシー2026衝撃スペック公開—買う前に見て",
+   "url": "https://www.youtube.com/watch?v=U0bRa0cpu3s",
+   "durationSec": 802,
+   "status": "queued",
+   "publishAt": "2026-12-21T09:00:00Z"
+  },
+  {
+   "id": "KqDDrh6h_iE",
+   "order": 30,
+   "title": "ついに解禁！トヨタ2026年新型軽自動車、115万円の衝撃価格が日本を震わせた！誰も知らなかった真実を完全暴露",
+   "url": "https://www.youtube.com/watch?v=KqDDrh6h_iE",
+   "durationSec": 834,
+   "status": "queued",
+   "publishAt": "2026-12-22T09:00:00Z"
+  },
+  {
+   "id": "UPWhxOP2PoU",
+   "order": 31,
+   "title": "新型カローラ2026、本当に進化した？カムリより賢い選択か正直に徹底レビュー",
+   "url": "https://www.youtube.com/watch?v=UPWhxOP2PoU",
+   "durationSec": 746,
+   "status": "queued",
+   "publishAt": "2026-12-23T09:00:00Z"
+  },
+  {
+   "id": "sW3fJw_ZHH0",
+   "order": 32,
+   "title": "信じられない進化！パジェロミニ2027完全復活—買う前に絶対見て、衝撃の新型軽SUV",
+   "url": "https://www.youtube.com/watch?v=sW3fJw_ZHH0",
+   "durationSec": 746,
+   "status": "queued",
+   "publishAt": "2026-12-24T09:00:00Z"
+  },
+  {
+   "id": "0K_87QoKpX8",
+   "order": 33,
+   "title": "ついに公開！2026年新型トヨタ・ノア完全レビュー｜家族のための最強ミニバンが進化して登場！",
+   "url": "https://www.youtube.com/watch?v=0K_87QoKpX8",
+   "durationSec": 717,
+   "status": "queued",
+   "publishAt": "2026-12-25T09:00:00Z"
+  },
+  {
+   "id": "G61y0f3Ix-M",
+   "order": 34,
+   "title": "２０２６トヨタ新型スパーキーハイブリッド新登場、モダンな外観と内観、燃費35km/リットル！",
+   "url": "https://www.youtube.com/watch?v=G61y0f3Ix-M",
+   "durationSec": 739,
+   "status": "queued",
+   "publishAt": "2026-12-26T09:00:00Z"
+  },
+  {
+   "id": "hRWvyUKYsqo",
+   "order": 35,
+   "title": "ついに公開！2026年型ホンダ・フィット 完全レビュー｜誰も教えてくれなかった衝撃の真実",
+   "url": "https://www.youtube.com/watch?v=hRWvyUKYsqo",
+   "durationSec": 1050,
+   "status": "queued",
+   "publishAt": "2026-12-27T09:00:00Z"
+  },
+  {
+   "id": "-7OyzfuLs2c",
+   "order": 36,
+   "title": "シャオミがテスラを殺した！YU7 MAX—3.23秒・760KM・なぜBMWは震えているのか？",
+   "url": "https://www.youtube.com/watch?v=-7OyzfuLs2c",
+   "durationSec": 894,
+   "status": "queued",
+   "publishAt": "2026-12-28T09:00:00Z"
+  },
+  {
+   "id": "97tJ06pIeqA",
+   "order": 37,
+   "title": "ついに公開！2026年式ホンダHR-V — 大人のための最強ミニSUV完全レビュー",
+   "url": "https://www.youtube.com/watch?v=97tJ06pIeqA",
+   "durationSec": 799,
+   "status": "queued",
+   "publishAt": "2026-12-29T09:00:00Z"
+  },
+  {
+   "id": "lRM9mMlccCQ",
+   "order": 38,
+   "title": "ついに発表 — ダイハツ ウェイク 真実の全記録 2026年版 完全解説",
+   "url": "https://www.youtube.com/watch?v=lRM9mMlccCQ",
+   "durationSec": 699,
+   "status": "queued",
+   "publishAt": "2026-12-30T09:00:00Z"
+  },
+  {
+   "id": "S_IzwIhhE60",
+   "order": 39,
+   "title": "ついに解禁！2026年型トヨタ カローラ ツーリング 完全レビュー｜誰も教えてくれなかった真実を暴露します",
+   "url": "https://www.youtube.com/watch?v=S_IzwIhhE60",
+   "durationSec": 806,
+   "status": "queued",
+   "publishAt": "2026-12-31T09:00:00Z"
+  },
+  {
+   "id": "_EAOg2c_tg0",
+   "order": 40,
+   "title": "遂に公開！2026年ホンダ・フィット5 — 6年間の沈黙を破った衝撃の全貌",
+   "url": "https://www.youtube.com/watch?v=_EAOg2c_tg0",
+   "durationSec": 783,
+   "status": "queued",
+   "publishAt": "2027-01-01T09:00:00Z"
+  },
+  {
+   "id": "E8_L6Z9YSJA",
+   "order": 41,
+   "title": "ついに公開！新型スパーキーがミニ・アルファードに進化！これは反則だ！",
+   "url": "https://www.youtube.com/watch?v=E8_L6Z9YSJA",
+   "durationSec": 862,
+   "status": "queued",
+   "publishAt": "2027-01-02T09:00:00Z"
+  },
+  {
+   "id": "HuXgwhWT0sQ",
+   "order": 42,
+   "title": "ついに公開！2026年最新ダイハツ・ハイゼットトラック完全解説｜60年の進化がここに集結",
+   "url": "https://www.youtube.com/watch?v=HuXgwhWT0sQ",
+   "durationSec": 693,
+   "status": "queued",
+   "publishAt": "2027-01-03T09:00:00Z"
+  },
+  {
+   "id": "vgirrCuoWXI",
+   "order": 43,
+   "title": "4月10日 世界初公開！新型トヨタ カローラクロス—ついに全貌が明かされた",
+   "url": "https://www.youtube.com/watch?v=vgirrCuoWXI",
+   "durationSec": 823,
+   "status": "queued",
+   "publishAt": "2027-01-04T09:00:00Z"
+  },
+  {
+   "id": "-hzjMuiWoGQ",
+   "order": 44,
+   "title": "トヨタ、やりすぎた。燃費36MPG—2026シエナが「ミニバンが死んだ日」と呼ばれる理由",
+   "url": "https://www.youtube.com/watch?v=-hzjMuiWoGQ",
+   "durationSec": 828,
+   "status": "queued",
+   "publishAt": "2027-01-05T09:00:00Z"
+  },
+  {
+   "id": "eusoMib4b3M",
+   "order": 45,
+   "title": "ついに公開！2026年新型ハスラー4型、想像以上の進化に驚きの声続出",
+   "url": "https://www.youtube.com/watch?v=eusoMib4b3M",
+   "durationSec": 794,
+   "status": "queued",
+   "publishAt": "2027-01-06T09:00:00Z"
+  },
+  {
+   "id": "uVf3DSzNDWc",
+   "order": 46,
+   "title": "ヤバすぎる！2026新型N-VANで軽バン界に革命が起きた—これを見たら他の軽バンは買えない",
+   "url": "https://www.youtube.com/watch?v=uVf3DSzNDWc",
+   "durationSec": 742,
+   "status": "queued",
+   "publishAt": "2027-01-07T09:00:00Z"
+  },
+  {
+   "id": "5JoY2GJ61ms",
+   "order": 47,
+   "title": "ついに解禁！ホンダ新型e:HEV軽自動車2026年モデル完全公開｜燃費・価格・走行性能を徹底レビュー",
+   "url": "https://www.youtube.com/watch?v=5JoY2GJ61ms",
+   "durationSec": 681,
+   "status": "queued",
+   "publishAt": "2027-01-08T09:00:00Z"
+  },
+  {
+   "id": "hw8schJuLV8",
+   "order": 48,
+   "title": "ついに公開！2026年型スバル サンバー 全情報解禁｜価格・安全装備・内装を徹底レビュー【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=hw8schJuLV8",
+   "durationSec": 645,
+   "status": "queued",
+   "publishAt": "2027-01-09T09:00:00Z"
+  },
+  {
+   "id": "nmRqaOYpKfw",
+   "order": 49,
+   "title": "日本中が驚いた！180万円で買える最強の6輪軽自動車—ホンダN-Boxがついに常識を壊した」",
+   "url": "https://www.youtube.com/watch?v=nmRqaOYpKfw",
+   "durationSec": 690,
+   "status": "queued",
+   "publishAt": "2027-01-10T09:00:00Z"
+  },
+  {
+   "id": "QPxBcCrl5U8",
+   "order": 50,
+   "title": "ついに公開！2026年型トヨタ・カローラ・セダン完全レビュー｜買う前に絶対見てください",
+   "url": "https://www.youtube.com/watch?v=QPxBcCrl5U8",
+   "durationSec": 820,
+   "status": "queued",
+   "publishAt": "2027-01-11T09:00:00Z"
+  },
+  {
+   "id": "ZlM3gJUcnPk",
+   "order": 51,
+   "title": "ついに公開！2026年型スズキ・スイフトスポーツ — 誰も知らなかった全真実",
+   "url": "https://www.youtube.com/watch?v=ZlM3gJUcnPk",
+   "durationSec": 467,
+   "status": "queued",
+   "publishAt": "2027-01-12T09:00:00Z"
+  },
+  {
+   "id": "R_qvRzhqrIM",
+   "order": 52,
+   "title": "世界初公開！2026ヤリスクロス マイナーチェンジ—爆売れ確定の理由を全部暴露",
+   "url": "https://www.youtube.com/watch?v=R_qvRzhqrIM",
+   "durationSec": 661,
+   "status": "queued",
+   "publishAt": "2027-01-13T09:00:00Z"
+  },
+  {
+   "id": "K151vxE8ZM4",
+   "order": 53,
+   "title": "日本No.1軽自動車ついに来た！2026タントが他の軽を完全に終わらせた理由",
+   "url": "https://www.youtube.com/watch?v=K151vxE8ZM4",
+   "durationSec": 758,
+   "status": "queued",
+   "publishAt": "2027-01-14T09:00:00Z"
+  },
+  {
+   "id": "2SIPFcheRKg",
+   "order": 54,
+   "title": "ついに公開！2026トヨタ・ハリアー完全レビュー｜乗ったら衝撃だった…",
+   "url": "https://www.youtube.com/watch?v=2SIPFcheRKg",
+   "durationSec": 740,
+   "status": "queued",
+   "publishAt": "2027-01-15T09:00:00Z"
+  },
+  {
+   "id": "v5anB5vS-1A",
+   "order": 55,
+   "title": "テスラ超えた？嘘だろ？2026マツダCX-6eが日本の未来を変えた真実",
+   "url": "https://www.youtube.com/watch?v=v5anB5vS-1A",
+   "durationSec": 967,
+   "status": "queued",
+   "publishAt": "2027-01-16T09:00:00Z"
+  },
+  {
+   "id": "ZH4qcX0-eCw",
+   "order": 56,
+   "title": "ついに解禁！2026新型スズキアルト完全公開〜誰も知らなかった驚きの進化を徹底レビュー【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=ZH4qcX0-eCw",
+   "durationSec": 804,
+   "status": "queued",
+   "publishAt": "2027-01-17T09:00:00Z"
+  },
+  {
+   "id": "YM_zC1nDjhE",
+   "order": 57,
+   "title": "ついに公開！2026年型トヨタ新型ミニエース — 日本中が待ち望んだ最強の一台、その全貌を徹底解剖",
+   "url": "https://www.youtube.com/watch?v=YM_zC1nDjhE",
+   "durationSec": 864,
+   "status": "queued",
+   "publishAt": "2027-01-18T09:00:00Z"
+  },
+  {
+   "id": "TseiT5wj6CI",
+   "order": 58,
+   "title": "ついに解禁！2026年スバル フォレスター 完全レビュー｜買う前に絶対見てください！",
+   "url": "https://www.youtube.com/watch?v=TseiT5wj6CI",
+   "durationSec": 729,
+   "status": "queued",
+   "publishAt": "2027-01-19T09:00:00Z"
+  },
+  {
+   "id": "_HdpN7G6UlA",
+   "order": 59,
+   "title": "【ついに解禁】2026年型 三菱パジェロ 完全公開！7年間の沈黙を破った伝説のSUVが帰ってきた",
+   "url": "https://www.youtube.com/watch?v=_HdpN7G6UlA",
+   "durationSec": 747,
+   "status": "queued",
+   "publishAt": "2027-01-20T09:00:00Z"
+  },
+  {
+   "id": "hb_bRVL83Is",
+   "order": 60,
+   "title": "ついに解禁！2026年 日産エクストレイル 完全公開 — 衝撃の全貌を徹底レビュー！",
+   "url": "https://www.youtube.com/watch?v=hb_bRVL83Is",
+   "durationSec": 786,
+   "status": "queued",
+   "publishAt": "2027-01-21T09:00:00Z"
+  },
+  {
+   "id": "RpT7gaomoIM",
+   "order": 61,
+   "title": "2026年型トヨタ・ノア ついに全貌解禁！ハイブリッド専用モデルの衝撃と真実を徹底レビュー！【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=RpT7gaomoIM",
+   "durationSec": 766,
+   "status": "queued",
+   "publishAt": "2027-01-22T09:00:00Z"
+  },
+  {
+   "id": "4m-IBLHEGWw",
+   "order": 62,
+   "title": "2026年 新型ホンダN-BOX、ついに公開！誰も知らなかった驚きの全貌を徹底レビュー",
+   "url": "https://www.youtube.com/watch?v=4m-IBLHEGWw",
+   "durationSec": 772,
+   "status": "queued",
+   "publishAt": "2027-01-23T09:00:00Z"
+  },
+  {
+   "id": "I9gJgH_l-zI",
+   "order": 63,
+   "title": "ついに解禁！2026年スズキ・ハスラー完全レビュー — 買う前に絶対見てください",
+   "url": "https://www.youtube.com/watch?v=I9gJgH_l-zI",
+   "durationSec": 715,
+   "status": "queued",
+   "publishAt": "2027-01-24T09:00:00Z"
+  },
+  {
+   "id": "nvT9SrQNTKs",
+   "order": 64,
+   "title": "ガソリン不要！2026 RAV4ハイブリッドで月3万円節約できる？燃費の真実を正直に言います",
+   "url": "https://www.youtube.com/watch?v=nvT9SrQNTKs",
+   "durationSec": 749,
+   "status": "queued",
+   "publishAt": "2027-01-25T09:00:00Z"
+  },
+  {
+   "id": "icp_2guqRjI",
+   "order": 65,
+   "title": "ついに解禁！2026年型 ホンダ新型N-BOX 完全公開 — 誰も知らなかった衝撃の真実",
+   "url": "https://www.youtube.com/watch?v=icp_2guqRjI",
+   "durationSec": 768,
+   "status": "queued",
+   "publishAt": "2027-01-26T09:00:00Z"
+  },
+  {
+   "id": "VN_nd-4zoS4",
+   "order": 66,
+   "title": "ついに解禁！2026年型ニッサン X-トレイル T34 — 誰も語らなかった衝撃の全貌を完全公開！",
+   "url": "https://www.youtube.com/watch?v=VN_nd-4zoS4",
+   "durationSec": 1115,
+   "status": "queued",
+   "publishAt": "2027-01-27T09:00:00Z"
+  },
+  {
+   "id": "N1i9PyKfoug",
+   "order": 67,
+   "title": "ついに公開！2026 スズキ e EVERY 第7世代 — 軽バン64年目の革命、全て暴露します",
+   "url": "https://www.youtube.com/watch?v=N1i9PyKfoug",
+   "durationSec": 809,
+   "status": "queued",
+   "publishAt": "2027-01-28T09:00:00Z"
+  },
+  {
+   "id": "02qV97QvY64",
+   "order": 68,
+   "title": "ついに解禁！2026年型レクサスNX 全貌公開 — 乗って、驚いた",
+   "url": "https://www.youtube.com/watch?v=02qV97QvY64",
+   "durationSec": 714,
+   "status": "queued",
+   "publishAt": "2027-01-29T09:00:00Z"
+  },
+  {
+   "id": "M5F-GZHIsgk",
+   "order": 69,
+   "title": "新型スズキ・ハスラー2026、ついに全貌解禁！誰も知らなかった衝撃の真実を徹底暴露",
+   "url": "https://www.youtube.com/watch?v=M5F-GZHIsgk",
+   "durationSec": 841,
+   "status": "queued",
+   "publishAt": "2027-01-30T09:00:00Z"
+  },
+  {
+   "id": "P47S_E0J9Ws",
+   "order": 70,
+   "title": "これ反則じゃないですか？2026ステップワゴン—7人乗り・18.5km/Lで340万円の価値を正直に言います",
+   "url": "https://www.youtube.com/watch?v=P47S_E0J9Ws",
+   "durationSec": 785,
+   "status": "queued",
+   "publishAt": "2027-01-31T09:00:00Z"
+  },
+  {
+   "id": "JxZ2bKGLqP4",
+   "order": 71,
+   "title": "1,500万円の理由、ついに判明！2026ヴェルファイアは日本が作った”動く高級ホテル”だった",
+   "url": "https://www.youtube.com/watch?v=JxZ2bKGLqP4",
+   "durationSec": 702,
+   "status": "queued",
+   "publishAt": "2027-02-01T09:00:00Z"
+  },
+  {
+   "id": "ih9T1zxzgok",
+   "order": 72,
+   "title": "マツダ・ビネイト、ついに解禁。誰も知らなかった2026年の答え。",
+   "url": "https://www.youtube.com/watch?v=ih9T1zxzgok",
+   "durationSec": 702,
+   "status": "queued",
+   "publishAt": "2027-02-02T09:00:00Z"
+  },
+  {
+   "id": "H4weZ7RSQUE",
+   "order": 73,
+   "title": "テスラ終了？2026 EverV—3.1秒・683km・充電18分、これは反則だ",
+   "url": "https://www.youtube.com/watch?v=H4weZ7RSQUE",
+   "durationSec": 848,
+   "status": "queued",
+   "publishAt": "2027-02-03T09:00:00Z"
+  },
+  {
+   "id": "5la8bbx9WO8",
+   "order": 74,
+   "title": "この車、ヤバすぎる。2026年型日産スカイライン—まさかの結末と衝撃の理由とは？",
+   "url": "https://www.youtube.com/watch?v=5la8bbx9WO8",
+   "durationSec": 806,
+   "status": "queued",
+   "publishAt": "2027-02-04T09:00:00Z"
+  },
+  {
+   "id": "cpRfMMmbpnQ",
+   "order": 75,
+   "title": "2026年トヨタ・シエンタ クロス、ついに解禁！誰も見たことがない衝撃の全貌を完全公開！🔥",
+   "url": "https://www.youtube.com/watch?v=cpRfMMmbpnQ",
+   "durationSec": 737,
+   "status": "queued",
+   "publishAt": "2027-02-05T09:00:00Z"
+  },
+  {
+   "id": "cmJVucUzLso",
+   "order": 76,
+   "title": "ついに公開！日産エルグランド2026年型 — 15年の進化がここに！アルファードを超えた伝説のミニバン完全レビュー🔥",
+   "url": "https://www.youtube.com/watch?v=cmJVucUzLso",
+   "durationSec": 751,
+   "status": "queued",
+   "publishAt": "2027-02-06T09:00:00Z"
+  },
+  {
+   "id": "lnPUx4M2_9Q",
+   "order": 77,
+   "title": "買う前に見ろ！2026スズキ スペーシアを買ったら、どうかしてると言われた理由",
+   "url": "https://www.youtube.com/watch?v=lnPUx4M2_9Q",
+   "durationSec": 876,
+   "status": "queued",
+   "publishAt": "2027-02-07T09:00:00Z"
+  },
+  {
+   "id": "0Mz7EZWJ620",
+   "order": 78,
+   "title": "ついに公開！2026 スバル レヴォーグ 完全暴露 — ハイブリッド革命が始まった",
+   "url": "https://www.youtube.com/watch?v=0Mz7EZWJ620",
+   "durationSec": 792,
+   "status": "queued",
+   "publishAt": "2027-02-08T09:00:00Z"
+  },
+  {
+   "id": "korXqHyiPHo",
+   "order": 79,
+   "title": "想像以上の衝撃！2026アウトランダーは買いか否か—別次元の真実",
+   "url": "https://www.youtube.com/watch?v=korXqHyiPHo",
+   "durationSec": 848,
+   "status": "queued",
+   "publishAt": "2027-02-09T09:00:00Z"
+  },
+  {
+   "id": "APiwXkyY258",
+   "order": 80,
+   "title": "ついに公開！2026年型トヨタ・ヴォクシー完全レビュー！誰も知らなかった衝撃の進化とは？",
+   "url": "https://www.youtube.com/watch?v=APiwXkyY258",
+   "durationSec": 806,
+   "status": "queued",
+   "publishAt": "2027-02-10T09:00:00Z"
+  },
+  {
+   "id": "3KVMwUIq3VU",
+   "order": 81,
+   "title": "760万円でこれが買えるの?! 2026年Cクラスは人生最高の一台か",
+   "url": "https://www.youtube.com/watch?v=3KVMwUIq3VU",
+   "durationSec": 848,
+   "status": "queued",
+   "publishAt": "2027-02-11T09:00:00Z"
+  },
+  {
+   "id": "u1AHG_DezM0",
+   "order": 82,
+   "title": "トヨタが隠したかった！2026 RAV4の秘密—燃費47MPGと490万円の真実",
+   "url": "https://www.youtube.com/watch?v=u1AHG_DezM0",
+   "durationSec": 822,
+   "status": "queued",
+   "publishAt": "2027-02-12T09:00:00Z"
+  },
+  {
+   "id": "h0FuFVlQ78M",
+   "order": 83,
+   "title": "買って後悔？それとも大正解？2026カローラクロス正直レビュー",
+   "url": "https://www.youtube.com/watch?v=h0FuFVlQ78M",
+   "durationSec": 794,
+   "status": "queued",
+   "publishAt": "2027-02-13T09:00:00Z"
+  },
+  {
+   "id": "vvw8N7jbZbk",
+   "order": 84,
+   "title": "2026ホンダZR-V、ついに全貌解明！誰も知らなかった衝撃の真実",
+   "url": "https://www.youtube.com/watch?v=vvw8N7jbZbk",
+   "durationSec": 780,
+   "status": "queued",
+   "publishAt": "2027-02-14T09:00:00Z"
+  },
+  {
+   "id": "GNrW7PZ_ZWw",
+   "order": 85,
+   "title": "ついに解禁！2026年型ホンダ フィット 完全レビュー — これがコンパクトカーの未来だ！🔥😱",
+   "url": "https://www.youtube.com/watch?v=GNrW7PZ_ZWw",
+   "durationSec": 878,
+   "status": "queued",
+   "publishAt": "2027-02-15T09:00:00Z"
+  },
+  {
+   "id": "IO0oiwepr5Y",
+   "order": 86,
+   "title": "ついに解禁！ディーラーが絶対に言わなかった2026スズキエブリィJOINターボの真実を完全暴露！",
+   "url": "https://www.youtube.com/watch?v=IO0oiwepr5Y",
+   "durationSec": 808,
+   "status": "queued",
+   "publishAt": "2027-02-16T09:00:00Z"
+  },
+  {
+   "id": "rUG9mZbchp0",
+   "order": 87,
+   "title": "DM AutoReviews、ジムニーEVがついに姿を現した！スズキが隠していた衝撃の真実2026年完全暴露",
+   "url": "https://www.youtube.com/watch?v=rUG9mZbchp0",
+   "durationSec": 808,
+   "status": "queued",
+   "publishAt": "2027-02-17T09:00:00Z"
+  },
+  {
+   "id": "u57z2mZW3-Y",
+   "order": 88,
+   "title": "2026年式 三菱 デリカ D:5 ついに公開！ファミリーカーなのに悪路最強⁉️【完全レビュー】",
+   "url": "https://www.youtube.com/watch?v=u57z2mZW3-Y",
+   "durationSec": 808,
+   "status": "queued",
+   "publishAt": "2027-02-18T09:00:00Z"
+  },
+  {
+   "id": "RZKzshLrK3s",
+   "order": 89,
+   "title": "2026年式スズキ スペーシア ベース、ついに全貌公開！軽自動車の常識を覆す衝撃の一台【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=RZKzshLrK3s",
+   "durationSec": 780,
+   "status": "queued",
+   "publishAt": "2027-02-19T09:00:00Z"
+  },
+  {
+   "id": "JLsYiSi55No",
+   "order": 90,
+   "title": "ついに公開！2026年トヨタbZ4X 完全レビュー — 驚きの進化と本当の実力を徹底検証",
+   "url": "https://www.youtube.com/watch?v=JLsYiSi55No",
+   "durationSec": 836,
+   "status": "queued",
+   "publishAt": "2027-02-20T09:00:00Z"
+  },
+  {
+   "id": "pfH6Sv1yAcc",
+   "order": 91,
+   "title": "誰も言わなかった本当のこと｜新型エルグランドE53完全解説",
+   "url": "https://www.youtube.com/watch?v=pfH6Sv1yAcc",
+   "durationSec": 841,
+   "status": "queued",
+   "publishAt": "2027-02-21T09:00:00Z"
+  },
+  {
+   "id": "3aHq5sSxkSs",
+   "order": 92,
+   "title": "ついに解禁！誰も知らなかったスバル360ワゴンの真実 — 16馬力で日本を変えた伝説の名車",
+   "url": "https://www.youtube.com/watch?v=3aHq5sSxkSs",
+   "durationSec": 674,
+   "status": "queued",
+   "publishAt": "2027-02-22T09:00:00Z"
+  },
+  {
+   "id": "WatJho5GzY0",
+   "order": 93,
+   "title": "ついに解禁！ホンダN-ONEの全てを暴露｜軽自動車の頂点がここにある【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=WatJho5GzY0",
+   "durationSec": 702,
+   "status": "queued",
+   "publishAt": "2027-02-23T09:00:00Z"
+  },
+  {
+   "id": "i4R1ZWmJHL4",
+   "order": 94,
+   "title": "【2026年最新】年新型ルーミーがヤバすぎる！燃費45.5km/L＆軽自動車超えの6人乗り！",
+   "url": "https://www.youtube.com/watch?v=i4R1ZWmJHL4",
+   "durationSec": 592,
+   "status": "queued",
+   "publishAt": "2027-02-24T09:00:00Z"
+  },
+  {
+   "id": "aBmJS9z8E9Q",
+   "order": 95,
+   "title": "ついに解禁！誰も知らなかった日産テラノの真実…これが伝説の正体だ",
+   "url": "https://www.youtube.com/watch?v=aBmJS9z8E9Q",
+   "durationSec": 689,
+   "status": "queued",
+   "publishAt": "2027-02-25T09:00:00Z"
+  },
+  {
+   "id": "zl5MqujEANU",
+   "order": 96,
+   "title": "ついに暴露！2026年新型ヴォクシーで絶対に妥協してはいけない8つのガッカリポイント！本当にその価格に見合う価値があるのか？DM AutoReviews",
+   "url": "https://www.youtube.com/watch?v=zl5MqujEANU",
+   "durationSec": 661,
+   "status": "queued",
+   "publishAt": "2027-02-26T09:00:00Z"
+  },
+  {
+   "id": "QgEE2x182QU",
+   "order": 97,
+   "title": "ついに解禁！スバル・クロストレック Dタイプ 完全レビュー — 乗った瞬間、全てが変わった。",
+   "url": "https://www.youtube.com/watch?v=QgEE2x182QU",
+   "durationSec": 759,
+   "status": "queued",
+   "publishAt": "2027-02-27T09:00:00Z"
+  },
+  {
+   "id": "JL_0aL9xkfs",
+   "order": 98,
+   "title": "2026トヨタ ランドクルーザーFJ、ついに全貌解禁！世界が震えた無骨デザインと隠された機能を完全公開！",
+   "url": "https://www.youtube.com/watch?v=JL_0aL9xkfs",
+   "durationSec": 785,
+   "status": "queued",
+   "publishAt": "2027-02-28T09:00:00Z"
+  },
+  {
+   "id": "7GBjmQgD_ek",
+   "order": 99,
+   "title": "信じられない！アルトに乗ったら他の車が全部売れた理由",
+   "url": "https://www.youtube.com/watch?v=7GBjmQgD_ek",
+   "durationSec": 738,
+   "status": "queued",
+   "publishAt": "2027-03-01T09:00:00Z"
+  },
+  {
+   "id": "lF6WcbrBy6s",
+   "order": 100,
+   "title": "ついに解禁！ホンダS660の全てを暴露 — 誰も知らなかった衝撃の真実【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=lF6WcbrBy6s",
+   "durationSec": 674,
+   "status": "queued",
+   "publishAt": "2027-03-02T09:00:00Z"
+  },
+  {
+   "id": "j45hI0yD1r0",
+   "order": 101,
+   "title": "2026 ダイハツ・タント ついに完全公開！予想を遥かに超えた衝撃の進化",
+   "url": "https://www.youtube.com/watch?v=j45hI0yD1r0",
+   "durationSec": 646,
+   "status": "queued",
+   "publishAt": "2027-03-03T09:00:00Z"
+  },
+  {
+   "id": "ddaTnJVfmsg",
+   "order": 102,
+   "title": "新型トヨタ ヴェルファイア2026 ついに全貌解明！安全性とキャビン静粛性が別次元の進化を遂げた！",
+   "url": "https://www.youtube.com/watch?v=ddaTnJVfmsg",
+   "durationSec": 772,
+   "status": "queued",
+   "publishAt": "2027-03-04T09:00:00Z"
+  },
+  {
+   "id": "35PTima1M7o",
+   "order": 103,
+   "title": "買って後悔する前に見ろ！2026年式日産ノートの隠された欠点",
+   "url": "https://www.youtube.com/watch?v=35PTima1M7o",
+   "durationSec": 744,
+   "status": "queued",
+   "publishAt": "2027-03-05T09:00:00Z"
+  },
+  {
+   "id": "ACWQPhoxHT4",
+   "order": 104,
+   "title": "見逃すな！2026年型ヒュンダイ・オーラ—今年最高のファミリーカーが登場",
+   "url": "https://www.youtube.com/watch?v=ACWQPhoxHT4",
+   "durationSec": 716,
+   "status": "queued",
+   "publishAt": "2027-03-06T09:00:00Z"
+  },
+  {
+   "id": "4xCedZn7eIA",
+   "order": 105,
+   "title": "トヨタが隠したかった！2026年型カムリの真実を暴露",
+   "url": "https://www.youtube.com/watch?v=4xCedZn7eIA",
+   "durationSec": 786,
+   "status": "queued",
+   "publishAt": "2027-03-07T09:00:00Z"
+  },
+  {
+   "id": "W4flt3HGu3Y",
+   "order": 106,
+   "title": "33.5km/L!? 2026年型プロボックスがプリウスより燃費いい件",
+   "url": "https://www.youtube.com/watch?v=W4flt3HGu3Y",
+   "durationSec": 772,
+   "status": "queued",
+   "publishAt": "2027-03-08T09:00:00Z"
+  },
+  {
+   "id": "ZsDLBRtQtAU",
+   "order": 107,
+   "title": "【価格崩壊】かつて1000万円超えのポルシェが今や激安に…何が起きた？",
+   "url": "https://www.youtube.com/watch?v=ZsDLBRtQtAU",
+   "durationSec": 646,
+   "status": "queued",
+   "publishAt": "2027-03-09T09:00:00Z"
+  },
+  {
+   "id": "i8Od0LXXhjo",
+   "order": 108,
+   "title": "【ついに解禁】新型エブリイ7型、スズキ本気の全貌がヤバすぎた…誰も知らなかった衝撃の真実を完全暴露！",
+   "url": "https://www.youtube.com/watch?v=i8Od0LXXhjo",
+   "durationSec": 646,
+   "status": "queued",
+   "publishAt": "2027-03-10T09:00:00Z"
+  },
+  {
+   "id": "2rUAETGuBlQ",
+   "order": 109,
+   "title": "スズキ・ハスラーの隠れ機能がついに暴露！知らないと一生後悔する衝撃の秘密10選【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=2rUAETGuBlQ",
+   "durationSec": 730,
+   "status": "queued",
+   "publishAt": "2027-03-11T09:00:00Z"
+  },
+  {
+   "id": "fQlysUbQt4Y",
+   "order": 110,
+   "title": "2026年型トヨタ・ルーミー vs スパーキーハイブリッド、ついに全貌解明！衝撃の比較結果があなたの車選びを変える！",
+   "url": "https://www.youtube.com/watch?v=fQlysUbQt4Y",
+   "durationSec": 800,
+   "status": "queued",
+   "publishAt": "2027-03-12T09:00:00Z"
+  },
+  {
+   "id": "vHQA1HBBXRw",
+   "order": 111,
+   "title": "ついに解禁！スズキ・ハスラーの隠された10の神機能｜誰も教えてくれなかった衝撃の真実【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=vHQA1HBBXRw",
+   "durationSec": 655,
+   "status": "queued",
+   "publishAt": "2027-03-13T09:00:00Z"
+  },
+  {
+   "id": "iEPtma6ONcw",
+   "order": 112,
+   "title": "2026年新型ホンダフィット、ついに正式公開！デザイン激変＆消えるグレードの真実を完全解説！",
+   "url": "https://www.youtube.com/watch?v=iEPtma6ONcw",
+   "durationSec": 797,
+   "status": "queued",
+   "publishAt": "2027-03-14T09:00:00Z"
+  },
+  {
+   "id": "gWfSGpur1Ao",
+   "order": 113,
+   "title": "2026年スズキ スペーシア、ついに全貌解禁！財布も命も守る最強の軽自動車が登場！",
+   "url": "https://www.youtube.com/watch?v=gWfSGpur1Ao",
+   "durationSec": 799,
+   "status": "queued",
+   "publishAt": "2027-03-15T09:00:00Z"
+  },
+  {
+   "id": "6tcEuZPyyFE",
+   "order": 114,
+   "title": "【ついに解禁】2026年 ダイハツ・タント 燃費の真実…ガソリン代が消える軽自動車がヤバすぎた",
+   "url": "https://www.youtube.com/watch?v=6tcEuZPyyFE",
+   "durationSec": 771,
+   "status": "queued",
+   "publishAt": "2027-03-16T09:00:00Z"
+  },
+  {
+   "id": "BPcKSn8Z1DM",
+   "order": 115,
+   "title": "ついに暴露！2026年型トヨタ・プリウスの隠し機能と驚異の燃費性能！ディーラーが絶対教えない真実！【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=BPcKSn8Z1DM",
+   "durationSec": 727,
+   "status": "queued",
+   "publishAt": "2027-03-17T09:00:00Z"
+  },
+  {
+   "id": "1JbcskmAqxs",
+   "order": 116,
+   "title": "2026年型トヨタ・センチュリー、ついに全貌解明！天皇も選んだ日本最強のラグジュアリーカーの秘密を暴露 | DM AutoReviews",
+   "url": "https://www.youtube.com/watch?v=1JbcskmAqxs",
+   "durationSec": 845,
+   "status": "queued",
+   "publishAt": "2027-03-18T09:00:00Z"
+  },
+  {
+   "id": "jDqZ7UKKhnc",
+   "order": 117,
+   "title": "ついに判明！トヨタ・ルーミーが日本で売れ続ける本当の理由【2026年最新版】",
+   "url": "https://www.youtube.com/watch?v=jDqZ7UKKhnc",
+   "durationSec": 572,
+   "status": "queued",
+   "publishAt": "2027-03-19T09:00:00Z"
+  },
+  {
+   "id": "z_ua75pyn3M",
+   "order": 118,
+   "title": "【ついに解禁】トヨタの新型2026年軽自動車がヤバすぎる！115万円ショックで業界激震、誰も予想できなかった真実",
+   "url": "https://www.youtube.com/watch?v=z_ua75pyn3M",
+   "durationSec": 698,
+   "status": "queued",
+   "publishAt": "2027-03-20T09:00:00Z"
+  },
+  {
+   "id": "EYOfC3eF7pg",
+   "order": 119,
+   "title": "【ついに公開】2027年トヨタ新型軽トラックが全てを変える！31km/Lディーゼル＆4ドア革命、業界震撼の全真実",
+   "url": "https://www.youtube.com/watch?v=EYOfC3eF7pg",
+   "durationSec": 790,
+   "status": "queued",
+   "publishAt": "2027-03-21T09:00:00Z"
+  },
+  {
+   "id": "feERjNCc9qc",
+   "order": 120,
+   "title": "【ついに解禁】2026スズキ・エブリイワゴン7型の全真実！誰も知らなかった衝撃の秘密をDM AutoReviewsが完全暴露！",
+   "url": "https://www.youtube.com/watch?v=feERjNCc9qc",
+   "durationSec": 730,
+   "status": "queued",
+   "publishAt": "2027-03-22T09:00:00Z"
+  },
+  {
+   "id": "rikXvslF5MA",
+   "order": 121,
+   "title": "ついに公開！トヨタ ミニ スパーキー 2027 — PHEV革命と驚異の35.5km/L燃費が明らかに！",
+   "url": "https://www.youtube.com/watch?v=rikXvslF5MA",
+   "durationSec": 760,
+   "status": "queued",
+   "publishAt": "2027-03-23T09:00:00Z"
+  },
+  {
+   "id": "D7bzqDEOSIU",
+   "order": 122,
+   "title": "ついに公開！ダイハツ新型ハイゼットトラック ジャンボ2026 — 4ドア感覚＆オフロード最強軽トラが凄すぎた！😱🔥",
+   "url": "https://www.youtube.com/watch?v=D7bzqDEOSIU",
+   "durationSec": 670,
+   "status": "queued",
+   "publishAt": "2027-03-24T09:00:00Z"
+  },
+  {
+   "id": "W8gu8H3UJuE",
+   "order": 123,
+   "title": "ついに暴露…トヨタ ハリアーの衝撃的な真実が明らかに！長年のファンが激怒した本当の理由【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=W8gu8H3UJuE",
+   "durationSec": 604,
+   "status": "queued",
+   "publishAt": "2027-03-25T09:00:00Z"
+  },
+  {
+   "id": "bTxRKQ8Fsag",
+   "order": 124,
+   "title": "新型コロラクロスZアドベンチャー遂に完全公開！Gトリム廃止の衝撃的な真実と全詳細を徹底解説！",
+   "url": "https://www.youtube.com/watch?v=bTxRKQ8Fsag",
+   "durationSec": 772,
+   "status": "queued",
+   "publishAt": "2027-03-26T09:00:00Z"
+  },
+  {
+   "id": "ksT3baqc3CU",
+   "order": 125,
+   "title": "ついに復活！新型フェアレディZ 2025年型、伝説のスタイルが再び蘇った！【完全解説】",
+   "url": "https://www.youtube.com/watch?v=ksT3baqc3CU",
+   "durationSec": 883,
+   "status": "queued",
+   "publishAt": "2027-03-27T09:00:00Z"
+  },
+  {
+   "id": "tM8JiFujUxE",
+   "order": 126,
+   "title": "【衝撃】スズキ新型スーパーキャリイ、ついに全貌解禁！ここまで進化していたとは…誰も予想できなかった驚きの真実",
+   "url": "https://www.youtube.com/watch?v=tM8JiFujUxE",
+   "durationSec": 632,
+   "status": "queued",
+   "publishAt": "2027-03-28T09:00:00Z"
+  },
+  {
+   "id": "ZpfIT5na19s",
+   "order": 127,
+   "title": "【ついに解禁】トヨタ新型ハイブリッド軽が正式発表！29km/Lで140万円台の衝撃の真実…日本中が驚いた！",
+   "url": "https://www.youtube.com/watch?v=ZpfIT5na19s",
+   "durationSec": 841,
+   "status": "queued",
+   "publishAt": "2027-03-29T09:00:00Z"
+  },
+  {
+   "id": "Fc_nxI6BCxI",
+   "order": 128,
+   "title": "【ついに公開】2026年新型モデルが正式発表！誰も予想できなかった衝撃の進化に日本中が騒然【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=Fc_nxI6BCxI",
+   "durationSec": 632,
+   "status": "queued",
+   "publishAt": "2027-03-30T09:00:00Z"
+  },
+  {
+   "id": "eVkkeMr3yQ8",
+   "order": 129,
+   "title": "ついに暴露！営業マンが絶対買わない人気車ワースト3【衝撃の真実】売れてるのに危険な理由をプロが完全公開",
+   "url": "https://www.youtube.com/watch?v=eVkkeMr3yQ8",
+   "durationSec": 450,
+   "status": "queued",
+   "publishAt": "2027-03-31T09:00:00Z"
+  },
+  {
+   "id": "IJUYbl68mi8",
+   "order": 130,
+   "title": "トヨタ最安ハイブリッド、ついに全貌解明！2026年新型軽自動車が29km/L＆120万円で登場！誰も信じなかった革命がついに現実に…",
+   "url": "https://www.youtube.com/watch?v=IJUYbl68mi8",
+   "durationSec": 800,
+   "status": "queued",
+   "publishAt": "2027-04-01T09:00:00Z"
+  },
+  {
+   "id": "d7e3rP4UUYs",
+   "order": 131,
+   "title": "やっと公開された！スバル2026新型コンパクトSUV、1.5Lディーゼルターボで27km/L超えの衝撃スペック全て暴露！",
+   "url": "https://www.youtube.com/watch?v=d7e3rP4UUYs",
+   "durationSec": 772,
+   "status": "queued",
+   "publishAt": "2027-04-02T09:00:00Z"
+  },
+  {
+   "id": "_C4k9oM6-zU",
+   "order": 132,
+   "title": "【ついに公開】新型ハスラー4型、見積もり解禁！全装備・価格・グレード完全解説2026年最新版",
+   "url": "https://www.youtube.com/watch?v=_C4k9oM6-zU",
+   "durationSec": 702,
+   "status": "queued",
+   "publishAt": "2027-04-03T09:00:00Z"
+  },
+  {
+   "id": "mRpOFS4aOZY",
+   "order": 133,
+   "title": "【ついに暴露】日本一売れてるハイゼットに隠された\"致命的な弱点\"がヤバすぎる…購入前に絶対見て！",
+   "url": "https://www.youtube.com/watch?v=mRpOFS4aOZY",
+   "durationSec": 534,
+   "status": "queued",
+   "publishAt": "2027-04-04T09:00:00Z"
+  },
+  {
+   "id": "3oBDXl-VsQo",
+   "order": 134,
+   "title": "トヨタの新型\"水エンジン\"がついに公開！自動車業界を震撼させた未来技術の全貌を徹底解説！",
+   "url": "https://www.youtube.com/watch?v=3oBDXl-VsQo",
+   "durationSec": 730,
+   "status": "queued",
+   "publishAt": "2027-04-05T09:00:00Z"
+  },
+  {
+   "id": "bo9GdvpGVcg",
+   "order": 135,
+   "title": "新型ハイラックス、ついに全貌解禁！550万円の衝撃と高級SUV級の進化を完全暴露！【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=bo9GdvpGVcg",
+   "durationSec": 506,
+   "status": "queued",
+   "publishAt": "2027-04-06T09:00:00Z"
+  },
+  {
+   "id": "bSXg9HTZM_s",
+   "order": 136,
+   "title": "2027年新型スパーキーついに公開！183万円で電動スライドドア標準装備、シエンタキラー爆誕か？",
+   "url": "https://www.youtube.com/watch?v=bSXg9HTZM_s",
+   "durationSec": 744,
+   "status": "queued",
+   "publishAt": "2027-04-07T09:00:00Z"
+  },
+  {
+   "id": "yNyLh6vtUJk",
+   "order": 137,
+   "title": "2026年型トヨタ カローラ ツーリング ついに正式発表！50万円の衝撃値下げでバイヤーが震えた！誰も知らなかった真実を完全暴露！",
+   "url": "https://www.youtube.com/watch?v=yNyLh6vtUJk",
+   "durationSec": 688,
+   "status": "queued",
+   "publishAt": "2027-04-08T09:00:00Z"
+  },
+  {
+   "id": "r3T5dnSDfwE",
+   "order": 138,
+   "title": "ついに公開！トヨタ・ミニエース2026年型 — 軽自動車の価格で大型車の実力を証明した伝説の一台",
+   "url": "https://www.youtube.com/watch?v=r3T5dnSDfwE",
+   "durationSec": 730,
+   "status": "queued",
+   "publishAt": "2027-04-09T09:00:00Z"
+  },
+  {
+   "id": "FoNyXSjHsm0",
+   "order": 139,
+   "title": "ついに解禁！トヨタ新型軽ハイブリッド2026年完全公開！燃費29km/L＆185Nmトルク＆120万円台の革命的1台が日本市場を震撼させる！",
+   "url": "https://www.youtube.com/watch?v=FoNyXSjHsm0",
+   "durationSec": 716,
+   "status": "queued",
+   "publishAt": "2027-04-10T09:00:00Z"
+  },
+  {
+   "id": "Vrecjb8azlw",
+   "order": 140,
+   "title": "2026年トヨタ新型軽ハイブリッド、ついに正式発表！122万円の衝撃価格とホンダN-BOXを超える驚異のスペック全公開！",
+   "url": "https://www.youtube.com/watch?v=Vrecjb8azlw",
+   "durationSec": 758,
+   "status": "queued",
+   "publishAt": "2027-04-11T09:00:00Z"
+  },
+  {
+   "id": "2_mf4UemeA8",
+   "order": 141,
+   "title": "【ついに公開】2026年新型プリウスα復活！燃費34.5km/L＆292万円の衝撃価格！",
+   "url": "https://www.youtube.com/watch?v=2_mf4UemeA8",
+   "durationSec": 814,
+   "status": "queued",
+   "publishAt": "2027-04-12T09:00:00Z"
+  },
+  {
+   "id": "eHKD1QOPQUY",
+   "order": 142,
+   "title": "【ついに公開】2026新型トヨタRAV4登場！誰も予想しなかった衝撃の進化とは！？",
+   "url": "https://www.youtube.com/watch?v=eHKD1QOPQUY",
+   "durationSec": 660,
+   "status": "queued",
+   "publishAt": "2027-04-13T09:00:00Z"
+  },
+  {
+   "id": "zHtNBJ2yDHk",
+   "order": 143,
+   "title": "ついに解禁！2026年型トヨタ・ブリザード完全初公開 — タフさ、スタイル、そして驚きの高級感がここに",
+   "url": "https://www.youtube.com/watch?v=zHtNBJ2yDHk",
+   "durationSec": 800,
+   "status": "queued",
+   "publishAt": "2027-04-14T09:00:00Z"
+  },
+  {
+   "id": "iXlAMx9aosw",
+   "order": 144,
+   "title": "ついに公開！2026年トヨタ・シエナ——誰も予想しなかった最大のサプライズ",
+   "url": "https://www.youtube.com/watch?v=iXlAMx9aosw",
+   "durationSec": 842,
+   "status": "queued",
+   "publishAt": "2027-04-15T09:00:00Z"
+  },
+  {
+   "id": "5arTneqB21I",
+   "order": 145,
+   "title": "新型スバル・グレイバック ついに正式公開！ハイブリッドパワーが自動車業界をすべて変える",
+   "url": "https://www.youtube.com/watch?v=5arTneqB21I",
+   "durationSec": 688,
+   "status": "queued",
+   "publishAt": "2027-04-16T09:00:00Z"
+  },
+  {
+   "id": "wLDMgK0MRR0",
+   "order": 146,
+   "title": "ついに解禁！ホンダ スーパーワン 10日で1万台の衝撃真実 — 誰も語らなかった全て暴露！🔥",
+   "url": "https://www.youtube.com/watch?v=wLDMgK0MRR0",
+   "durationSec": 925,
+   "status": "queued",
+   "publishAt": "2027-04-17T09:00:00Z"
+  },
+  {
+   "id": "CYr8DsCaqo0",
+   "order": 147,
+   "title": "ついに公開！トヨタの新型ミニアルファード登場、アルファードの4分の1の価格で最高級ミニバン体験が実現！誰も信じられない衝撃の真実！",
+   "url": "https://www.youtube.com/watch?v=CYr8DsCaqo0",
+   "durationSec": 814,
+   "status": "queued",
+   "publishAt": "2027-04-18T09:00:00Z"
+  },
+  {
+   "id": "hpP6kOa4dqI",
+   "order": 148,
+   "title": "ついに公開！新型ダイハツ軽自動車2026年後半デビュー——スライドドア・燃費30km/L・価格135万円以下の衝撃スペック全部見せます！【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=hpP6kOa4dqI",
+   "durationSec": 883,
+   "status": "queued",
+   "publishAt": "2027-04-19T09:00:00Z"
+  },
+  {
+   "id": "EpaZGQT3h1g",
+   "order": 149,
+   "title": "ついに解禁！スズキ ハスラー タフワイルド 2026 大幅フェイスリフト完全公開 — 軽自動車界の革命がついに来た！",
+   "url": "https://www.youtube.com/watch?v=EpaZGQT3h1g",
+   "durationSec": 828,
+   "status": "queued",
+   "publishAt": "2027-04-20T09:00:00Z"
+  },
+  {
+   "id": "9iv7fImppOQ",
+   "order": 150,
+   "title": "ついに公開！2026年スズキ・キャリイ ワゴン完全解説！110万円台の革命的軽ワゴンがすべてを変える！",
+   "url": "https://www.youtube.com/watch?v=9iv7fImppOQ",
+   "durationSec": 842,
+   "status": "queued",
+   "publishAt": "2027-04-21T09:00:00Z"
+  },
+  {
+   "id": "_u-RJtExIxU",
+   "order": 151,
+   "title": "やっと公開！2026年ミニ電気自動車が都市を完全制覇！誰も知らなかった衝撃の真実🚗⚡",
+   "url": "https://www.youtube.com/watch?v=_u-RJtExIxU",
+   "durationSec": 814,
+   "status": "queued",
+   "publishAt": "2027-04-22T09:00:00Z"
+  },
+  {
+   "id": "_ajFtTNdWUY",
+   "order": 152,
+   "title": "ついに解禁！2027年型ホンダN-BOX完全公開！VIP豪華キャビン、ハイブリッドパワー、衝撃の低価格をDM AutoReviewsが徹底レビュー！",
+   "url": "https://www.youtube.com/watch?v=_ajFtTNdWUY",
+   "durationSec": 786,
+   "status": "queued",
+   "publishAt": "2027-04-23T09:00:00Z"
+  },
+  {
+   "id": "nkAFm9oaGtA",
+   "order": 153,
+   "title": "2026年 三菱パジェロ、ついに公開！ランドクルーザー300より強いのか？伝説のSUVが完全復活！",
+   "url": "https://www.youtube.com/watch?v=nkAFm9oaGtA",
+   "durationSec": 758,
+   "status": "queued",
+   "publishAt": "2027-04-24T09:00:00Z"
+  },
+  {
+   "id": "xz9OSlklmJw",
+   "order": 154,
+   "title": "ついに公開！トヨタ新型コンパクトカー2025年モデル完全レビュー — 170馬力エンジン＆驚異の高級インテリアを徹底解説！【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=xz9OSlklmJw",
+   "durationSec": 618,
+   "status": "queued",
+   "publishAt": "2027-04-25T09:00:00Z"
+  },
+  {
+   "id": "nZmviXFJEtk",
+   "order": 155,
+   "title": "2027年型トヨタ ハイエース ついに公開！新型ハイブリッドが22km/Lの燃費と驚異的なコストパフォーマンスを実現！",
+   "url": "https://www.youtube.com/watch?v=nZmviXFJEtk",
+   "durationSec": 744,
+   "status": "queued",
+   "publishAt": "2027-04-26T09:00:00Z"
+  },
+  {
+   "id": "rFM7f1wy014",
+   "order": 156,
+   "title": "2026トヨタ・ヴォクシー・ブラック、ついに全貌解禁！😱🖤 これが究極のファミリーミニバンだ！",
+   "url": "https://www.youtube.com/watch?v=rFM7f1wy014",
+   "durationSec": 716,
+   "status": "queued",
+   "publishAt": "2027-04-27T09:00:00Z"
+  },
+  {
+   "id": "L7frmeAMxHE",
+   "order": 157,
+   "title": "ついに公開！トヨタの新型99万円スライドドアミニバン、シエンタ完全解説！これが究極のファミリーカーだ！【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=L7frmeAMxHE",
+   "durationSec": 772,
+   "status": "queued",
+   "publishAt": "2027-04-28T09:00:00Z"
+  },
+  {
+   "id": "S0rMEjuNcBM",
+   "order": 158,
+   "title": "【ついに公開】スバル メガフォレスター アセント完全解説 — 日本発売がついに確定！？3列シート最強SUVの全てを暴露 🚙🇯🇵",
+   "url": "https://www.youtube.com/watch?v=S0rMEjuNcBM",
+   "durationSec": 624,
+   "status": "queued",
+   "publishAt": "2027-04-29T09:00:00Z"
+  },
+  {
+   "id": "KKpmUWBdGtI",
+   "order": 159,
+   "title": "Honda N-BOX 163万円新グレードついに解禁！廃止モデルの衝撃的な真実も完全暴露！",
+   "url": "https://www.youtube.com/watch?v=KKpmUWBdGtI",
+   "durationSec": 548,
+   "status": "queued",
+   "publishAt": "2027-04-30T09:00:00Z"
+  },
+  {
+   "id": "ZXbGaAybzVM",
+   "order": 160,
+   "title": "やっと公開！トヨタ99万円スライドドア軽自動車がホンダN-BOXを震わせた！日本自動車史上最大の衝撃！",
+   "url": "https://www.youtube.com/watch?v=ZXbGaAybzVM",
+   "durationSec": 798,
+   "status": "queued",
+   "publishAt": "2027-05-01T09:00:00Z"
+  },
+  {
+   "id": "IldIUpX4Ck0",
+   "order": 161,
+   "title": "2026年型スズキ・キャリーワゴンついに公開！わずか7,000ドルで手に入る究極の移動式秘密基地！？",
+   "url": "https://www.youtube.com/watch?v=IldIUpX4Ck0",
+   "durationSec": 813,
+   "status": "queued",
+   "publishAt": "2027-05-02T09:00:00Z"
+  },
+  {
+   "id": "UQlYFvXsiTE",
+   "order": 162,
+   "title": "【ついに解禁】2027年トヨタ新型ミニハイブリッドSUV正式発表！たった130万円で2.0Lクラスの性能が手に入る！🚗⚡",
+   "url": "https://www.youtube.com/watch?v=UQlYFvXsiTE",
+   "durationSec": 708,
+   "status": "queued",
+   "publishAt": "2027-05-03T09:00:00Z"
+  },
+  {
+   "id": "oVTkB_rw3g8",
+   "order": 163,
+   "title": "ついに公開！2026年トヨタ・シエンタクロス vs ホンダ・フリード — 家族が選ぶ本当の理由",
+   "url": "https://www.youtube.com/watch?v=oVTkB_rw3g8",
+   "durationSec": 678,
+   "status": "queued",
+   "publishAt": "2027-05-04T09:00:00Z"
+  },
+  {
+   "id": "4Ejz0vWpaL8",
+   "order": 164,
+   "title": "トヨタ新型コンパクトカーついに公開！燃費33.2km/L、169馬力、価格220万円台！DM AutoReviews",
+   "url": "https://www.youtube.com/watch?v=4Ejz0vWpaL8",
+   "durationSec": 813,
+   "status": "queued",
+   "publishAt": "2027-05-05T09:00:00Z"
+  },
+  {
+   "id": "W68xe9xamSE",
+   "order": 165,
+   "title": "ついに公開！2027年トヨタ軽ハイブリッドSUV、660ccで2.0Lクラスの加速を実現！驚愕の新時代軽自動車が登場",
+   "url": "https://www.youtube.com/watch?v=W68xe9xamSE",
+   "durationSec": 618,
+   "status": "queued",
+   "publishAt": "2027-05-06T09:00:00Z"
+  },
+  {
+   "id": "AFefkpLbn3w",
+   "order": 166,
+   "title": "衝撃初公開！スバル全新型コンパクトSUV 2026年10月ついに登場！燃費20km/L超え＆驚異の新デザイン完全暴露！【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=AFefkpLbn3w",
+   "durationSec": 693,
+   "status": "queued",
+   "publishAt": "2027-05-07T09:00:00Z"
+  },
+  {
+   "id": "DR_aYR3_L_Q",
+   "order": 167,
+   "title": "2027三菱デリカD:6ついに公開！驚異のデザインと次世代アドベンチャーパワーが登場",
+   "url": "https://www.youtube.com/watch?v=DR_aYR3_L_Q",
+   "durationSec": 828,
+   "status": "queued",
+   "publishAt": "2027-05-08T09:00:00Z"
+  },
+  {
+   "id": "HYP73U_V5f0",
+   "order": 168,
+   "title": "ついに公開！2026年トヨタ ケイ ハイブリッド完全レビュー！たった120万円で29km/Lの奇跡！DM AutoReviews",
+   "url": "https://www.youtube.com/watch?v=HYP73U_V5f0",
+   "durationSec": 708,
+   "status": "queued",
+   "publishAt": "2027-05-09T09:00:00Z"
+  },
+  {
+   "id": "jCCJzTPVrfQ",
+   "order": 169,
+   "title": "【衝撃】2027年Toyota、ついに$8,000の最強ハイブリッドを正式発表！燃費が信じられない！",
+   "url": "https://www.youtube.com/watch?v=jCCJzTPVrfQ",
+   "durationSec": 649,
+   "status": "queued",
+   "publishAt": "2027-05-10T09:00:00Z"
+  },
+  {
+   "id": "yeWhhNn3BjI",
+   "order": 170,
+   "title": "ついに解禁！2026年新型トヨタ・ハイエース完全公開！驚きのスペックと320万円からの価格に業界震撼！",
+   "url": "https://www.youtube.com/watch?v=yeWhhNn3BjI",
+   "durationSec": 724,
+   "status": "queued",
+   "publishAt": "2027-05-11T09:00:00Z"
+  },
+  {
+   "id": "79eeJCHUz6s",
+   "order": 171,
+   "title": "ついに公開！誰も予想しなかった2026年トヨタ新型軽ワゴン、たった110万円の衝撃真実",
+   "url": "https://www.youtube.com/watch?v=79eeJCHUz6s",
+   "durationSec": 829,
+   "status": "queued",
+   "publishAt": "2027-05-12T09:00:00Z"
+  },
+  {
+   "id": "hYVb5pmnnoQ",
+   "order": 172,
+   "title": "ついに公開！2026年型トヨタ・プリウス、4つの衝撃的なアップグレードを徹底解説！これを見ずにハイブリッドを買うな！",
+   "url": "https://www.youtube.com/watch?v=hYVb5pmnnoQ",
+   "durationSec": 754,
+   "status": "queued",
+   "publishAt": "2027-05-13T09:00:00Z"
+  },
+  {
+   "id": "RsYXk0___cU",
+   "order": 173,
+   "title": "ついに解禁！2026年トヨタ ミニ エース ワゴン衝撃デビュー！760ccハイブリッドが全軽自動車を完全撃破🔥",
+   "url": "https://www.youtube.com/watch?v=RsYXk0___cU",
+   "durationSec": 812,
+   "status": "queued",
+   "publishAt": "2027-05-14T09:00:00Z"
+  },
+  {
+   "id": "FMVhUn3g-Kk",
+   "order": 174,
+   "title": "【ついに公開】ダイハツ新型ラガーが衝撃デビュー！？ジムニー最大のライバル誕生か！170万円台からの本格SUV！",
+   "url": "https://www.youtube.com/watch?v=FMVhUn3g-Kk",
+   "durationSec": 722,
+   "status": "queued",
+   "publishAt": "2027-05-15T09:00:00Z"
+  },
+  {
+   "id": "Zm1T3YNaFQw",
+   "order": 175,
+   "title": "【ついに公開】2026年登場！トヨタ新型軽量スライドドアカーがN-BOXを超える！？驚異の燃費と最新技術を徹底解説！",
+   "url": "https://www.youtube.com/watch?v=Zm1T3YNaFQw",
+   "durationSec": 737,
+   "status": "queued",
+   "publishAt": "2027-05-16T09:00:00Z"
+  },
+  {
+   "id": "prVtmhK0SQw",
+   "order": 176,
+   "title": "ついに公開！2026年新型N-BOX Custom BLACK STYLEの衝撃的な新ルック！誰も予想できなかった革命的デザインがついに登場！",
+   "url": "https://www.youtube.com/watch?v=prVtmhK0SQw",
+   "durationSec": 782,
+   "status": "queued",
+   "publishAt": "2027-05-17T09:00:00Z"
+  },
+  {
+   "id": "_7jsacj6--U",
+   "order": 177,
+   "title": "ついに解禁！2026年型ホンダ フィット、1.0Lターボ復活と衝撃価格を正式発表！誰も予想しなかった革命的な一台がここに！",
+   "url": "https://www.youtube.com/watch?v=_7jsacj6--U",
+   "durationSec": 707,
+   "status": "queued",
+   "publishAt": "2027-05-18T09:00:00Z"
+  },
+  {
+   "id": "5B6Frx4Olw4",
+   "order": 178,
+   "title": "2027年新型日産スカイラインついに公開！405馬力V6ツインターボ復活で世界に衝撃！徹底レビュー｜DM AutoReviews",
+   "url": "https://www.youtube.com/watch?v=5B6Frx4Olw4",
+   "durationSec": 737,
+   "status": "queued",
+   "publishAt": "2027-05-19T09:00:00Z"
+  },
+  {
+   "id": "s0IX9OC9Lew",
+   "order": 179,
+   "title": "トヨタがついに公開！最安値スライドドア軽自動車、N-BOX最大のライバル登場！",
+   "url": "https://www.youtube.com/watch?v=s0IX9OC9Lew",
+   "durationSec": 752,
+   "status": "queued",
+   "publishAt": "2027-05-20T09:00:00Z"
+  },
+  {
+   "id": "G3nd3gKTgfI",
+   "order": 180,
+   "title": "2026年トヨタ新型ケイハイブリッド、ついに発表！たった122万円でN-BOXキラー爆誕！",
+   "url": "https://www.youtube.com/watch?v=G3nd3gKTgfI",
+   "durationSec": 857,
+   "status": "queued",
+   "publishAt": "2027-05-21T09:00:00Z"
+  },
+  {
+   "id": "i7OmdKOwrrE",
+   "order": 181,
+   "title": "2026年型スバル360ワゴンついに登場！たった110万円で伝説が令和に復活した理由とは",
+   "url": "https://www.youtube.com/watch?v=i7OmdKOwrrE",
+   "durationSec": 812,
+   "status": "queued",
+   "publishAt": "2027-05-22T09:00:00Z"
+  },
+  {
+   "id": "a0VVTFFmnQI",
+   "order": 182,
+   "title": "新型トヨタ・スターレット2026ついに発表！145万円の衝撃価格が日本を震わせた！",
+   "url": "https://www.youtube.com/watch?v=a0VVTFFmnQI",
+   "durationSec": 782,
+   "status": "queued",
+   "publishAt": "2027-05-23T09:00:00Z"
+  },
+  {
+   "id": "NSEET9ghVjQ",
+   "order": 183,
+   "title": "【114万円の衝撃】日本騒然！114万円の新型ワゴン、まるで未来から来たクルマだった！ 🚗✨",
+   "url": "https://www.youtube.com/watch?v=NSEET9ghVjQ",
+   "durationSec": 1007,
+   "status": "queued",
+   "publishAt": "2027-05-24T09:00:00Z"
+  },
+  {
+   "id": "IdKZB9hv0y8",
+   "order": 184,
+   "title": "ついに公開！2026年ダイハツ・タント完全レビュー — 日本中を震わせたケイカーの正体がヤバすぎた！🚗🔥",
+   "url": "https://www.youtube.com/watch?v=IdKZB9hv0y8",
+   "durationSec": 662,
+   "status": "queued",
+   "publishAt": "2027-05-25T09:00:00Z"
+  },
+  {
+   "id": "nmRLnPPoEds",
+   "order": 185,
+   "title": "トヨタ新型コンパクトカーがついに正式公開！革命的エンジンと高級装備の全貌を徹底レビュー！【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=nmRLnPPoEds",
+   "durationSec": 722,
+   "status": "queued",
+   "publishAt": "2027-05-26T09:00:00Z"
+  },
+  {
+   "id": "VgelPtGaQCo",
+   "order": 186,
+   "title": "Honda新型スライドドア軽自動車100万円以下ついに公開！日本市場を震撼させる驚愕の一台が登場",
+   "url": "https://www.youtube.com/watch?v=VgelPtGaQCo",
+   "durationSec": 737,
+   "status": "queued",
+   "publishAt": "2027-05-27T09:00:00Z"
+  },
+  {
+   "id": "DL-rExtDZZU",
+   "order": 187,
+   "title": "ホンダフィット2027ついに公開！1.0ターボ・フルモデルチェンジ・誰も予想しなかった機能が全部判明！",
+   "url": "https://www.youtube.com/watch?v=DL-rExtDZZU",
+   "durationSec": 830,
+   "status": "queued",
+   "publishAt": "2027-05-28T09:00:00Z"
+  },
+  {
+   "id": "KKQoWNTrSGY",
+   "order": 188,
+   "title": "ついに公開！トヨタの秘密兵器｜35km/L燃費＆両側パワースライドドアが日本を震わせた【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=KKQoWNTrSGY",
+   "durationSec": 752,
+   "status": "queued",
+   "publishAt": "2027-05-29T09:00:00Z"
+  },
+  {
+   "id": "RgOTg3TXLBw",
+   "order": 189,
+   "title": "ついに公開！トヨタ新型スパーキー登場｜パワースライドドア＆1.5Lディーゼルエンジン搭載の最強ミニバン",
+   "url": "https://www.youtube.com/watch?v=RgOTg3TXLBw",
+   "durationSec": 812,
+   "status": "queued",
+   "publishAt": "2027-05-30T09:00:00Z"
+  },
+  {
+   "id": "HQL-TE8LrqU",
+   "order": 190,
+   "title": "ついに公開！2026年トヨタ新型軽ハイブリッド登場｜たった120万円でN-BOXに挑戦状！本当に勝てるのか？",
+   "url": "https://www.youtube.com/watch?v=HQL-TE8LrqU",
+   "durationSec": 872,
+   "status": "queued",
+   "publishAt": "2027-05-31T09:00:00Z"
+  },
+  {
+   "id": "pSL6KkarLnE",
+   "order": 191,
+   "title": "ホンダ新型ケイSUV、ついに全貌公開！本格オフロードデザインが135万円から登場！誰も予想しなかった驚愕の一台！",
+   "url": "https://www.youtube.com/watch?v=pSL6KkarLnE",
+   "durationSec": 737,
+   "status": "queued",
+   "publishAt": "2027-06-01T09:00:00Z"
+  },
+  {
+   "id": "56qyOKY_UWM",
+   "order": 192,
+   "title": "【ついに解禁】2026年型ホンダ・バモスバン正式発表！760cc i-VTECディーゼル搭載、驚異の積載空間と圧倒的快適性でライバル全滅！これが軽バンの未来だ！",
+   "url": "https://www.youtube.com/watch?v=56qyOKY_UWM",
+   "durationSec": 767,
+   "status": "queued",
+   "publishAt": "2027-06-02T09:00:00Z"
+  },
+  {
+   "id": "eaYgorJZB4E",
+   "order": 193,
+   "title": "ついに公開！ホンダ新型軽SUV2026年登場、135万円でN-BOXを超えた夢のクルマ爆誕",
+   "url": "https://www.youtube.com/watch?v=eaYgorJZB4E",
+   "durationSec": 872,
+   "status": "queued",
+   "publishAt": "2027-06-03T09:00:00Z"
+  },
+  {
+   "id": "-4J7_pvQ7Xo",
+   "order": 194,
+   "title": "2026年ついに公開！ホンダ・バモス、スバル760、スズキ・キャリィ、ホンダT500－本当に買うべき軽バンはどれだ？【完全比較】",
+   "url": "https://www.youtube.com/watch?v=-4J7_pvQ7Xo",
+   "durationSec": 722,
+   "status": "queued",
+   "publishAt": "2027-06-04T09:00:00Z"
+  },
+  {
+   "id": "iRwT-gvS304",
+   "order": 195,
+   "title": "ついに公開！ホンダ新型7人乗りミニバン2026年登場｜シエンタより安い180万円フル装備の衝撃",
+   "url": "https://www.youtube.com/watch?v=iRwT-gvS304",
+   "durationSec": 872,
+   "status": "queued",
+   "publishAt": "2027-06-05T09:00:00Z"
+  },
+  {
+   "id": "iQxnC-iP618",
+   "order": 196,
+   "title": "ついに公開！2026年トヨタ新型軽自動車が登場！価格わずか135万円・燃費30km/L — ホンダN-BOXの最大ライバル降臨！",
+   "url": "https://www.youtube.com/watch?v=iQxnC-iP618",
+   "durationSec": 782,
+   "status": "queued",
+   "publishAt": "2027-06-06T09:00:00Z"
+  },
+  {
+   "id": "sVe5YZEUpNk",
+   "order": 197,
+   "title": "ついに登場！2027年スバル1800バン – 衝撃のデザインと1.8Lターボディーゼルエンジン徹底レビュー",
+   "url": "https://www.youtube.com/watch?v=sVe5YZEUpNk",
+   "durationSec": 632,
+   "status": "queued",
+   "publishAt": "2027-06-07T09:00:00Z"
+  },
+  {
+   "id": "CUDe4Rw0Zag",
+   "order": 198,
+   "title": "【ついに登場】2027年新型トヨタ・スパーキー正式発表！1.5Lディーゼル搭載コンパクトミニバン、価格に驚愕",
+   "url": "https://www.youtube.com/watch?v=CUDe4Rw0Zag",
+   "durationSec": 602,
+   "status": "queued",
+   "publishAt": "2027-06-08T09:00:00Z"
+  },
+  {
+   "id": "fUGbFUgxeDg",
+   "order": 199,
+   "title": "ついに解禁！2026年型 全新スズキ・ソリオ 完全公開 — 誰も知らなかった衝撃の新機能を徹底暴露！【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=fUGbFUgxeDg",
+   "durationSec": 692,
+   "status": "queued",
+   "publishAt": "2027-06-09T09:00:00Z"
+  },
+  {
+   "id": "jrg5leFazM4",
+   "order": 200,
+   "title": "【ついに正式発表】2026年新型トヨタ・シエンタ ついに解禁！ツートンカラー廃止＆価格・燃費の全真実",
+   "url": "https://www.youtube.com/watch?v=jrg5leFazM4",
+   "durationSec": 513,
+   "status": "queued",
+   "publishAt": "2027-06-10T09:00:00Z"
+  },
+  {
+   "id": "bt-Ir0l3v9M",
+   "order": 201,
+   "title": "ついに公開!2026年トヨタ新型ミニハイエース、コンパクトボディに驚異の燃費と最新装備を凝縮した衝撃の一台",
+   "url": "https://www.youtube.com/watch?v=bt-Ir0l3v9M",
+   "durationSec": 603,
+   "status": "queued",
+   "publishAt": "2027-06-11T09:00:00Z"
+  },
+  {
+   "id": "buXjHCkbbYo",
+   "order": 202,
+   "title": "ついに正式発表!トヨタ・ミニアルファード2026年式、衝撃の150万円でパワースライドドアと低燃費ディーゼルを搭載!ホンダ・ニッサンに激震走る",
+   "url": "https://www.youtube.com/watch?v=buXjHCkbbYo",
+   "durationSec": 651,
+   "status": "queued",
+   "publishAt": "2027-06-12T09:00:00Z"
+  },
+  {
+   "id": "3fO0tEM8I3I",
+   "order": 203,
+   "title": "ついに発表!トヨタが放つスライドドア付き軽自動車、ホンダN-BOXの半額以下という衝撃価格で市場を揺るがす",
+   "url": "https://www.youtube.com/watch?v=3fO0tEM8I3I",
+   "durationSec": 707,
+   "status": "queued",
+   "publishAt": "2027-06-13T09:00:00Z"
+  },
+  {
+   "id": "-aBKG8-01ZA",
+   "order": 204,
+   "title": "2027年トヨタ新型軽ハイブリッドSUVついに発表!660ccで2.0L超えの衝撃パワー、ジムニーとハスラーを完全撃破!",
+   "url": "https://www.youtube.com/watch?v=-aBKG8-01ZA",
+   "durationSec": 587,
+   "status": "queued",
+   "publishAt": "2027-06-14T09:00:00Z"
+  },
+  {
+   "id": "9z91_vU2MdU",
+   "order": 205,
+   "title": "ついに公開!2026年 日産オールニューモデル4選 - 日本最大のラインナップ刷新",
+   "url": "https://www.youtube.com/watch?v=9z91_vU2MdU",
+   "durationSec": 617,
+   "status": "queued",
+   "publishAt": "2027-06-15T09:00:00Z"
+  },
+  {
+   "id": "z1hUT_zQLAM",
+   "order": 206,
+   "title": "ついに正式発表!2026年トヨタ・ミニエース・ワゴン、新開発770ccエンジンがすべてを変える",
+   "url": "https://www.youtube.com/watch?v=z1hUT_zQLAM",
+   "durationSec": 725,
+   "status": "queued",
+   "publishAt": "2027-06-16T09:00:00Z"
+  },
+  {
+   "id": "sn_LWNAk7KQ",
+   "order": 207,
+   "title": "ついに解禁!2026年 新型スズキ・キャリイ 衝撃価格で登場、業界震撼のフルモデルチェンジを徹底レビュー",
+   "url": "https://www.youtube.com/watch?v=sn_LWNAk7KQ",
+   "durationSec": 617,
+   "status": "queued",
+   "publishAt": "2027-06-17T09:00:00Z"
+  },
+  {
+   "id": "ojYAm6fvqDI",
+   "order": 208,
+   "title": "ついに判明!新型スズキ・ワゴンR フルモデルチェンジ、衝撃の新デザインと180の変化がすべてを変える",
+   "url": "https://www.youtube.com/watch?v=ojYAm6fvqDI",
+   "durationSec": 632,
+   "status": "queued",
+   "publishAt": "2027-06-18T09:00:00Z"
+  },
+  {
+   "id": "U9uc1I49_5o",
+   "order": 209,
+   "title": "トヨタの新型SUVついに完全公開！1.5L直列4気筒、220万円で本当にホンダWR-Vを倒す？衝撃の価格と装備が明らかに！",
+   "url": "https://www.youtube.com/watch?v=U9uc1I49_5o",
+   "durationSec": 737,
+   "status": "queued",
+   "publishAt": "2027-06-19T09:00:00Z"
+  },
+  {
+   "id": "qIOVix1o44M",
+   "order": 210,
+   "title": "ついに公開!11,400ドルの衝撃ミニバン、日本市場が震えた未来のワゴン",
+   "url": "https://www.youtube.com/watch?v=qIOVix1o44M",
+   "durationSec": 691,
+   "status": "queued",
+   "publishAt": "2027-06-20T09:00:00Z"
+  },
+  {
+   "id": "jkPZB5MHVSs",
+   "order": 211,
+   "title": "【ついに公開】トヨタ軽ハイブリッド、衝撃の119万円!燃費28km/L、ホンダN-BOXの最強ライバル登場か",
+   "url": "https://www.youtube.com/watch?v=jkPZB5MHVSs",
+   "durationSec": 724,
+   "status": "queued",
+   "publishAt": "2027-06-21T09:00:00Z"
+  },
+  {
+   "id": "pmsHdbOaYFQ",
+   "order": 212,
+   "title": "【ついに公開】2026年 トヨタ ミニエース ワゴン,760ccハイブリッド搭載,168万円からの衝撃コスパ,軽自動車を超える新提案",
+   "url": "https://www.youtube.com/watch?v=pmsHdbOaYFQ",
+   "durationSec": 750,
+   "status": "queued",
+   "publishAt": "2027-06-22T09:00:00Z"
+  },
+  {
+   "id": "ZSdl5kNh2_c",
+   "order": 213,
+   "title": "ついに判明!トヨタ新型ピクシストラック、革命的エンジンで軽自動車市場を揺るがす",
+   "url": "https://www.youtube.com/watch?v=ZSdl5kNh2_c",
+   "durationSec": 557,
+   "status": "queued",
+   "publishAt": "2027-06-23T09:00:00Z"
+  },
+  {
+   "id": "p2DjHyf3f9I",
+   "order": 214,
+   "title": "ついに公開!ダイハツ・ハイゼットトラック 新型フェイスリフト、燃費・安全・エンジンすべてが進化した本音レビュー",
+   "url": "https://www.youtube.com/watch?v=p2DjHyf3f9I",
+   "durationSec": 751,
+   "status": "queued",
+   "publishAt": "2027-06-24T09:00:00Z"
+  },
+  {
+   "id": "b6aRoXUnb4M",
+   "order": 215,
+   "title": "【ついに解禁】トヨタ新型軽ハイブリッド、正式発表!わずか119万円・燃費28km/Lでホンダ N-BOXはついに終焉か?",
+   "url": "https://www.youtube.com/watch?v=b6aRoXUnb4M",
+   "durationSec": 648,
+   "status": "queued",
+   "publishAt": "2027-06-25T09:00:00Z"
+  },
+  {
+   "id": "ezJ-vhkBr6I",
+   "order": 216,
+   "title": "ついに登場!2026年 Subaru コンパクトSUV、驚異の燃費と最新安全装備、そして本格オフロード性能を徹底解説",
+   "url": "https://www.youtube.com/watch?v=ezJ-vhkBr6I",
+   "durationSec": 810,
+   "status": "queued",
+   "publishAt": "2027-06-26T09:00:00Z"
+  },
+  {
+   "id": "MRABDNR-KXE",
+   "order": 217,
+   "title": "ついに判明!トヨタ新型軽バン(2027年)衝撃の全貌、ホンダN-VANを超えるのか徹底解説",
+   "url": "https://www.youtube.com/watch?v=MRABDNR-KXE",
+   "durationSec": 678,
+   "status": "queued",
+   "publishAt": "2027-06-27T09:00:00Z"
+  },
+  {
+   "id": "8zY05I9z5S4",
+   "order": 218,
+   "title": "ついに発表!トヨタ・ヴォクシー衝撃の改良モデル、全車ハイブリッド化で徹底解説",
+   "url": "https://www.youtube.com/watch?v=8zY05I9z5S4",
+   "durationSec": 720,
+   "status": "queued",
+   "publishAt": "2027-06-28T09:00:00Z"
+  },
+  {
+   "id": "bgBN3CrtsQQ",
+   "order": 219,
+   "title": "ついに公開!2027年トヨタ2000GT復活、B58エンジン搭載でGT-Rを超えるか?",
+   "url": "https://www.youtube.com/watch?v=bgBN3CrtsQQ",
+   "durationSec": 648,
+   "status": "queued",
+   "publishAt": "2027-06-29T09:00:00Z"
+  },
+  {
+   "id": "6pzzqb7MgA0",
+   "order": 220,
+   "title": "【ついに公開】2027年新型スズキ・ハスラー ストロングハイブリッド搭載で軽自動車の常識が変わる!",
+   "url": "https://www.youtube.com/watch?v=6pzzqb7MgA0",
+   "durationSec": 705,
+   "status": "queued",
+   "publishAt": "2027-06-30T09:00:00Z"
+  },
+  {
+   "id": "kM0_eHGMvEA",
+   "order": 221,
+   "title": "ついに判明！2027年型トヨタ・シエンタクロス、SUVスタイルで登場か",
+   "url": "https://www.youtube.com/watch?v=kM0_eHGMvEA",
+   "durationSec": 645,
+   "status": "queued",
+   "publishAt": "2027-07-01T09:00:00Z"
+  },
+  {
+   "id": "wTN3O2xLNUQ",
+   "order": 222,
+   "title": "【ついに公開】2026年新型トヨタ・アルファード、その全貌がついに明らかに!",
+   "url": "https://www.youtube.com/watch?v=wTN3O2xLNUQ",
+   "durationSec": 645,
+   "status": "queued",
+   "publishAt": "2027-07-02T09:00:00Z"
+  },
+  {
+   "id": "Kw7P9dCa-_4",
+   "order": 223,
+   "title": "ついに判明!?トヨタ新型ミニエース・ワゴン 770ccエンジン搭載か!軽自動車の常識が変わる",
+   "url": "https://www.youtube.com/watch?v=Kw7P9dCa-_4",
+   "durationSec": 750,
+   "status": "queued",
+   "publishAt": "2027-07-03T09:00:00Z"
+  },
+  {
+   "id": "vyYuso5McRM",
+   "order": 224,
+   "title": "ついに公開!新型スズキ・アルト2027年モデル、車両重量600kg以下&燃費30km/L超え、軽自動車の常識を覆す衝撃のフルモデルチェンジ",
+   "url": "https://www.youtube.com/watch?v=vyYuso5McRM",
+   "durationSec": 735,
+   "status": "queued",
+   "publishAt": "2027-07-04T09:00:00Z"
+  },
+  {
+   "id": "LxLGVwAPmEM",
+   "order": 225,
+   "title": "ついに公開!2026年 新型トヨタ軽自動車が想像を超える高級装備で登場",
+   "url": "https://www.youtube.com/watch?v=LxLGVwAPmEM",
+   "durationSec": 645,
+   "status": "queued",
+   "publishAt": "2027-07-05T09:00:00Z"
+  },
+  {
+   "id": "HAZ4RwXHOE8",
+   "order": 226,
+   "title": "ついに解禁⁉️トヨタ新型軽自動車がN-BOXを本気で潰しに来た、まさかの135万円スタートで軽市場に激震",
+   "url": "https://www.youtube.com/watch?v=HAZ4RwXHOE8",
+   "durationSec": 780,
+   "status": "queued",
+   "publishAt": "2027-07-06T09:00:00Z"
+  },
+  {
+   "id": "2O4v1DKbl5s",
+   "order": 227,
+   "title": "新型トヨタ・ライズ、ついに登場!値上げの理由がこれを見れば納得できます",
+   "url": "https://www.youtube.com/watch?v=2O4v1DKbl5s",
+   "durationSec": 678,
+   "status": "queued",
+   "publishAt": "2027-07-07T09:00:00Z"
+  },
+  {
+   "id": "ekh2CweUtx8",
+   "order": 228,
+   "title": "ついに判明!? 2026年型トヨタ・ミニエース・ワゴン、770ccエンジン搭載の噂を徹底解説",
+   "url": "https://www.youtube.com/watch?v=ekh2CweUtx8",
+   "durationSec": 630,
+   "status": "queued",
+   "publishAt": "2027-07-08T09:00:00Z"
+  },
+  {
+   "id": "MNGd1IDog_I",
+   "order": 229,
+   "title": "新型ハリアー、ついに公開！衝撃のデザインと最新機能を徹底解説",
+   "url": "https://www.youtube.com/watch?v=MNGd1IDog_I",
+   "durationSec": 645,
+   "status": "queued",
+   "publishAt": "2027-07-09T09:00:00Z"
+  },
+  {
+   "id": "ztg6Fm1pJYc",
+   "order": 230,
+   "title": "2026年型トヨタ・ルーミー、ついに完全公開！このコンパクトカーは進化のレベルが違う…市場を支配する準備は整った",
+   "url": "https://www.youtube.com/watch?v=ztg6Fm1pJYc",
+   "durationSec": 574,
+   "status": "queued",
+   "publishAt": "2027-07-10T09:00:00Z"
+  },
+  {
+   "id": "Fpn1BHIoTOU",
+   "order": 231,
+   "title": "ついに公開!ホンダ新型コンパクトSUV、燃費38.5km/L・1.3Lターボe:HEVがすべてを変える",
+   "url": "https://www.youtube.com/watch?v=Fpn1BHIoTOU",
+   "durationSec": 645,
+   "status": "queued",
+   "publishAt": "2027-07-11T09:00:00Z"
+  },
+  {
+   "id": "13UhMAzTtYI",
+   "order": 232,
+   "title": "ついに公開!2026年型トヨタ軽バン、ホンダN-VANを超えたのか?",
+   "url": "https://www.youtube.com/watch?v=13UhMAzTtYI",
+   "durationSec": 604,
+   "status": "queued",
+   "publishAt": "2027-07-12T09:00:00Z"
+  },
+  {
+   "id": "sutyXKMCUkg",
+   "order": 233,
+   "title": "ついに解禁!2026年新型スバル・コンパクトSUV、3つのエンジンで市場を完全に変えた",
+   "url": "https://www.youtube.com/watch?v=sutyXKMCUkg",
+   "durationSec": 707,
+   "status": "queued",
+   "publishAt": "2027-07-13T09:00:00Z"
+  },
+  {
+   "id": "OvdvMaTNEUU",
+   "order": 234,
+   "title": "ついに登場!オール・ニュー2026年型トヨタ・スパーキー・ハイブリッド、35km/Lの衝撃燃費と12.3インチディスプレイを徹底レビュー",
+   "url": "https://www.youtube.com/watch?v=OvdvMaTNEUU",
+   "durationSec": 648,
+   "status": "queued",
+   "publishAt": "2027-07-14T09:00:00Z"
+  },
+  {
+   "id": "gkDwwijavr8",
+   "order": 235,
+   "title": "ついに登場!2026年 新型トヨタ・ノア 正式発表 – 衝撃の新機能、グレード、デザイン変更を徹底解説",
+   "url": "https://www.youtube.com/watch?v=gkDwwijavr8",
+   "durationSec": 585,
+   "status": "queued",
+   "publishAt": "2027-07-15T09:00:00Z"
+  },
+  {
+   "id": "XPGkz26BGPQ",
+   "order": 236,
+   "title": "2026年新型トヨタ・シエンタ、ついに公開!衝撃の新機能とは?",
+   "url": "https://www.youtube.com/watch?v=XPGkz26BGPQ",
+   "durationSec": 495,
+   "status": "queued",
+   "publishAt": "2027-07-16T09:00:00Z"
+  },
+  {
+   "id": "hHfFxFFZtvU",
+   "order": 237,
+   "title": "ついに公開！新型ホンダ・フィット2026、衝撃の完全モデルチェンジと1.0Lターボ搭載か",
+   "url": "https://www.youtube.com/watch?v=hHfFxFFZtvU",
+   "durationSec": 660,
+   "status": "queued",
+   "publishAt": "2027-07-17T09:00:00Z"
+  },
+  {
+   "id": "bdGdRLdOlOk",
+   "order": 238,
+   "title": "【ついに判明】2027年 新型ホンダ・フィット フルモデルチェンジ!1.0Lターボ搭載&182万円からという衝撃価格!",
+   "url": "https://www.youtube.com/watch?v=bdGdRLdOlOk",
+   "durationSec": 585,
+   "status": "queued",
+   "publishAt": "2027-07-18T09:00:00Z"
+  },
+  {
+   "id": "IfzJYTrdQgM",
+   "order": 239,
+   "title": "2027年トヨタ新型ハイランダー ついに公開!衝撃のEVクロスオーバーが世界を変える",
+   "url": "https://www.youtube.com/watch?v=IfzJYTrdQgM",
+   "durationSec": 681,
+   "status": "queued",
+   "publishAt": "2027-07-19T09:00:00Z"
+  },
+  {
+   "id": "vPqgDoh_JZM",
+   "order": 240,
+   "title": "トヨタ・アルファード・ミニ、ついに噂が判明!?衝撃の予想スペックを徹底解説",
+   "url": "https://www.youtube.com/watch?v=vPqgDoh_JZM",
+   "durationSec": 648,
+   "status": "queued",
+   "publishAt": "2027-07-20T09:00:00Z"
+  },
+  {
+   "id": "CaLOK_MphhE",
+   "order": 241,
+   "title": "ついに公開!新型トヨタ・シエンタ2026、受注再開&衝撃の新機能満載",
+   "url": "https://www.youtube.com/watch?v=CaLOK_MphhE",
+   "durationSec": 570,
+   "status": "queued",
+   "publishAt": "2027-07-21T09:00:00Z"
+  },
+  {
+   "id": "Y7oi4quookg",
+   "order": 242,
+   "title": "遂に判明!新型レクサスUX、DIRECT4搭載で全てが変わる衝撃の新型SUV",
+   "url": "https://www.youtube.com/watch?v=Y7oi4quookg",
+   "durationSec": 681,
+   "status": "queued",
+   "publishAt": "2027-07-22T09:00:00Z"
+  },
+  {
+   "id": "rMMhrefNNoA",
+   "order": 243,
+   "title": "【ついに公開】2027年 三菱デリカD:6、衝撃の新型フルモデルチェンジ!395馬力PHEV × 最新4WDシステム搭載",
+   "url": "https://www.youtube.com/watch?v=rMMhrefNNoA",
+   "durationSec": 645,
+   "status": "queued",
+   "publishAt": "2027-07-23T09:00:00Z"
+  },
+  {
+   "id": "tAbKCyJBXNk",
+   "order": 244,
+   "title": "ついに来た!?トヨタの新型軽自動車がN-BOXを終わらせる【衝撃の噂】",
+   "url": "https://www.youtube.com/watch?v=tAbKCyJBXNk",
+   "durationSec": 676,
+   "status": "queued",
+   "publishAt": "2027-07-24T09:00:00Z"
+  },
+  {
+   "id": "4qIMGgmEvlk",
+   "order": 245,
+   "title": "ついに公開!2027年 新型トヨタ ハイブリッド軽自動車、ホンダN-BOXを本当に超えられるのか?",
+   "url": "https://www.youtube.com/watch?v=4qIMGgmEvlk",
+   "durationSec": 676,
+   "status": "queued",
+   "publishAt": "2027-07-25T09:00:00Z"
+  },
+  {
+   "id": "HOJvtkurOC8",
+   "order": 246,
+   "title": "【ついに公開】2027年 新型トヨタ・スパーキー ハイブリッド ホンダ・フリードに挑む衝撃のコンパクトミニバン, Finally Unveiled!",
+   "url": "https://www.youtube.com/watch?v=HOJvtkurOC8",
+   "durationSec": 645,
+   "status": "queued",
+   "publishAt": "2027-07-26T09:00:00Z"
+  },
+  {
+   "id": "YthGqlQdRKg",
+   "order": 247,
+   "title": "ついに公開！トヨタ ミニスパーキー2026 – まさかのPHEV復活構想と衝撃35.5km/L燃費を徹底妄想レビュー",
+   "url": "https://www.youtube.com/watch?v=YthGqlQdRKg",
+   "durationSec": 630,
+   "status": "queued",
+   "publishAt": "2027-07-27T09:00:00Z"
+  },
+  {
+   "id": "snnmz6g48sk",
+   "order": 248,
+   "title": "ついに判明!トヨタ新型軽自動車、まさかの6輪デザインで衝撃デビュー【噂】",
+   "url": "https://www.youtube.com/watch?v=snnmz6g48sk",
+   "durationSec": 698,
+   "status": "queued",
+   "publishAt": "2027-07-28T09:00:00Z"
+  },
+  {
+   "id": "WgtZn4gqKpQ",
+   "order": 249,
+   "title": "ついに妄想公開!2026年新型バモス \"ディーゼルi-VTEC\" コンセプト徹底解説",
+   "url": "https://www.youtube.com/watch?v=WgtZn4gqKpQ",
+   "durationSec": 570,
+   "status": "queued",
+   "publishAt": "2027-07-29T09:00:00Z"
+  },
+  {
+   "id": "AHy0t2VUdZQ",
+   "order": 250,
+   "title": "ついに公開!スズキ新型軽自動車、衝撃の490kg!?2027年最強コスパEVの真実",
+   "url": "https://www.youtube.com/watch?v=AHy0t2VUdZQ",
+   "durationSec": 572,
+   "status": "queued",
+   "publishAt": "2027-07-30T09:00:00Z"
+  },
+  {
+   "id": "8AIelJFeiRc",
+   "order": 251,
+   "title": "【ついに判明】トヨタ・ルーミーの全て徹底レビュー！9年間フルモデルチェンジなしの衝撃の理由とは",
+   "url": "https://www.youtube.com/watch?v=8AIelJFeiRc",
+   "durationSec": 660,
+   "status": "queued",
+   "publishAt": "2027-07-31T09:00:00Z"
+  },
+  {
+   "id": "jpXelu4dbvI",
+   "order": 252,
+   "title": "ついに公開!三菱パジェロミニ2026、まさかの195万円で登場か",
+   "url": "https://www.youtube.com/watch?v=jpXelu4dbvI",
+   "durationSec": 765,
+   "status": "queued",
+   "publishAt": "2027-08-01T09:00:00Z"
+  },
+  {
+   "id": "glAxb6n6w0I",
+   "order": 253,
+   "title": "トヨタ新型スパーキーハイブリッド、ついに登場！？両側電動スライドドア搭載、燃費35km/リットルの噂を徹底解説",
+   "url": "https://www.youtube.com/watch?v=glAxb6n6w0I",
+   "durationSec": 690,
+   "status": "queued",
+   "publishAt": "2027-08-02T09:00:00Z"
+  },
+  {
+   "id": "F_Soy3faO5s",
+   "order": 254,
+   "title": "ついに公開！トヨタ新型軽自動車、スライドドア×ターボ搭載でわずか115万円",
+   "url": "https://www.youtube.com/watch?v=F_Soy3faO5s",
+   "durationSec": 630,
+   "status": "queued",
+   "publishAt": "2027-08-03T09:00:00Z"
+  },
+  {
+   "id": "Dt1vSYSi1a0",
+   "order": 255,
+   "title": "ついに登場!2027年 新型トヨタ ハイブリッド軽SUV、660ccでジムニーを超える衝撃の実力とは",
+   "url": "https://www.youtube.com/watch?v=Dt1vSYSi1a0",
+   "durationSec": 663,
+   "status": "queued",
+   "publishAt": "2027-08-04T09:00:00Z"
+  },
+  {
+   "id": "7IlR8p8ny7A",
+   "order": 256,
+   "title": "ついに公開！2026年トヨタ新型軽自動車コンセプト｜Honda N-BOXより約2,700ドル安い！？究極の軽自動車になるのか？",
+   "url": "https://www.youtube.com/watch?v=7IlR8p8ny7A",
+   "durationSec": 870,
+   "status": "queued",
+   "publishAt": "2027-08-05T09:00:00Z"
+  },
+  {
+   "id": "kH-ozlgWvO8",
+   "order": 257,
+   "title": "ついに公開!2026年型トヨタ・ミニエース・ワゴン、常識を覆すハイブリッドバン",
+   "url": "https://www.youtube.com/watch?v=kH-ozlgWvO8",
+   "durationSec": 690,
+   "status": "queued",
+   "publishAt": "2027-08-06T09:00:00Z"
+  },
+  {
+   "id": "_DASqx-1Vgs",
+   "order": 258,
+   "title": "ついに判明!? 2026年型トヨタ軽自動車、170万円の衝撃スペック【噂・予想】",
+   "url": "https://www.youtube.com/watch?v=_DASqx-1Vgs",
+   "durationSec": 615,
+   "status": "queued",
+   "publishAt": "2027-08-07T09:00:00Z"
+  },
+  {
+   "id": "LE9erGsU9Xs",
+   "order": 259,
+   "title": "ついに公開!2027年 トヨタ 軽ハイブリッド、価格118万円でホンダN-BOXに挑む",
+   "url": "https://www.youtube.com/watch?v=LE9erGsU9Xs",
+   "durationSec": 660,
+   "status": "queued",
+   "publishAt": "2027-08-08T09:00:00Z"
+  },
+  {
+   "id": "OoG-TD_PLrQ",
+   "order": 260,
+   "title": "ついに公開！新型トヨタ軽スライドドア車、まさかの$4,700でホンダN-BOXを圧倒",
+   "url": "https://www.youtube.com/watch?v=OoG-TD_PLrQ",
+   "durationSec": 735,
+   "status": "queued",
+   "publishAt": "2027-08-09T09:00:00Z"
+  },
+  {
+   "id": "EEi7F1GfFpQ",
+   "order": 261,
+   "title": "ついに判明!トヨタ新型軽ハイブリッド リーク情報 - N-BOXを超える広さ&38.5km/Lの衝撃燃費【2026年最新噂】",
+   "url": "https://www.youtube.com/watch?v=EEi7F1GfFpQ",
+   "durationSec": 738,
+   "status": "queued",
+   "publishAt": "2027-08-10T09:00:00Z"
+  },
+  {
+   "id": "Jp9LFVptjBY",
+   "order": 262,
+   "title": "ついに公開!トヨタ・カローラが46.6km/Lで世界に衝撃、EVを超える未来がここに",
+   "url": "https://www.youtube.com/watch?v=Jp9LFVptjBY",
+   "durationSec": 810,
+   "status": "queued",
+   "publishAt": "2027-08-11T09:00:00Z"
+  },
+  {
+   "id": "kreOcn4RaXE",
+   "order": 263,
+   "title": "【ついに公開】ホンダの新型SUVが登場！1.8Lターボ e:HEVが驚異の44.5km/Lを実現 ― トヨタも警戒する圧倒的な実力！",
+   "url": "https://www.youtube.com/watch?v=kreOcn4RaXE",
+   "durationSec": 660,
+   "status": "queued",
+   "publishAt": "2027-08-12T09:00:00Z"
+  },
+  {
+   "id": "hNbpghUAeQU",
+   "order": 264,
+   "title": "ついに公開!トヨタ新型ミニエースワゴン 2027年最新軽自動車、買う価値ある?",
+   "url": "https://www.youtube.com/watch?v=hNbpghUAeQU",
+   "durationSec": 675,
+   "status": "queued",
+   "publishAt": "2027-08-13T09:00:00Z"
+  },
+  {
+   "id": "TlENNGSfTHE",
+   "order": 265,
+   "title": "ついに公開！トヨタ・ミニアルファード2027、まさかの110万円でディーゼルターボ搭載！",
+   "url": "https://www.youtube.com/watch?v=TlENNGSfTHE",
+   "durationSec": 750,
+   "status": "queued",
+   "publishAt": "2027-08-14T09:00:00Z"
+  },
+  {
+   "id": "N0ksAnmYCLo",
+   "order": 266,
+   "title": "ついに公開！トヨタ軽ハイブリッド、価格105万円・トルク385Nm・燃費36.5km/Lの衝撃コンセプト",
+   "url": "https://www.youtube.com/watch?v=N0ksAnmYCLo",
+   "durationSec": 735,
+   "status": "queued",
+   "publishAt": "2027-08-15T09:00:00Z"
+  },
+  {
+   "id": "tyHikGn3MLU",
+   "order": 267,
+   "title": "【ついに判明】トヨタ新型車、燃費35.5km/L・100万円台でまもなく登場か!?",
+   "url": "https://www.youtube.com/watch?v=tyHikGn3MLU",
+   "durationSec": 675,
+   "status": "queued",
+   "publishAt": "2027-08-16T09:00:00Z"
+  },
+  {
+   "id": "ShgjX9LBvkw",
+   "order": 268,
+   "title": "新型ホンダ・フィット、ついに全貌解禁!新デザイン・全グレード・価格を徹底解説",
+   "url": "https://www.youtube.com/watch?v=ShgjX9LBvkw",
+   "durationSec": 737,
+   "status": "queued",
+   "publishAt": "2027-08-17T09:00:00Z"
+  },
+  {
+   "id": "S9kqlETvlNg",
+   "order": 269,
+   "title": "新型レクサスNX、ついに全貌判明！衝撃デザイン&12.3インチコックピット&EV走行110km",
+   "url": "https://www.youtube.com/watch?v=S9kqlETvlNg",
+   "durationSec": 572,
+   "status": "queued",
+   "publishAt": "2027-08-18T09:00:00Z"
+  },
+  {
+   "id": "2y0NyV9Z5KQ",
+   "order": 270,
+   "title": "ついに全貌公開!新型トヨタ・ルーミー 第2世代e-SMARTハイブリッド、驚愕の185万円スタート!",
+   "url": "https://www.youtube.com/watch?v=2y0NyV9Z5KQ",
+   "durationSec": 617,
+   "status": "queued",
+   "publishAt": "2027-08-19T09:00:00Z"
+  },
+  {
+   "id": "PR3P_oN2cmU",
+   "order": 271,
+   "title": "ついに解禁!2026年型トヨタ・ヤリス、燃費45.5km/Lの衝撃が判明",
+   "url": "https://www.youtube.com/watch?v=PR3P_oN2cmU",
+   "durationSec": 647,
+   "status": "queued",
+   "publishAt": "2027-08-20T09:00:00Z"
+  },
+  {
+   "id": "_yvaKNefC7Y",
+   "order": 272,
+   "title": "ついに公開!トヨタ新型軽自動車、112万円でスライドドア&車中泊ベッド仕様",
+   "url": "https://www.youtube.com/watch?v=_yvaKNefC7Y",
+   "durationSec": 544,
+   "status": "queued",
+   "publishAt": "2027-08-21T09:00:00Z"
+  },
+  {
+   "id": "7iLUM4Bd93g",
+   "order": 273,
+   "title": "2026年新型トヨタ・ライズ「スペース」ついに登場!? 新デザイン・エンジン・価格を徹底解説",
+   "url": "https://www.youtube.com/watch?v=7iLUM4Bd93g",
+   "durationSec": 559,
+   "status": "queued",
+   "publishAt": "2027-08-22T09:00:00Z"
+  },
+  {
+   "id": "so-S1FXi3dA",
+   "order": 274,
+   "title": "【ついに公開】新型ハイエース スーパーGL 燃費17.6km/L!？180万円の衝撃価格でトヨタが本気を出した",
+   "url": "https://www.youtube.com/watch?v=so-S1FXi3dA",
+   "durationSec": 602,
+   "status": "queued",
+   "publishAt": "2027-08-23T09:00:00Z"
+  },
+  {
+   "id": "vkevpKVYnoE",
+   "order": 275,
+   "title": "ついに解禁！トヨタ新型軽ハイブリッド、まさかの111万円で登場か？燃費40.5km/LでN-BOXに終焉のシナリオ",
+   "url": "https://www.youtube.com/watch?v=vkevpKVYnoE",
+   "durationSec": 762,
+   "status": "queued",
+   "publishAt": "2027-08-24T09:00:00Z"
+  },
+  {
+   "id": "nt7I0CET_4k",
+   "order": 276,
+   "title": "ついに解禁!ダイハツ新型軽自動車、衝撃の111万円でスライドドア&リッター30km達成",
+   "url": "https://www.youtube.com/watch?v=nt7I0CET_4k",
+   "durationSec": 662,
+   "status": "queued",
+   "publishAt": "2027-08-25T09:00:00Z"
+  },
+  {
+   "id": "AzF2PyEkcFY",
+   "order": 277,
+   "title": "【ついに公開】2027年 スバル・レガシィ・ツーリングワゴン 衝撃の実力とは?",
+   "url": "https://www.youtube.com/watch?v=AzF2PyEkcFY",
+   "durationSec": 722,
+   "status": "queued",
+   "publishAt": "2027-08-26T09:00:00Z"
+  },
+  {
+   "id": "RQulirh0OvM",
+   "order": 278,
+   "title": "ついに公開!トヨタ新型軽ハイブリッド、118万円・32km/Lの衝撃",
+   "url": "https://www.youtube.com/watch?v=RQulirh0OvM",
+   "durationSec": 647,
+   "status": "queued",
+   "publishAt": "2027-08-27T09:00:00Z"
+  },
+  {
+   "id": "o0qik8YdRnI",
+   "order": 279,
+   "title": "ついに解禁!2026年ダイハツ ムーヴ、初のスライドドア搭載で日本中が震撼!",
+   "url": "https://www.youtube.com/watch?v=o0qik8YdRnI",
+   "durationSec": 602,
+   "status": "queued",
+   "publishAt": "2027-08-28T09:00:00Z"
+  },
+  {
+   "id": "xxT5FKemNBI",
+   "order": 280,
+   "title": "ついに解禁！新型トヨタ・ルーミー フルモデルチェンジの全貌が判明",
+   "url": "https://www.youtube.com/watch?v=xxT5FKemNBI",
+   "durationSec": 542,
+   "status": "queued",
+   "publishAt": "2027-08-29T09:00:00Z"
+  },
+  {
+   "id": "ZOR9Iy-r9PU",
+   "order": 281,
+   "title": "新型ダイハツ・タント、ついに登場！e-SMART HYBRIDでN-BOXに挑む",
+   "url": "https://www.youtube.com/watch?v=ZOR9Iy-r9PU",
+   "durationSec": 647,
+   "status": "queued",
+   "publishAt": "2027-08-30T09:00:00Z"
+  },
+  {
+   "id": "JqXmmBfR1nc",
+   "order": 282,
+   "title": "ついに登場、新型ダイハツが遂に公開!驚愕のコストパフォーマンスと燃費性能",
+   "url": "https://www.youtube.com/watch?v=JqXmmBfR1nc",
+   "durationSec": 617,
+   "status": "queued",
+   "publishAt": "2027-08-31T09:00:00Z"
+  },
+  {
+   "id": "xGJX36SLfNo",
+   "order": 283,
+   "title": "ついに判明!2027年 新型ダイハツ・ロッキー・スペース Finally Unveiled",
+   "url": "https://www.youtube.com/watch?v=xGJX36SLfNo",
+   "durationSec": 692,
+   "status": "queued",
+   "publishAt": "2027-09-01T09:00:00Z"
+  },
+  {
+   "id": "uKzg20OYuX0",
+   "order": 284,
+   "title": "「ついに公開」トヨタ新型880ccハイブリッドSUV、ジムニー超えのタフさと2.0L級加速力が話題に【DM AutoReviews】",
+   "url": "https://www.youtube.com/watch?v=uKzg20OYuX0",
+   "durationSec": 677,
+   "status": "queued",
+   "publishAt": "2027-09-02T09:00:00Z"
+  },
+  {
+   "id": "I-pNca_y6kc",
+   "order": 285,
+   "title": "2027年スバル460ワゴンついに登場！100万円の軽自動車がすべてを変えるかもしれない！",
+   "url": "https://www.youtube.com/watch?v=I-pNca_y6kc",
+   "durationSec": 746,
+   "status": "queued",
+   "publishAt": "2027-09-03T09:00:00Z"
+  },
+  {
+   "id": "uFy9Am9Psgk",
+   "order": 286,
+   "title": "2026年｜日本で買える軽自動車ワースト3＆本当におすすめのベスト4",
+   "url": "https://www.youtube.com/watch?v=uFy9Am9Psgk",
+   "durationSec": 783,
+   "status": "queued",
+   "publishAt": "2027-09-04T09:00:00Z"
+  },
+  {
+   "id": "QE1U6ee3TLc",
+   "order": 287,
+   "title": "ついに登場!トヨタ新型ケイ・ハイブリッド、180万円でリッター25kmの衝撃燃費を徹底レビュー",
+   "url": "https://www.youtube.com/watch?v=QE1U6ee3TLc",
+   "durationSec": 662,
+   "status": "queued",
+   "publishAt": "2027-09-05T09:00:00Z"
+  },
+  {
+   "id": "06WkJagAR0Y",
+   "order": 288,
+   "title": "新型トヨタ・シエンタ、ついに公開！衝撃デザイン&最新装備満載 ― 199万円から/燃費30km/L超え",
+   "url": "https://www.youtube.com/watch?v=06WkJagAR0Y",
+   "durationSec": 572,
+   "status": "queued",
+   "publishAt": "2027-09-06T09:00:00Z"
+  },
+  {
+   "id": "XXdMKKUDLiY",
+   "order": 289,
+   "title": "2027年型スズキ・ワゴンR、ついに全貌公開!新型EVモデル&2万円値上げの噂を徹底解説",
+   "url": "https://www.youtube.com/watch?v=XXdMKKUDLiY",
+   "durationSec": 692,
+   "status": "queued",
+   "publishAt": "2027-09-07T09:00:00Z"
+  },
+  {
+   "id": "3bPVxCgHG4U",
+   "order": 290,
+   "title": "トヨタがついに発表!高齢ドライバーに最適なケイカー — たった450kg・150万円!",
+   "url": "https://www.youtube.com/watch?v=3bPVxCgHG4U",
+   "durationSec": 587,
+   "status": "queued",
+   "publishAt": "2027-09-08T09:00:00Z"
+  },
+  {
+   "id": "v80UWST9W7A",
+   "order": 291,
+   "title": "トヨタ・ミニエース・ワゴン ついに公開！ガソリン・ハイブリッド・EV 3種類のパワートレイン搭載、日本が震撼！",
+   "url": "https://www.youtube.com/watch?v=v80UWST9W7A",
+   "durationSec": 798,
+   "status": "queued",
+   "publishAt": "2027-09-09T09:00:00Z"
+  },
+  {
+   "id": "YnY3mtpXl98",
+   "order": 292,
+   "title": "日産の新型コンパクトSUVが日本を震撼！驚きの価格＆スペックでトヨタ・ライズを圧倒か!?",
+   "url": "https://www.youtube.com/watch?v=YnY3mtpXl98",
+   "durationSec": 800,
+   "status": "queued",
+   "publishAt": "2027-09-10T09:00:00Z"
+  },
+  {
+   "id": "PpbqT7Y_emE",
+   "order": 293,
+   "title": "【衝撃】2027年トヨタ新型SUV登場予想！THS II搭載で燃費45km/L超え！1800ccエンジンで軽自動車の常識が完全に変わる！？",
+   "url": "https://www.youtube.com/watch?v=PpbqT7Y_emE",
+   "durationSec": 613,
+   "status": "queued",
+   "publishAt": "2027-09-11T09:00:00Z"
+  },
+  {
+   "id": "3JYyasiq0Qw",
+   "order": 294,
+   "title": "ついに公開!【価格崩壊】日本のほぼ新車14台…お得?それとも罠?",
+   "url": "https://www.youtube.com/watch?v=3JYyasiq0Qw",
+   "durationSec": 1241,
+   "status": "queued",
+   "publishAt": "2027-09-12T09:00:00Z"
+  },
+  {
+   "id": "KO0HNrdPFLU",
+   "order": 295,
+   "title": "2026年トヨタ・ルーミー、ついに登場!衝撃の新デザイン、広さも価格も驚異的",
+   "url": "https://www.youtube.com/watch?v=KO0HNrdPFLU",
+   "durationSec": 707,
+   "status": "queued",
+   "publishAt": "2027-09-13T09:00:00Z"
+  },
+  {
+   "id": "F-XIypDF7b4",
+   "order": 296,
+   "title": "「ついに公開!」ダイハツ・コペン フルモデルチェンジ、衝撃のFR化!25年の伝統を破る軽オープンスポーツカーが2027年3月に復活か、予想価格120万円・最高速度160km/h",
+   "url": "https://www.youtube.com/watch?v=F-XIypDF7b4",
+   "durationSec": 676,
+   "status": "queued",
+   "publishAt": "2027-09-14T09:00:00Z"
+  },
+  {
+   "id": "ELkQ6_S_XE0",
+   "order": 297,
+   "title": "ついに公開!Honda N-BOX vs Suzuki Spacia 2026年最強軽自動車、衝撃の結果とは?",
+   "url": "https://www.youtube.com/watch?v=ELkQ6_S_XE0",
+   "durationSec": 495,
+   "status": "queued",
+   "publishAt": "2027-09-15T09:00:00Z"
+  },
+  {
+   "id": "BwPQRFilJy8",
+   "order": 298,
+   "title": "BYD Racco 試乗レビュー、衝撃の弱点とディーラーの裏側が判明!",
+   "url": "https://www.youtube.com/watch?v=BwPQRFilJy8",
+   "durationSec": 564,
+   "status": "queued",
+   "publishAt": "2027-09-16T09:00:00Z"
+  },
+  {
+   "id": "uVY7rXK3HkI",
+   "order": 299,
+   "title": "ついに解禁!トヨタ新型軽自動車が116万円で「ベッドルーム・オン・ホイールズ」に変身、日本中が騒然",
+   "url": "https://www.youtube.com/watch?v=uVY7rXK3HkI",
+   "durationSec": 572,
+   "status": "queued",
+   "publishAt": "2027-09-17T09:00:00Z"
+  },
+  {
+   "id": "Wd86-pb8dsw",
+   "order": 300,
+   "title": "ついに解禁!新型ダイハツ・アトレー、まさかの低価格で登場か",
+   "url": "https://www.youtube.com/watch?v=Wd86-pb8dsw",
+   "durationSec": 632,
+   "status": "queued",
+   "publishAt": "2027-09-18T09:00:00Z"
+  },
+  {
+   "id": "H98PHoVT4Do",
+   "order": 301,
+   "title": "ついに解禁！新型スズキ・エブリイが日本を震撼させる、未来的デザインと隠れた機能を徹底暴露",
+   "url": "https://www.youtube.com/watch?v=H98PHoVT4Do",
+   "durationSec": 587,
+   "status": "queued",
+   "publishAt": "2027-09-19T09:00:00Z"
+  },
+  {
+   "id": "JvNe4gbu6YA",
+   "order": 302,
+   "title": "トヨタ・ブリザードが日本を震撼させる！タフなデザイン、豪華なインテリア＆5ドア・ジムニーを圧倒する驚異の走行性能！",
+   "url": "https://www.youtube.com/watch?v=JvNe4gbu6YA",
+   "durationSec": 617,
+   "status": "queued",
+   "publishAt": "2027-09-20T09:00:00Z"
+  },
+  {
+   "id": "T7VjV-LDOfM",
+   "order": 303,
+   "title": "スズキ新型軽自動車、ついに判明!¥60万円台・600kgボディでハスラーを超えるタフさ",
+   "url": "https://www.youtube.com/watch?v=T7VjV-LDOfM",
+   "durationSec": 677,
+   "status": "queued",
+   "publishAt": "2027-09-21T09:00:00Z"
+  },
+  {
+   "id": "nmsUxv4_UDg",
+   "order": 304,
+   "title": "ついに公開!ホンダの2027年型160万円7人乗りミニバンがアルファードを脅かす?衝撃の徹底比較",
+   "url": "https://www.youtube.com/watch?v=nmsUxv4_UDg",
+   "durationSec": 692,
+   "status": "queued",
+   "publishAt": "2027-09-22T09:00:00Z"
+  },
+  {
+   "id": "ydsDw2p8hTM",
+   "order": 305,
+   "title": "ついに解禁！新型スズキ・エブリイが日本中を震撼させた3つのスポーティ進化とは!?",
+   "url": "https://www.youtube.com/watch?v=ydsDw2p8hTM",
+   "durationSec": 587,
+   "status": "queued",
+   "publishAt": "2027-09-23T09:00:00Z"
+  },
+  {
+   "id": "tzpMfCdjeUA",
+   "order": 306,
+   "title": "ついに公開!スバル・ミニフォレスター 180万円で登場か!?45km/L・6速MT復活・大胆デザイン【噂】",
+   "url": "https://www.youtube.com/watch?v=tzpMfCdjeUA",
+   "durationSec": 707,
+   "status": "queued",
+   "publishAt": "2027-09-24T09:00:00Z"
+  },
+  {
+   "id": "sZLG11ivhNA",
+   "order": 307,
+   "title": "ついに公開!トヨタ新型スライドドア車 2027年モデル – 軽量革命の真実",
+   "url": "https://www.youtube.com/watch?v=sZLG11ivhNA",
+   "durationSec": 512,
+   "status": "queued",
+   "publishAt": "2027-09-25T09:00:00Z"
+  },
+  {
+   "id": "71RVk7Hmrp0",
+   "order": 308,
+   "title": "トヨタ・ブリザード、ついに正式発表!?ジムニー5ドアを本気で潰しに来た衝撃のオフロード怪物",
+   "url": "https://www.youtube.com/watch?v=71RVk7Hmrp0",
+   "durationSec": 617,
+   "status": "queued",
+   "publishAt": "2027-09-26T09:00:00Z"
+  },
+  {
+   "id": "1UVa7WTdQ5s",
+   "order": 309,
+   "title": "ついに解禁!トヨタ2000GT、カプチーノ、S2000、LFA 伝説の4台が同時復活",
+   "url": "https://www.youtube.com/watch?v=1UVa7WTdQ5s",
+   "durationSec": 602,
+   "status": "queued",
+   "publishAt": "2027-09-27T09:00:00Z"
+  },
+  {
+   "id": "_H3IAmp-ikg",
+   "order": 310,
+   "title": "【ついに解禁】2027年 トヨタ・カローラクロス、EV一択の時代にトヨタが選んだ本当の道とは?",
+   "url": "https://www.youtube.com/watch?v=_H3IAmp-ikg",
+   "durationSec": 617,
+   "status": "queued",
+   "publishAt": "2027-09-28T09:00:00Z"
+  },
+  {
+   "id": "Wv4S08lUmP8",
+   "order": 311,
+   "title": "ついに公開！新型スズキ・コンパクトワゴン、まさかの110万円",
+   "url": "https://www.youtube.com/watch?v=Wv4S08lUmP8",
+   "durationSec": 752,
+   "status": "queued",
+   "publishAt": "2027-09-29T09:00:00Z"
+  },
+  {
+   "id": "0Y_CErKc18E",
+   "order": 312,
+   "title": "2027年登場へ！ホンダ新型7人乗りミニバン、わずか180万円!? アルファードキラーがついに登場！",
+   "url": "https://www.youtube.com/watch?v=0Y_CErKc18E",
+   "durationSec": 632,
+   "status": "queued",
+   "publishAt": "2027-09-30T09:00:00Z"
+  },
+  {
+   "id": "cbTVwCadUiY",
+   "order": 313,
+   "title": "【ついに判明】トヨタ新型軽ハイブリッド発表!¥116万・48km/L でN-BOXを終わらせるのか?",
+   "url": "https://www.youtube.com/watch?v=cbTVwCadUiY",
+   "durationSec": 632,
+   "status": "queued",
+   "publishAt": "2027-10-01T09:00:00Z"
+  },
+  {
+   "id": "676BmIEllr4",
+   "order": 314,
+   "title": "ついに解禁！トヨタ新型軽EV、まさかの257km航続距離で衝撃デビュー",
+   "url": "https://www.youtube.com/watch?v=676BmIEllr4",
+   "durationSec": 677,
+   "status": "queued",
+   "publishAt": "2027-10-02T09:00:00Z"
+  },
+  {
+   "id": "V11EbVQMezw",
+   "order": 315,
+   "title": "【ついに公開】トヨタ新型ミニハイブリッドSUV(コンセプト)まさかの130万円台で4.0L級パワーを実現!?",
+   "url": "https://www.youtube.com/watch?v=V11EbVQMezw",
+   "durationSec": 602,
+   "status": "queued",
+   "publishAt": "2027-10-03T09:00:00Z"
+  },
+  {
+   "id": "dApEWNvTDo8",
+   "order": 316,
+   "title": "トヨタ史上最安の軽自動車!? 75万円・燃費38km/L・車重わずか600kg！",
+   "url": "https://www.youtube.com/watch?v=dApEWNvTDo8",
+   "durationSec": 722,
+   "status": "queued",
+   "publishAt": "2027-10-04T09:00:00Z"
+  },
+  {
+   "id": "Aj2SCDhIXZo",
+   "order": 317,
+   "title": "ついに判明！トヨタ新型軽SUV、140万円で75km/Lの衝撃",
+   "url": "https://www.youtube.com/watch?v=Aj2SCDhIXZo",
+   "durationSec": 692,
+   "status": "queued",
+   "publishAt": "2027-10-05T09:00:00Z"
+  },
+  {
+   "id": "DvF3xfV2w8s",
+   "order": 318,
+   "title": "ついに公開!トヨタ新型軽ハイブリッド ― たった120万円でN-BOXは終わるのか?",
+   "url": "https://www.youtube.com/watch?v=DvF3xfV2w8s",
+   "durationSec": 617,
+   "status": "queued",
+   "publishAt": "2027-10-06T09:00:00Z"
+  },
+  {
+   "id": "Dd5LBsBp4jM",
+   "order": 319,
+   "title": "トヨタ・ルーミー2027年ついに判明！完全新設計＆1.9L直列6気筒ハイブリッド搭載か!?",
+   "url": "https://www.youtube.com/watch?v=Dd5LBsBp4jM",
+   "durationSec": 647,
+   "status": "queued",
+   "publishAt": "2027-10-07T09:00:00Z"
+  },
+  {
+   "id": "eHQTgSITD1g",
+   "order": 320,
+   "title": "2027 Suzuki Jimny Sierra ついに全貌公開!衝撃の新デザインと圧倒的オフロード性能",
+   "url": "https://www.youtube.com/watch?v=eHQTgSITD1g",
+   "durationSec": 557,
+   "status": "queued",
+   "publishAt": "2027-10-08T09:00:00Z"
+  },
+  {
+   "id": "RfaZ2q-P_34",
+   "order": 321,
+   "title": "【ついに解禁】新型ダイハツ・ラガーが170万円で登場、ジムニーはもう終わり?",
+   "url": "https://www.youtube.com/watch?v=RfaZ2q-P_34",
+   "durationSec": 572,
+   "status": "queued",
+   "publishAt": "2027-10-09T09:00:00Z"
+  },
+  {
+   "id": "yYp4u7HUWaY",
+   "order": 322,
+   "title": "ついに公開!2027年型 トヨタ・ブリザードHV ジムニーを超える性能と180万円の衝撃価格",
+   "url": "https://www.youtube.com/watch?v=yYp4u7HUWaY",
+   "durationSec": 632,
+   "status": "queued",
+   "publishAt": "2027-10-10T09:00:00Z"
+  },
+  {
+   "id": "4VicQFolzeE",
+   "order": 323,
+   "title": "2027年トヨタ・ミニエース・ワゴン、ついに全貌公開!168万円という衝撃価格とガソリン・ハイブリッド・EVの3つのパワートレインを徹底解説",
+   "url": "https://www.youtube.com/watch?v=4VicQFolzeE",
+   "durationSec": 647,
+   "status": "queued",
+   "publishAt": "2027-10-11T09:00:00Z"
+  },
+  {
+   "id": "w-XrvGWNZHc",
+   "order": 324,
+   "title": "ついに登場！新型ホンダ・フリード フェイスリフト、11月発売決定！新9インチナビで10万円お得に",
+   "url": "https://www.youtube.com/watch?v=w-XrvGWNZHc",
+   "durationSec": 647,
+   "status": "queued",
+   "publishAt": "2027-10-12T09:00:00Z"
+  },
+  {
+   "id": "HkEWZ5wyty0",
+   "order": 325,
+   "title": "【ついに解禁】トヨタ カローラクロス Z アドベンチャー 2027 ついに公開!60年の歴史が生んだ究極SUV、その真実とは",
+   "url": "https://www.youtube.com/watch?v=HkEWZ5wyty0",
+   "durationSec": 557,
+   "status": "queued",
+   "publishAt": "2027-10-13T09:00:00Z"
+  },
+  {
+   "id": "xRkvqnplnmY",
+   "order": 326,
+   "title": "2027年 三菱パジェロミニ、ついに復活か!? ジムニーを超える軽量オフローダー最新情報",
+   "url": "https://www.youtube.com/watch?v=xRkvqnplnmY",
+   "durationSec": 602,
+   "status": "queued",
+   "publishAt": "2027-10-14T09:00:00Z"
+  },
+  {
+   "id": "cn8XQtz9BJU",
+   "order": 327,
+   "title": "トヨタ新型1200ccハイブリッドSUVついに始動!?ジムニーの牙城を崩す2.0Lクラス級加速の噂を徹底解説",
+   "url": "https://www.youtube.com/watch?v=cn8XQtz9BJU",
+   "durationSec": 542,
+   "status": "queued",
+   "publishAt": "2027-10-15T09:00:00Z"
+  },
+  {
+   "id": "WxGUkTfWgjc",
+   "order": 328,
+   "title": "【ついに公開】2027年新型日産エルグランド、フルモデルチェンジ！最強e-POWER搭載でアルファード超えなるか？",
+   "url": "https://www.youtube.com/watch?v=WxGUkTfWgjc",
+   "durationSec": 632,
+   "status": "queued",
+   "publishAt": "2027-10-16T09:00:00Z"
+  },
+  {
+   "id": "Whn20lH3HFc",
+   "order": 329,
+   "title": "ついに公開！2027年型トヨタ軽トラック 衝撃のディーゼルターボ×4WD",
+   "url": "https://www.youtube.com/watch?v=Whn20lH3HFc",
+   "durationSec": 572,
+   "status": "queued",
+   "publishAt": "2027-10-17T09:00:00Z"
+  },
+  {
+   "id": "Oe4tmmSMP7A",
+   "order": 330,
+   "title": "ついに解禁!トヨタ新型ミニハイブリッドSUV、130万円で2.0Lクラス性能を実現か?!🚗⚡",
+   "url": "https://www.youtube.com/watch?v=Oe4tmmSMP7A",
+   "durationSec": 632,
+   "status": "queued",
+   "publishAt": "2027-10-18T09:00:00Z"
+  },
+  {
+   "id": "p0aDZBrJCh0",
+   "order": 331,
+   "title": "ついに公開!トヨタ新型軽自動車、価格102万円+ターボエンジン&スライドドア搭載",
+   "url": "https://www.youtube.com/watch?v=p0aDZBrJCh0",
+   "durationSec": 602,
+   "status": "queued",
+   "publishAt": "2027-10-19T09:00:00Z"
+  },
+  {
+   "id": "vnWAP4Isq_k",
+   "order": 332,
+   "title": "ついに正式発表!2027年 新型トヨタ ミニエース ワゴン、驚異の燃費70km/Lで中国製格安EVを完全撃破か",
+   "url": "https://www.youtube.com/watch?v=vnWAP4Isq_k",
+   "durationSec": 662,
+   "status": "queued",
+   "publishAt": "2027-10-20T09:00:00Z"
+  },
+  {
+   "id": "J-6JYQZ70gk",
+   "order": 333,
+   "title": "ついに登場!新型パジェロミニ 1200ccディーゼルエンジン搭載で軽自動車の常識が変わる衝撃の一台",
+   "url": "https://www.youtube.com/watch?v=J-6JYQZ70gk",
+   "durationSec": 632,
+   "status": "queued",
+   "publishAt": "2027-10-21T09:00:00Z"
+  },
+  {
+   "id": "e-J5D919ZYU",
+   "order": 334,
+   "title": "ついに登場!三菱の新型ミニ4WD、クラシックデザインと本格オフロード性能を融合",
+   "url": "https://www.youtube.com/watch?v=e-J5D919ZYU",
+   "durationSec": 557,
+   "status": "queued",
+   "publishAt": "2027-10-22T09:00:00Z"
+  },
+  {
+   "id": "NAqOngObcPU",
+   "order": 335,
+   "title": "ついに登場!新型トヨタ・ルーミー、衝撃の進化でライバルを本気で脅かす!",
+   "url": "https://www.youtube.com/watch?v=NAqOngObcPU",
+   "durationSec": 662,
+   "status": "queued",
+   "publishAt": "2027-10-23T09:00:00Z"
+  },
+  {
+   "id": "ayQLw6xze-Q",
+   "order": 336,
+   "title": "ついに登場！ホンダ新型スーパーN-BOX、まさかのモンスター性能に日本中が騒然、2.0リッター級トルク&45km/L超え燃費を徹底レビュー",
+   "url": "https://www.youtube.com/watch?v=ayQLw6xze-Q",
+   "durationSec": 587,
+   "status": "queued",
+   "publishAt": "2027-10-24T09:00:00Z"
+  },
+  {
+   "id": "o-x2bCJ2mMU",
+   "order": 337,
+   "title": "【ついに解禁】トヨタ・スパーキー2027 リッター48km/L ハイブリッド衝撃デビュー!ホンダ・フリード完全終了か",
+   "url": "https://www.youtube.com/watch?v=o-x2bCJ2mMU",
+   "durationSec": 632,
+   "status": "queued",
+   "publishAt": "2027-10-25T09:00:00Z"
+  },
+  {
+   "id": "ZZz59mwwvrU",
+   "order": 338,
+   "title": "ついに解禁!2027年スバル新型コンパクトSUV、リッター65kmの衝撃と高級インテリア",
+   "url": "https://www.youtube.com/watch?v=ZZz59mwwvrU",
+   "durationSec": 663,
+   "status": "queued",
+   "publishAt": "2027-10-26T09:00:00Z"
+  },
+  {
+   "id": "EYc4jf5irHA",
+   "order": 339,
+   "title": "スズキ2027年型 軽キャンパーEV、ついに正式発表!航続298km&車内キッチン搭載でキャンピングカー業界に激震",
+   "url": "https://www.youtube.com/watch?v=EYc4jf5irHA",
+   "durationSec": 587,
+   "status": "queued",
+   "publishAt": "2027-10-27T09:00:00Z"
+  },
+  {
+   "id": "xrSa75jhu5k",
+   "order": 340,
+   "title": "ついに公開!SUBARU新型ミニSUV、AWD×驚異の75km/L、衝撃の低燃費を徹底解説",
+   "url": "https://www.youtube.com/watch?v=xrSa75jhu5k",
+   "durationSec": 722,
+   "status": "queued",
+   "publishAt": "2027-10-28T09:00:00Z"
+  },
+  {
+   "id": "6rdrqOlxO0g",
+   "order": 341,
+   "title": "新型ダイハツ タント、ついに公開！N-BOXのライバルが大進化を遂げた瞬間",
+   "url": "https://www.youtube.com/watch?v=6rdrqOlxO0g",
+   "durationSec": 587,
+   "status": "queued",
+   "publishAt": "2027-10-29T09:00:00Z"
+  },
+  {
+   "id": "q5FgWMW3wic",
+   "order": 342,
+   "title": "ついに解禁!トヨタ新型軽自動車 102万円で登場、ターボ搭載&衝撃の新機能を徹底レビュー!",
+   "url": "https://www.youtube.com/watch?v=q5FgWMW3wic",
+   "durationSec": 602,
+   "status": "queued",
+   "publishAt": "2027-10-30T09:00:00Z"
+  },
+  {
+   "id": "zOHBnEEAJxQ",
+   "order": 343,
+   "title": "日産キックス ロックリーク ついに発表!e-4ORCE電動四駆&タフなSUVデザインを徹底解説【¥140万円台〜】",
+   "url": "https://www.youtube.com/watch?v=zOHBnEEAJxQ",
+   "durationSec": 632,
+   "status": "queued",
+   "publishAt": "2027-10-31T09:00:00Z"
+  },
+  {
+   "id": "8VqkNlDhqi4",
+   "order": 344,
+   "title": "ついに登場!12人乗り超大型ファミリーカー、価格を見て驚愕",
+   "url": "https://www.youtube.com/watch?v=8VqkNlDhqi4",
+   "durationSec": 633,
+   "status": "queued",
+   "publishAt": "2027-11-01T09:00:00Z"
+  },
+  {
+   "id": "U8fKFv-nMuo",
+   "order": 345,
+   "title": "ついに解禁!新型トヨタ・コンパクトSUV、まさかのリッター40km達成でセグメント激変か",
+   "url": "https://www.youtube.com/watch?v=U8fKFv-nMuo",
+   "durationSec": 512,
+   "status": "queued",
+   "publishAt": "2027-11-02T09:00:00Z"
+  },
+  {
+   "id": "6lmU_hHaldI",
+   "order": 346,
+   "title": "ついに解禁！2027年 新型トヨタ 軽ワゴン、軽自動車史上最強の一台が遂に姿を現す",
+   "url": "https://www.youtube.com/watch?v=6lmU_hHaldI",
+   "durationSec": 677,
+   "status": "queued",
+   "publishAt": "2027-11-03T09:00:00Z"
+  },
+  {
+   "id": "0oUbJJWfIDg",
+   "order": 347,
+   "title": "ついに解禁!新型ホンダN-BOX、まさかの2.0Lクラストルクで軽自動車の常識崩壊",
+   "url": "https://www.youtube.com/watch?v=0oUbJJWfIDg",
+   "durationSec": 602,
+   "status": "queued",
+   "publishAt": "2027-11-04T09:00:00Z"
+  },
+  {
+   "id": "g5Qxl8Pacqc",
+   "order": 348,
+   "title": "【ついに始動】2027年 新型三菱パジェロミニ ついに復活決定!5ドア化&マイルドハイブリッド搭載で軽自動車の常識が変わる",
+   "url": "https://www.youtube.com/watch?v=g5Qxl8Pacqc",
+   "durationSec": 617,
+   "status": "queued",
+   "publishAt": "2027-11-05T09:00:00Z"
+  },
+  {
+   "id": "3GjvUyG4Ak4",
+   "order": 349,
+   "title": "トヨタ新型軽自動車、ついに登場!ターボエンジン搭載で102万円から【衝撃レビュー】",
+   "url": "https://www.youtube.com/watch?v=3GjvUyG4Ak4",
+   "durationSec": 617,
+   "status": "queued",
+   "publishAt": "2027-11-06T09:00:00Z"
+  }
+ ],
+ "reference": {
+  "url": "https://www.youtube.com/@DmAutoreviews-p9m",
+  "name": "Dm Auto reviews . 78K views ",
+  "count": 349
+ },
+ "updated": "2026-11-22T11:09:51+00:00"
+}
