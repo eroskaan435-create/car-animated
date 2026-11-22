@@ -185,9 +185,11 @@ def run_long(job, job_dir, preset, images, common, out, rel, name, music_file, a
         sys.exit("Long mode needs jobs/<id>/script.md (generate it with pipeline/script_gen.py or the upload page).")
     vo_cfg = job.get("voice") or {}
     voice = vo_cfg.get("voice") if vo_cfg.get("voice") in VOICES else "am_michael"
+    # Any Microsoft Edge neural voice can narrate the whole script, e.g. "ja-JP-KeitaNeural" for Japanese.
+    edge_voice = (vo_cfg.get("edgeVoice") or "").strip()
 
     def norm(x: str) -> str:
-        return re.sub(r"[^a-z0-9]+", " ", x.lower()).strip()
+        return re.sub(r"[^a-z0-9\u3040-\u30ff\u4e00-\u9fff]+", " ", x.lower()).strip()
 
     overrides = [o for o in (job.get("ttsOverrides") or []) if o.get("match") and o.get("text")]
 
@@ -202,6 +204,11 @@ def run_long(job, job_dir, preset, images, common, out, rel, name, music_file, a
                 if clip is not None:
                     return clip
                 break
+        if edge_voice:
+            clip = ai.edge_tts(text, edge_voice, speed)
+            if clip is None:  # don't let the English Kokoro voice read e.g. Japanese text
+                sys.exit(f"edge-tts voice {edge_voice} failed for: {text[:60]!r}")
+            return clip
         return ai.tts(text, voice, speed)
 
     job = dict(job)

@@ -5,7 +5,7 @@ import {Particles} from '../fx/fx';
 import {Photo} from '../fx/layers';
 import {chrome, ScrambleText, SlamWords} from '../fx/text';
 import type {Scene} from '../types';
-import {clamp, easeInOut, fitFont, frameImage, hexA, lerp, splitTitle, unit, useManifest} from '../util';
+import {clamp, easeInOut, fitFont, visLen, frameImage, hexA, lerp, splitTitle, unit, useManifest} from '../util';
 
 export const Hero: React.FC<{scene: Scene}> = ({scene}) => {
 	const m = useManifest();
@@ -29,7 +29,7 @@ export const Hero: React.FC<{scene: Scene}> = ({scene}) => {
 	const carBottom = carTop + carH;
 
 	const lines = splitTitle((car.title || car.tagline).toUpperCase());
-	const maxLen = Math.max(...lines.map((l) => l.length));
+	const maxLen = Math.max(...lines.map((l) => visLen(l, fontRatio(theme.fontDisplay))));
 	const fs = Math.min(fitFont(maxLen, W * 0.94, fontRatio(theme.fontDisplay)), H * 0.24, (hasCut ? 0.75 : 0.5) * H / lines.length);
 	const blockH = lines.length * fs * 0.95;
 	const top = hasCut ? clamp(carTop + carH * 0.2 - blockH, H * 0.05, H * 0.6) : clamp(carTop - blockH - 30 * S, H * 0.06, H * 0.5);

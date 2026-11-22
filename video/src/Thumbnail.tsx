@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, Img, staticFile, useVideoConfig} from 'remotion';
 import {font, fontRatio} from './fonts';
 import type {Manifest} from './types';
-import {fitFont, hexA, splitTitle} from './util';
+import {fitFont, hexA, splitTitle, visLen} from './util';
 
 /** 1280x720 YouTube thumbnail: huge title, car cut-out, badge + price. */
 export const Thumbnail: React.FC<Manifest> = (m) => {
@@ -14,7 +14,7 @@ export const Thumbnail: React.FC<Manifest> = (m) => {
 	const display = font(theme.fontDisplay);
 	const body = font(theme.fontBody);
 	const lines = splitTitle((m.thumbnail?.text || car.title).toUpperCase());
-	const maxLen = Math.max(...lines.map((l) => l.length));
+	const maxLen = Math.max(...lines.map((l) => visLen(l, fontRatio(theme.fontDisplay))));
 	const fs = Math.min(fitFont(maxLen, W * 0.55, fontRatio(theme.fontDisplay)), (H * 0.62) / lines.length);
 
 	const [x0, y0, x1, y1] = img.box;

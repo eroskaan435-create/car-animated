@@ -4,7 +4,7 @@ import {font, fontRatio} from '../fonts';
 import {Distort, Particles, Streaks} from '../fx/fx';
 import {chrome, ScrambleText} from '../fx/text';
 import type {Scene} from '../types';
-import {clamp, easeOut, fitFont, frameImage, hexA, splitTitle, unit, useManifest} from '../util';
+import {clamp, easeOut, fitFont, visLen, frameImage, hexA, splitTitle, unit, useManifest} from '../util';
 
 export const Intro: React.FC<{scene: Scene}> = ({scene}) => {
 	const m = useManifest();
@@ -21,7 +21,7 @@ export const Intro: React.FC<{scene: Scene}> = ({scene}) => {
 	const teasers: {frame: number; image: number}[] = cues.teasers ?? [];
 
 	const lines = splitTitle((car.title || car.tagline).toUpperCase());
-	const maxLen = Math.max(...lines.map((l) => l.length));
+	const maxLen = Math.max(...lines.map((l) => visLen(l, fontRatio(theme.fontDisplay))));
 	const fs = Math.min(fitFont(maxLen, W * 0.88, fontRatio(theme.fontDisplay)), H * 0.2);
 	const wipe = easeOut(clamp((f - tTitle) / 10, 0, 1));
 	const titleScale = 1 + 0.08 * clamp((f - tTitle) / (D - tTitle), 0, 1);

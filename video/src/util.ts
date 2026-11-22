@@ -79,6 +79,15 @@ export function splitTitle(title: string): string[] {
 }
 
 /** Font size that fits `chars` characters of a condensed display font in `width`. */
+const WIDE = /[　-ヿ㐀-鿿豈-﫿＀-￯]/;
+
+/** Length of a string in "average glyph" units: full-width CJK characters are ~1em wide, i.e. 1/ratio glyphs. */
+export const visLen = (s: string, ratio = 0.5) => {
+	let n = 0;
+	for (const ch of s) n += WIDE.test(ch) ? 1 / ratio : 1;
+	return n;
+};
+
 export const fitFont = (chars: number, width: number, ratio = 0.5, max = 9999) =>
 	Math.min(max, width / Math.max(1, chars * ratio));
 

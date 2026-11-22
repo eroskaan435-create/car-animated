@@ -97,6 +97,15 @@ Add `"pace": "fast"` to a long job's `job.json` for an energetic edit instead of
 - `"ttsOverrides"` lets a line be spoken differently from how it's captioned. For example, Roman Urdu on
   screen can be voiced from Urdu script by `ur-PK-AsadNeural` (any edge-tts voice works).
 
+### Japanese (and other non-English) long videos
+See `jobs/honda-n-box/`:
+- `"language": "ja"`: the script is split into sentences on 。！？ and captions break after 、. Chapter titles can be Japanese
+  (まとめ/結論 gets the pros/cons board), and the description headings are in Japanese.
+- `"voice": {"edgeVoice": "ja-JP-KeitaNeural"}` narrates the whole script with any edge-tts voice. If that voice fails,
+  the job stops instead of falling back to an English voice.
+- `"hashtags"` and `"credits"` (photo attributions, e.g. for CC BY-SA images) are added to `description.txt`.
+- The render runners install `fonts-noto-cjk` so Japanese text renders.
+
 Expect about 30–60 minutes per long video. The first run takes longer because it downloads the models (~6 GB, cached after that).
 
 ## Tips for best results

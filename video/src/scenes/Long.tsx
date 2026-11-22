@@ -5,7 +5,7 @@ import {Particles} from '../fx/fx';
 import {BlurBg, Photo} from '../fx/layers';
 import {chrome, ScrambleText, SlamWords} from '../fx/text';
 import type {Scene} from '../types';
-import {clamp, easeOut, fitFont, frameImage, hexA, unit, useManifest} from '../util';
+import {clamp, easeOut, fitFont, visLen, frameImage, hexA, unit, useManifest} from '../util';
 
 /** Animated chapter title card: big outlined number + slammed title. */
 export const ChapterCard: React.FC<{scene: Scene}> = ({scene}) => {
@@ -20,7 +20,7 @@ export const ChapterCard: React.FC<{scene: Scene}> = ({scene}) => {
 	const display = font(theme.fontDisplay);
 	const body = font(theme.fontBody);
 	const wipe = easeOut(clamp((f - 4) / 12, 0, 1));
-	const fs = Math.min(fitFont(title.length, W * 0.62, fontRatio(theme.fontDisplay)), 150 * S);
+	const fs = Math.min(fitFont(visLen(title, fontRatio(theme.fontDisplay)), W * 0.62, fontRatio(theme.fontDisplay)), 150 * S);
 	const framed = frameImage(img, W, H, 'cover', 1.15 + 0.08 * (f / scene.duration));
 	return (
 		<AbsoluteFill style={{background: theme.bg}}>

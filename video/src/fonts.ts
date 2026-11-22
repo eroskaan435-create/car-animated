@@ -25,7 +25,7 @@ const cache: Record<string, string> = {};
 export function font(name: string): string {
 	if (cache[name]) return cache[name];
 	const loader = LOADERS[name] ?? LOADERS.Anton;
-	cache[name] = `"${loader().fontFamily}", Impact, sans-serif`;
+	cache[name] = `"${loader().fontFamily}", Impact, "Noto Sans CJK JP", "Noto Sans JP", sans-serif`;
 	return cache[name];
 }
 

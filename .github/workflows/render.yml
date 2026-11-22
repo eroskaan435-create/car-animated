@@ -133,7 +133,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: System packages
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng > /dev/null
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng fonts-noto-cjk > /dev/null
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -195,7 +195,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: System packages
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng > /dev/null
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng fonts-noto-cjk > /dev/null
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -230,6 +230,8 @@ jobs:
         include: ${{ fromJson(needs.find.outputs.chunks) }}
     steps:
       - uses: actions/checkout@v4
+      - name: Japanese fonts
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk > /dev/null
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -270,7 +272,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: System packages
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-cjk > /dev/null
       - uses: actions/setup-node@v4
         with:
           node-version: '20'

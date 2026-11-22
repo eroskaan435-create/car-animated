@@ -28,6 +28,19 @@ CALM_MOVES = ["pushIn", "panLR", "depth", "pullOut", "panRL", "depth", "pushIn",
 TRANSPOSE = [0, 2, -2, 3, -3, 5, 0, 2, -2, 3, -3, 5]
 WPS = 2.7            # placeholder speech rate (words/sec) when TTS is skipped
 FAST_PATTERN = [4, 4, 2, 2, 4, 2, 2, 4]  # shot lengths in beats for pace="fast"
+CJK = re.compile(r"[\u3000-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff00-\uffef]")
+CJK_PER_WORD = 2.0   # Japanese has no spaces: ~2 kana/kanji count as one "word" for length estimates
+
+
+def units(s: str) -> float:
+    """Word-equivalent length of a text: space-separated words, with CJK characters counted per CJK_PER_WORD."""
+    n_cjk = len(CJK.findall(s))
+    rest = CJK.sub(" ", s)
+    return len(rest.split()) + n_cjk / CJK_PER_WORD
+
+
+def is_cjk(s: str) -> bool:
+    return len(CJK.findall(s)) > len(s) * 0.2
 
 
 # --------------------------------------------------------------------------- script parsing
@@ -58,7 +71,10 @@ def parse_script(text: str) -> list[dict]:
             chapters.append(cur)
         line = re.sub(r"[*_`>]+", "", line)
         line = re.sub(r"^\s*[-•]\s+", "", line)
-        para.append(line)
+        if para and is_cjk(line) and is_cjk(para[-1]):
+            para[-1] += line  # no spaces between Japanese lines
+        else:
+            para.append(line)
     flush()
     chapters = [c for c in chapters if c["paragraphs"]]
     for c in chapters:
@@ -66,7 +82,34 @@ def parse_script(text: str) -> list[dict]:
     return chapters
 
 
+def split_sentences_cjk(p: str) -> list[str]:
+    parts = [x.strip() for x in re.split(r"(?<=[。！？!?])\s*", p.strip()) if x.strip()]
+    out: list[str] = []
+    for s in parts:
+        if out and units(s) < 3:
+            out[-1] += s
+        else:
+            out.append(s)
+    final = []
+    for s in out:  # very long sentences are split at 、 for TTS + captions
+        if len(s) > 70:
+            buf = ""
+            for c in re.split(r"(?<=[、，,])", s):
+                if len(buf + c) > 50 and buf:
+                    final.append(buf)
+                    buf = c
+                else:
+                    buf += c
+            if buf:
+                final.append(buf)
+        else:
+            final.append(s)
+    return final
+
+
 def split_sentences(p: str) -> list[str]:
+    if is_cjk(p):
+        return split_sentences_cjk(p)
     parts = re.split(r"(?<=[.!?])\s+(?=[A-Z0-9\"“$£€(])", p.strip())
     out: list[str] = []
     for s in parts:
@@ -97,23 +140,23 @@ def split_sentences(p: str) -> list[str]:
 
 
 def is_hook(title: str) -> bool:
-    return bool(re.match(r"^(hook|intro|introduction|cold open)$", title.strip().lower()))
+    return bool(re.match(r"^(hook|intro|introduction|cold open|フック|オープニング|導入)$", title.strip().lower()))
 
 
 def word_count(chapters) -> int:
-    return sum(len(s.split()) for c in chapters for p in c["paragraphs"] for s in p)
+    return int(sum(units(s) for c in chapters for p in c["paragraphs"] for s in p))
 
 
 # --------------------------------------------------------------------------- photos per chapter
 def prefs_for(title: str) -> list[str]:
     t = title.lower()
-    if any(k in t for k in ("interior", "comfort", "cabin", "seat")):
+    if any(k in t for k in ("interior", "comfort", "cabin", "seat", "内装", "インテリア", "室内", "シート", "快適")):
         return ["interior", "detail"]
-    if any(k in t for k in ("tech", "infotainment", "connect", "screen")):
+    if any(k in t for k in ("tech", "infotainment", "connect", "screen", "テクノロジー", "ナビ", "画面", "装備")):
         return ["interior", "detail"]
-    if any(k in t for k in ("engine", "performance", "power", "motor", "battery")):
+    if any(k in t for k in ("engine", "performance", "power", "motor", "battery", "エンジン", "性能", "走り", "パワー")):
         return ["engine", "exterior", "detail"]
-    if any(k in t for k in ("practical", "cargo", "space", "storage", "boot", "trunk")):
+    if any(k in t for k in ("practical", "cargo", "space", "storage", "boot", "trunk", "荷室", "収納", "空間", "使い勝手")):
         return ["interior", "exterior"]
     return ["exterior", "detail"]
 
@@ -164,7 +207,7 @@ def callout_candidates(job: dict) -> list[dict]:
         if v and len(v) <= 40:
             out.append({"label": k.title(), "value": v, "keys": words, "used": 0})
     if job.get("price"):
-        out.append({"label": job.get("priceLabel") or "Price", "value": job["price"], "keys": ["price", "costs", "msrp", "priced"], "used": 0})
+        out.append({"label": job.get("priceLabel") or "Price", "value": job["price"], "keys": ["price", "costs", "msrp", "priced", "価格", "万円"], "used": 0})
     return out
 
 
@@ -180,7 +223,40 @@ def find_callout(sentence: str, cands: list[dict]):
 
 
 # --------------------------------------------------------------------------- captions / text outputs
+def cjk_groups(text: str, max_chars=30) -> list[str]:
+    """Split a Japanese sentence into caption lines: break after 、 when possible, else after a particle."""
+    if len(text) <= max_chars:
+        return [text]
+    n = math.ceil(len(text) / max_chars)
+    cuts, start = [], 0
+    for k in range(1, n):
+        target = start + (len(text) - start) / (n - k + 1)
+        lo, hi = int(start + (target - start) * 0.5), min(len(text) - 4, start + max_chars + 6)
+        best = None
+        for chars, tol in (("、，", 1.0), ("はがをでも", 0.3)):
+            pos = [q + 1 for q in range(lo, hi) if text[q] in chars and text[q + 1] not in "、。！？」』）"]
+            pos = [q for q in pos if abs(q - target) <= tol * (target - start)]
+            if pos:
+                best = min(pos, key=lambda q: abs(q - target))
+                break
+        if best is None:  # no clean break: keep it as one caption, the box wraps to two lines
+            continue
+        cuts.append(best)
+        start = best
+    bounds = [0, *cuts, len(text)]
+    return [text[a:b] for a, b in zip(bounds, bounds[1:]) if text[a:b]]
+
+
 def caption_chunks(text: str, f0: int, f1: int, max_words=9) -> list[dict]:
+    if is_cjk(text):
+        groups = cjk_groups(text)
+        total = sum(len(g) for g in groups) or 1
+        out, t = [], f0
+        for g in groups:
+            d = (f1 - f0) * len(g) / total
+            out.append({"from": int(round(t)), "to": int(round(t + d)), "text": g})
+            t += d
+        return out
     words = text.split()
     n = max(1, math.ceil(len(words) / max_words))
     per = math.ceil(len(words) / n)
@@ -215,6 +291,7 @@ def build(job: dict, images: list[dict], preset: dict, script_text: str, tts_fn,
     words = word_count(chapters)
     log(f"script: {len(chapters)} chapters, {words} words")
     fast = (job.get("pace") or "").lower() == "fast"
+    ja = (job.get("language") or "").lower().startswith("ja")
     if fast and words < 60:
         raise SystemExit(f"Script too short ({words} words).")
     if not fast and words < 1300:
@@ -233,7 +310,7 @@ def build(job: dict, images: list[dict], preset: dict, script_text: str, tts_fn,
                 for s in p:
                     clip = tts_fn(s, speed) if voice_on else None
                     if clip is None:
-                        clip = np.zeros(int(len(s.split()) / (WPS * speed) * SR))
+                        clip = np.zeros(int(units(s) / (WPS * speed) * SR))
                     row.append(clip)
                     n_done += 1
                     if n_done % 25 == 0:
@@ -292,7 +369,7 @@ def build(job: dict, images: list[dict], preset: dict, script_text: str, tts_fn,
         events.append({"type": "impact", "frame": t, "strength": 1.0})
         drop = t
         t += 8 * B
-        chap_meta.append({"index": 0, "title": "Intro", "from": 0})
+        chap_meta.append({"index": 0, "title": job.get("introLabel") or ("オープニング" if ja else "Intro"), "from": 0})
 
         # ---- hook narration over energetic shots
         hook = next((c for c in chapters if is_hook(c["title"])), None)
@@ -361,7 +438,7 @@ def build(job: dict, images: list[dict], preset: dict, script_text: str, tts_fn,
             title_l = c["title"].lower()
             pros = [x.strip(" -•") for x in re.split(r"[\n;]", job.get("pros", "") or "") if x.strip(" -•")][:5]
             cons = [x.strip(" -•") for x in re.split(r"[\n;]", job.get("cons", "") or "") if x.strip(" -•")][:5]
-            if any(k in title_l for k in ("verdict", "conclusion", "final", "wrap")) and (pros or cons):
+            if any(k in title_l for k in ("verdict", "conclusion", "final", "wrap", "まとめ", "結論", "総評")) and (pros or cons):
                 d = min(int((chap_end - t) * 0.6), 90 + 50 * (len(pros) + len(cons)))
                 scenes.append({"type": "proscons", "from": t, "duration": d, "image": picker.pick(["exterior"]),
                                "transitionIn": "zoom", "cues": {"pros": pros, "cons": cons}})
@@ -496,18 +573,24 @@ def build(job: dict, images: list[dict], preset: dict, script_text: str, tts_fn,
 def description(job: dict, chapters, chap_lines) -> str:
     title = job.get("title", "").strip()
     first = next((p for c in chapters if not is_hook(c["title"]) for p in c["paragraphs"]), [])
-    intro = (job.get("descriptionIntro") or "").strip() or " ".join(first[:2])
-    heading = (job.get("descriptionTitle") or "").strip() or f"{title} — Full Review"
-    lines = [heading + (f" | {job['dealer']}" if job.get("dealer") else ""), "", intro, "", "⏱️ Chapters", *chap_lines, ""]
+    intro = (job.get("descriptionIntro") or "").strip() or ("" if ja else " ").join(first[:2])
+    ja = (job.get("language") or "").lower().startswith("ja")
+    heading = (job.get("descriptionTitle") or "").strip() or f"{title} — {'徹底レビュー' if ja else 'Full Review'}"
+    lines = [heading + (f" | {job['dealer']}" if job.get("dealer") else ""), "", intro, "",
+             "⏱️ チャプター" if ja else "⏱️ Chapters", *chap_lines, ""]
     specs = [s for s in job.get("specs", []) if s.get("value")]
     if specs:
-        lines += ["📋 Key specs", *[f"• {s.get('label', '')}: {s['value']}" for s in specs], ""]
+        lines += ["📋 主なスペック" if ja else "📋 Key specs", *[f"• {s.get('label', '')}: {s['value']}" for s in specs], ""]
     if job.get("price"):
         lines.append(f"💰 {job.get('priceLabel') or 'Price'}: {job['price']}")
     if job.get("dealer") or job.get("contact"):
         lines.append(f"📍 {job.get('dealer', '')} {('— ' + job['contact']) if job.get('contact') else ''}".strip())
     words = [w for w in re.findall(r"[A-Za-z][A-Za-z0-9]+", title) if not w.isdigit()][:3]
-    lines += ["", " ".join(["#cars", "#carreview"] + [f"#{w.lower()}" for w in words])]
+    credits = [c for c in (job.get("credits") or []) if c]
+    if credits:
+        lines += ["", "📷 写真" if ja else "📷 Photos", *credits]
+    tags = job.get("hashtags") or (["#cars", "#carreview"] + [f"#{w.lower()}" for w in words])
+    lines += ["", " ".join(tags)]
     return "\n".join(lines) + "\n"
 
 
