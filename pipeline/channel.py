@@ -291,9 +291,47 @@ def commons(params: dict) -> dict:
         return json.loads(r.read())
 
 
+def wiki(lang: str, params: dict) -> dict:
+    url = f"https://{lang}.wikipedia.org/w/api.php?" + urllib.parse.urlencode({**params, "format": "json"})
+    with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=60) as r:
+        return json.loads(r.read())
+
+
+def wiki_articles(car: dict) -> list[tuple[str, str]]:
+    """Find the car's Japanese Wikipedia article (robust to katakana) and its English counterpart."""
+    out = []
+    for q in [car.get("name_ja"), f"{car.get('make', '')} {car.get('model', '')}"]:
+        if not q or not q.strip():
+            continue
+        hits = wiki("ja", {"action": "query", "list": "search", "srsearch": q, "srlimit": 1}).get("query", {}).get("search", [])
+        if hits:
+            ja = hits[0]["title"]
+            out.append(("ja", ja))
+            pages = wiki("ja", {"action": "query", "titles": ja, "prop": "langlinks", "lllang": "en", "redirects": 1})["query"]["pages"]
+            ll = next(iter(pages.values())).get("langlinks") or []
+            if ll:
+                out.append(("en", ll[0]["*"]))
+            break
+    return out
+
+
 def find_photos(car: dict, n=12) -> list[dict]:
-    queries = [f"{car.get('make', '')} {car.get('model', '')}".strip(), car.get("model", "")]
     titles: list[str] = []
+    arts = wiki_articles(car)
+    log(f"wikipedia: {arts}")
+    for lang, art in arts:  # photos used in the car's Wikipedia articles (what a human would pick)
+        d = wiki(lang, {"action": "query", "titles": art, "prop": "images", "imlimit": 500, "redirects": 1})
+        for p in d["query"]["pages"].values():
+            for im in p.get("images", []):
+                t = "File:" + im["title"].split(":", 1)[1]
+                if re.search(r"\.jpe?g$", t, re.I) and t not in titles:
+                    titles.append(t)
+    en = next((a for lang, a in arts if lang == "en"), "")
+    if en:  # the English article title is a reliable romanised name, e.g. "Toyota Alphard"
+        make = car.get("make", "")
+        car["model"] = re.sub(rf"^{re.escape(make)}\s+", "", re.sub(r"\s*\(.*\)$", "", en), flags=re.I) or car.get("model", "")
+    from_articles = set(titles)
+    queries = [f"{car.get('make', '')} {car.get('model', '')}".strip(), car.get("model", "")]
     for qs in queries:
         if not qs:
             continue
@@ -302,6 +340,7 @@ def find_photos(car: dict, n=12) -> list[dict]:
         if len(titles) >= 40:
             break
     model_key = re.sub(r"[^a-z0-9]", "", (car.get("model") or "").lower())
+    make_key = re.sub(r"[^a-z0-9]", "", (car.get("make") or "").lower())
     found = []
     for i in range(0, len(titles), 50):
         d = commons({"action": "query", "titles": "|".join(titles[i:i + 50]), "prop": "imageinfo",
@@ -314,14 +353,20 @@ def find_photos(car: dict, n=12) -> list[dict]:
             norm = re.sub(r"[^a-z0-9]", "", t.lower())
             if ii.get("mime") not in ("image/jpeg", "image/png") or (ii.get("width") or 0) < 1200 or not FREE.match(lic.strip()):
                 continue
-            if model_key and model_key not in norm:
+            if t in from_articles:  # skip rivals/other makes pictured in the same article
+                if make_key and make_key not in norm and model_key not in norm:
+                    continue
+            elif model_key and model_key not in norm:
                 continue
             artist = re.sub(r"<[^>]+>", "", (m.get("Artist") or {}).get("value", "")).strip() or "unknown"
             date = (m.get("DateTimeOriginal") or {}).get("value", "")[:10]
             found.append({"title": t, "thumb": ii.get("thumburl"), "lic": lic, "artist": artist, "date": date,
                           "w": ii["width"], "h": ii["height"]})
-    # newest photos first (most likely the current generation), landscape first
-    found.sort(key=lambda x: (x["w"] >= x["h"], x["date"]), reverse=True)
+    # current generation first: filenames like "2011-2015 Toyota Vellfire" go last; then landscape, newest photo
+    def recent(x):
+        years = [int(y) for y in re.findall(r"(?<!\d)((?:19|20)\d\d)(?!\d)", x["title"])]
+        return not years or max(years) >= now().year - 4
+    found.sort(key=lambda x: (recent(x), x["w"] >= x["h"], x["date"]), reverse=True)
     return found[:n]
 
 
