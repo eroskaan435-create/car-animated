@@ -593,8 +593,8 @@ def build(job: dict, images: list[dict], preset: dict, script_text: str, tts_fn,
 def description(job: dict, chapters, chap_lines) -> str:
     title = job.get("title", "").strip()
     first = next((p for c in chapters if not is_hook(c["title"]) for p in c["paragraphs"]), [])
-    intro = (job.get("descriptionIntro") or "").strip() or ("" if ja else " ").join(first[:2])
     ja = (job.get("language") or "").lower().startswith("ja")
+    intro = (job.get("descriptionIntro") or "").strip() or ("" if ja else " ").join(first[:2])
     heading = (job.get("descriptionTitle") or "").strip() or f"{title} — {'徹底レビュー' if ja else 'Full Review'}"
     lines = [heading + (f" | {job['dealer']}" if job.get("dealer") else ""), "", intro, "",
              "⏱️ チャプター" if ja else "⏱️ Chapters", *chap_lines, ""]

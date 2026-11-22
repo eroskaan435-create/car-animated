@@ -13,6 +13,7 @@ fresh from general knowledge and the photos come from Wikimedia Commons (free li
 """
 from __future__ import annotations
 
+import html
 import json
 import os
 import re
@@ -250,6 +251,8 @@ def clean_ja(text: str) -> str:
         if s.startswith("#") or len(CJK.findall(s)) < len(s) * 0.3:
             continue  # headings / English chatter
         s = re.sub(r"[\[【(（][^\]】)）]*(音楽|BGM|効果音|ナレーション|映像)[^\]】)）]*[\]】)）]", "", s)
+        # English fragments the model sometimes mixes in: "futurism（未来主義）" / "アルcantaro（アルカンタラ）" -> the Japanese
+        s = re.sub(r"[゠-ヿA-Za-z\-]*[A-Za-z]{2,}[゠-ヿA-Za-z\-]*\s*[（(]([^）)]+)[）)]", r"\1", s)
         s = re.sub(r"[*_`#>]+", "", s)
         s = re.sub(r"^\s*[-•・]\s*", "", s)
         s = re.sub(r"^(ナレーション|ナレーター)\s*[:：]\s*", "", s)
@@ -326,6 +329,9 @@ def find_photos(car: dict, n=12) -> list[dict]:
                 t = "File:" + im["title"].split(":", 1)[1]
                 if re.search(r"\.jpe?g$", t, re.I) and t not in titles:
                     titles.append(t)
+    ja = next((a for lang, a in arts if lang == "ja"), "")
+    if ja:  # e.g. "トヨタ・ヴェルファイア" -> "トヨタ ヴェルファイア"
+        car["name_ja"] = re.sub(r"\s*[（(].*[）)]$", "", ja).replace("・", " ")
     en = next((a for lang, a in arts if lang == "en"), "")
     if en:  # the English article title is a reliable romanised name, e.g. "Toyota Alphard"
         make = car.get("make", "")
@@ -358,7 +364,7 @@ def find_photos(car: dict, n=12) -> list[dict]:
                     continue
             elif model_key and model_key not in norm:
                 continue
-            artist = re.sub(r"<[^>]+>", "", (m.get("Artist") or {}).get("value", "")).strip() or "unknown"
+            artist = html.unescape(re.sub(r"<[^>]+>", "", (m.get("Artist") or {}).get("value", ""))).strip() or "unknown"
             date = (m.get("DateTimeOriginal") or {}).get("value", "")[:10]
             found.append({"title": t, "thumb": ii.get("thumburl"), "lic": lic, "artist": artist, "date": date,
                           "w": ii["width"], "h": ii["height"]})
@@ -420,7 +426,11 @@ def make(vid: str):
     name_ja = car.get("name_ja") or f"{car.get('make', '')} {car.get('model', '')}"
     yt_title = (car.get("youtube_title") or f"{name_ja}徹底解説！魅力と注意点をまるごとチェック")[:100]
     mine = (q.get("mine") or {}).get("name") or (cfg.get("mine") or {}).get("name") or ""
-    tags = [re.sub(r"\s+", "", t.lstrip("#")) for t in (car.get("tags") or []) if t][:8]
+    tags = []
+    for t in [name_ja, car.get("model", ""), f"{car.get('make', '')}{car.get('model', '')}", car.get("make", ""), "新型車", "車レビュー", "自動車"]:
+        t = re.sub(r"[\s・\-]+", "", t or "")
+        if t and t.lower() not in [x.lower() for x in tags]:
+            tags.append(t)
     mine_tag = re.sub(r"\s+", "", mine)
     job = {
         "version": 1, "title": name_ja, "tagline": "", "vehicleType": car["type"], "mode": "long", "stage": "render",
