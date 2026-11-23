@@ -86,7 +86,7 @@
     </section>
     <section>
       <h2>My channel</h2>
-      <div class="connect"><button class="primary" id="myConnect" style="width:100%">Connect my channel</button></div>
+      <div class="connect"><button class="primary" id="myConnect" style="flex:1">Connect my channel</button><button id="myDisconnect" hidden>Disconnect</button></div>
       <div class="who" id="myWho"></div>
     </section>
   </div>
@@ -115,6 +115,7 @@
   <input type="text" id="gid" placeholder="OAuth client ID">
   <input type="password" id="gsecret" placeholder="OAuth client secret">
   <div style="display:flex; gap:8px; justify-content:flex-end; margin-top:6px">
+    <button class="small" id="clearRepo" style="margin-right:auto" title="Forget the GitHub owner, repo, token and Google client from this browser">Disconnect repo</button>
     <button class="small" id="close">Close</button>
     <button class="small primary" id="saveSettings">Save</button>
   </div>
@@ -135,6 +136,16 @@ $('saveSettings').onclick = async () => {
   saveSettings();
   try { const r = await gh(''); $('smsg').textContent = '✓ ' + r.full_name; $('smsg').className = 'msg'; load(); }
   catch (e) { $('smsg').textContent = e.message; $('smsg').className = 'msg err'; }
+};
+
+$('clearRepo').onclick = () => {
+  if (!confirm('Forget the GitHub repo, token and Google client ID/secret saved in this browser?\n(Nothing in the repo or on YouTube is changed.)')) return;
+  localStorage.removeItem('autopilot');
+  for (const k of ['owner', 'repo', 'token', 'gid', 'gsecret']) { delete S[k]; $(k).value = ''; }
+  clearTimeout(timer);
+  cfg = {}; queue = {items: []}; for (const k of Object.keys(edits)) delete edits[k];
+  $('refUrl').value = ''; render(); msg('⚙');
+  $('smsg').textContent = 'Cleared ✓'; $('smsg').className = 'msg';
 };
 
 // ------------------------------------------------------------------ GitHub
@@ -203,6 +214,7 @@ function render() {
   const me = {...(cfg.mine || {}), ...(queue.mine || {})};
   $('myWho').innerHTML = me?.name ? `${me.thumb ? `<img src="${esc(me.thumb)}">` : '<span class="dot ok"></span>'}${esc(me.name)}` : '';
   $('myConnect').textContent = me?.name ? 'Reconnect' : 'Connect my channel';
+  $('myDisconnect').hidden = !me?.name;
 
   const items = (queue.items || []).slice().sort((a, b) => a.order - b.order);
   const view = (it) => ({...it, ...(edits[it.id] || {})});
@@ -316,9 +328,28 @@ $('myConnect').onclick = async () => {
   sessionStorage.setItem('oauth', JSON.stringify({state, verifier}));
   const challenge = b64url(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(verifier)));
   const p = new URLSearchParams({client_id: S.gid, redirect_uri: redirect, response_type: 'code', access_type: 'offline', prompt: 'consent',
-    scope: 'https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube', state,
+    scope: 'openid email https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube', state,
     code_challenge: challenge, code_challenge_method: 'S256', include_granted_scopes: 'true'});
   location.href = 'https://accounts.google.com/o/oauth2/v2/auth?' + p;
+};
+
+$('myDisconnect').onclick = async () => {
+  if (!ready()) { $('settings').showModal(); return; }
+  if (!confirm('Disconnect your YouTube channel?\nThis deletes the YouTube secrets from the GitHub repo, so nothing more will be uploaded until you connect again.')) return;
+  $('myDisconnect').disabled = true; msg('Disconnecting…');
+  try {
+    for (const n of ['YT_REFRESH_TOKEN', 'YT_CLIENT_ID', 'YT_CLIENT_SECRET']) await gh(`/actions/secrets/${n}`, {method: 'DELETE', allow404: true});
+    cfg = (await readJson('channel/config.json')) || {};
+    const latest = (await readJson('channel/queue.json')) || {items: []};
+    cfg.mine = {}; latest.mine = {};
+    await commit([
+      {path: 'channel/config.json', blob: utf8(JSON.stringify(cfg, null, 2) + '\n')},
+      {path: 'channel/queue.json', blob: utf8(JSON.stringify(latest, null, 1) + '\n')},
+    ], 'Channel: my channel disconnected');
+    queue = latest; render();
+    msg('Disconnected ✓. To fully revoke Google access too, remove the app at myaccount.google.com/permissions.');
+  } catch (e) { msg(e.message, true); }
+  $('myDisconnect').disabled = false;
 };
 
 async function setSecret(name, value) {
@@ -332,6 +363,18 @@ async function setSecret(name, value) {
   const key = await gh('/actions/secrets/public-key');
   const sealed = so.crypto_box_seal(so.from_string(value), so.from_base64(key.key, so.base64_variants.ORIGINAL));
   await gh(`/actions/secrets/${name}`, {method: 'PUT', body: JSON.stringify({encrypted_value: so.to_base64(sealed, so.base64_variants.ORIGINAL), key_id: key.key_id})});
+}
+
+async function googleEmail(tok) {   // who actually signed in, so errors can name the account
+  try {
+    if (tok.id_token) {
+      const p = JSON.parse(atob(tok.id_token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/')));
+      if (p.email) return p.email;
+    }
+    const u = await (await fetch('https://openidconnect.googleapis.com/v1/userinfo', {headers: {Authorization: 'Bearer ' + tok.access_token}})).json();
+    if (u.email) return u.email;
+  } catch {}
+  return '(unknown email)';
 }
 
 async function finishOAuth() {
@@ -350,9 +393,19 @@ async function finishOAuth() {
     const tok = await res.json();
     if (!res.ok) throw new Error('Google: ' + (tok.error_description || tok.error));
     if (!tok.refresh_token) throw new Error('Google returned no refresh token; remove the app at myaccount.google.com/permissions and connect again');
-    const ch = await (await fetch('https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true', {headers: {Authorization: 'Bearer ' + tok.access_token}})).json();
+    const email = await googleEmail(tok);
+    const chRes = await fetch('https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true', {headers: {Authorization: 'Bearer ' + tok.access_token}});
+    const ch = await chRes.json().catch(() => ({}));
+    if (!chRes.ok || ch.error) {
+      const reason = ch.error?.errors?.[0]?.reason || ch.error?.status || chRes.status;
+      const text = ch.error?.message || chRes.statusText;
+      const hint = /accessNotConfigured|SERVICE_DISABLED|has not been used|disabled/i.test(reason + ' ' + text)
+        ? ' → Enable "YouTube Data API v3" in the Google Cloud project that owns this OAuth client (APIs & Services → Library), wait a minute, then connect again.'
+        : /insufficient|scope/i.test(reason + ' ' + text) ? ' → On the Google consent screen, tick every YouTube permission checkbox, then connect again.' : '';
+      throw new Error(`YouTube API error for ${email} (${reason}): ${text}${hint}`);
+    }
     const c = ch.items?.[0];
-    if (!c) throw new Error('No YouTube channel on this Google account');
+    if (!c) throw new Error(`Google account ${email} has no YouTube channel. If your channel is a Brand Account, connect again and pick the channel itself (not your personal profile) in the Google account chooser.`);
     await setSecret('YT_CLIENT_ID', S.gid);
     await setSecret('YT_CLIENT_SECRET', S.gsecret);
     await setSecret('YT_REFRESH_TOKEN', tok.refresh_token);
