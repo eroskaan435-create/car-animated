@@ -30,6 +30,7 @@ jobs:
     timeout-minutes: 30
     outputs:
       next: ${{ steps.s.outputs.next }}
+      upload: ${{ steps.s.outputs.upload }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -53,6 +54,51 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -q -m "Channel queue sync"
           for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep 5; done
+
+  # made videos that aren't on my channel yet: take the rendered file from Releases and upload it, scheduled
+  upload:
+    needs: sync
+    if: needs.sync.outputs.upload != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Upload to my channel (scheduled)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          IDS: ${{ needs.sync.outputs.upload }}
+          BRANCH: ${{ github.event.repository.default_branch }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          status=0
+          for id in $IDS; do
+            git pull -q --rebase origin "$BRANCH"
+            job=$(jq -r --arg id "$id" '.items[] | select(.id == $id) | .job // empty' channel/queue.json)
+            tag="video-$job"
+            rm -rf out && mkdir out
+            echo "::group::$id ($tag)"
+            if [ -z "$job" ] || ! gh release download "$tag" -D out -p '*.mp4' -p 'description.txt' -p '*-thumbnail.jpg'; then
+              python3 pipeline/youtube.py note "$id" "not on your channel and no rendered video in Releases ($tag)"
+            else
+              RELEASE_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/tag/$tag" \
+                python3 pipeline/youtube.py upload "jobs/$job" out "$id" || status=1
+            fi
+            echo "::endgroup::"
+            git add channel/queue.json
+            git diff --cached --quiet && continue
+            git commit -q -m "Channel: upload $id to my channel"
+            for i in 1 2 3 4 5; do git pull --rebase -q origin "$BRANCH" && git push -q origin HEAD:"$BRANCH" && break; sleep 5; done
+          done
+          exit $status
 
   make:
     needs: sync

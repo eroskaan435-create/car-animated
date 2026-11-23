@@ -5,7 +5,7 @@ YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN.
 
     python pipeline/youtube.py upload <job dir> <output dir>   # upload the rendered video, update channel/queue.json
 
-Videos are uploaded as private with `publishAt`, so YouTube publishes them at the scheduled time.
+Videos are uploaded as private with `publishAt` (at least 30 minutes from now), so YouTube publishes them then.
 Note: uploads from an unverified Google Cloud project stay private until the project passes YouTube's audit.
 """
 from __future__ import annotations
@@ -17,10 +17,11 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 API = "https://www.googleapis.com/youtube/v3"
+MIN_LEAD = timedelta(minutes=30)  # never schedule closer than this to "now"
 UPLOAD = "https://www.googleapis.com/upload/youtube/v3"
 
 
@@ -58,16 +59,17 @@ def call(method: str, url: str, body: dict | None = None, data: bytes | None = N
         raise SystemExit(f"YouTube API {method} {url.split('?')[0]} -> {e.code}: {e.read().decode(errors='replace')[:800]}")
 
 
-def iso(dt: str | None) -> str | None:
-    """Normalise to RFC 3339 UTC; None if missing or not in the future (then publish immediately)."""
-    if not dt:
-        return None
-    t = datetime.fromisoformat(dt.replace("Z", "+00:00"))
-    if t.tzinfo is None:
-        t = t.replace(tzinfo=timezone.utc)
-    if t <= datetime.now(timezone.utc):
-        return None
-    return t.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
+def iso(dt: str | None) -> str:
+    """The publish time to give YouTube (RFC 3339 UTC): the wanted time, but at least MIN_LEAD from now."""
+    floor = datetime.now(timezone.utc) + MIN_LEAD
+    t = None
+    if dt:
+        t = datetime.fromisoformat(dt.replace("Z", "+00:00"))
+        if t.tzinfo is None:
+            t = t.replace(tzinfo=timezone.utc)
+    if t is None or t < floor:
+        t = floor
+    return t.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def status_body(publish_at: str | None) -> dict:
@@ -124,9 +126,35 @@ def set_thumbnail(video_id: str, jpg: Path):
         print(f"thumbnail not set: {e}")
 
 
-def reschedule(video_id: str, publish_at: str | None):
-    call("PUT", f"{API}/videos?part=status", body={"id": video_id, "status": status_body(iso(publish_at))})
-    print(f"rescheduled {video_id} -> {publish_at or 'now'}")
+def reschedule(video_id: str, publish_at: str | None) -> str:
+    """Schedule an existing private video; returns the time actually set."""
+    t = iso(publish_at)
+    call("PUT", f"{API}/videos?part=status", body={"id": video_id, "status": status_body(t)})
+    print(f"rescheduled {video_id} -> {t}")
+    return t
+
+
+def my_videos(limit: int = 500) -> list[dict]:
+    """Every video on my channel (private and scheduled ones too, since we are the owner)."""
+    d, _ = call("GET", f"{API}/channels?part=contentDetails&mine=true")
+    ch = d.get("items") or []
+    if not ch:
+        return []
+    pl = ch[0]["contentDetails"]["relatedPlaylists"]["uploads"]
+    ids, page = [], ""
+    while len(ids) < limit:
+        d, _ = call("GET", f"{API}/playlistItems?part=contentDetails&maxResults=50&playlistId={pl}" + (f"&pageToken={page}" if page else ""))
+        ids += [x["contentDetails"]["videoId"] for x in d.get("items", [])]
+        page = d.get("nextPageToken")
+        if not page:
+            break
+    out = []
+    for i in range(0, len(ids), 50):
+        d, _ = call("GET", f"{API}/videos?part=snippet,status&id={','.join(ids[i:i + 50])}")
+        for v in d.get("items", []):
+            out.append({"id": v["id"], "title": v["snippet"].get("title", ""), "privacy": v["status"].get("privacyStatus"),
+                        "publishAt": v["status"].get("publishAt"), "publishedAt": v["snippet"].get("publishedAt")})
+    return out
 
 
 def my_channel() -> dict:
@@ -147,43 +175,55 @@ def update_queue(item_id: str, **fields):
     p.write_text(json.dumps(q, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
-def cmd_upload(job_dir: Path, out: Path):
+def cmd_upload(job_dir: Path, out: Path, qid: str | None = None):
     job = json.loads((job_dir / "job.json").read_text(encoding="utf-8"))
     yt = job.get("youtube") or {}
-    qid = yt.get("queueId")
+    qid = qid or yt.get("queueId")
     release = os.environ.get("RELEASE_URL", "")
     if not configured():
         print("My channel isn't connected (no YT_* secrets): video stays in Releases only.")
         if qid:
             update_queue(qid, status="made", release=release, madeAt=datetime.now(timezone.utc).isoformat())
         return
-    mp4 = next(out.glob("*-youtube.mp4"))
-    desc = (out / "description.txt").read_text(encoding="utf-8") if (out / "description.txt").exists() else ""
-    meta = {
-        "title": (yt.get("title") or job.get("descriptionTitle") or job.get("title", ""))[:100],
-        "description": desc[:4900],
-        "tags": [t.lstrip("#") for t in (yt.get("tags") or job.get("hashtags") or [])][:30],
-        "categoryId": str(yt.get("categoryId", "2")),  # Autos & Vehicles
-    }
-    lang = job.get("language")
-    if lang:
-        meta.update(defaultLanguage=lang, defaultAudioLanguage=lang)
     # the queue is the source of truth: the owner may have changed the time on the page after the job was built
     q = json.loads(Path("channel/queue.json").read_text(encoding="utf-8")) if Path("channel/queue.json").exists() else {}
     item = next((it for it in q.get("items", []) if it["id"] == qid), {}) if qid else {}
-    wanted = item.get("publishAt") or yt.get("publishAt")
-    publish_at = iso(wanted)
-    vid = upload_video(mp4, meta, publish_at)
+    try:
+        mp4 = next(out.glob("*-youtube.mp4"), None) or max(
+            (f for f in out.glob("*.mp4") if "short" not in f.name.lower()), key=lambda f: f.stat().st_size, default=None)
+        if not mp4:
+            raise SystemExit(f"no rendered .mp4 in {out}")
+        desc = (out / "description.txt").read_text(encoding="utf-8") if (out / "description.txt").exists() else ""
+        meta = {
+            "title": (item.get("myTitle") or yt.get("title") or job.get("descriptionTitle") or job.get("title", ""))[:100],
+            "description": desc[:4900],
+            "tags": [t.lstrip("#") for t in (yt.get("tags") or job.get("hashtags") or [])][:30],
+            "categoryId": str(yt.get("categoryId", "2")),  # Autos & Vehicles
+        }
+        lang = job.get("language")
+        if lang:
+            meta.update(defaultLanguage=lang, defaultAudioLanguage=lang)
+        publish_at = iso(item.get("publishAt") or yt.get("publishAt"))  # >= 30 min from now
+        vid = upload_video(mp4, meta, publish_at)
+    except BaseException as e:  # show why on the page; the sync retries after an hour
+        if qid:
+            update_queue(qid, note=f"YouTube upload failed: {e}"[:300], uploadTriedAt=datetime.now(timezone.utc).isoformat(timespec="seconds"))
+        raise
     thumb = next(out.glob("*-thumbnail.jpg"), None)
     if thumb:
         set_thumbnail(vid, thumb)
     if qid:
-        update_queue(qid, status="scheduled" if publish_at else "published", myVideoId=vid, uploadedPublishAt=wanted,
-                     release=release, madeAt=datetime.now(timezone.utc).isoformat())
+        fields = dict(status="scheduled", myVideoId=vid, publishAt=publish_at, uploadedPublishAt=publish_at,
+                      madeAt=item.get("madeAt") or datetime.now(timezone.utc).isoformat(), note="")
+        if release:
+            fields["release"] = release
+        update_queue(qid, **fields)
 
 
 if __name__ == "__main__":
-    if sys.argv[1] == "upload":
-        cmd_upload(Path(sys.argv[2]), Path(sys.argv[3]))
+    if sys.argv[1] == "upload":  # upload <job dir> <output dir> [queue id]
+        cmd_upload(Path(sys.argv[2]), Path(sys.argv[3]), sys.argv[4] if len(sys.argv) > 4 else None)
+    elif sys.argv[1] == "note":  # note <queue id> <text>
+        update_queue(sys.argv[2], note=sys.argv[3], uploadTriedAt=datetime.now(timezone.utc).isoformat(timespec="seconds"))
     elif sys.argv[1] == "whoami":
         print(my_channel())

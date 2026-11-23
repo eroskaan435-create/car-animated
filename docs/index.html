@@ -205,6 +205,8 @@ const pad = (n) => String(n).padStart(2, '0');
 const toLocal = (iso) => { if (!iso) return ''; const d = new Date(iso); return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`; };
 const fmt = (iso) => iso ? new Date(iso).toLocaleString([], {dateStyle: 'medium', timeStyle: 'short'}) : '';
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+const MIN_LEAD_MS = 30 * 60 * 1000;
+const minPublish = () => new Date(Date.now() + MIN_LEAD_MS).toISOString();
 const LABEL = {queued: 'Queued', requested: 'Next up', making: 'Making…', made: 'Made', scheduled: 'Scheduled', published: 'Published', failed: 'Failed'};
 
 function render() {
@@ -232,7 +234,9 @@ function rowHtml(it, inQueue) {
   const st = it.status;
   const intro = e.introRemove ? null : (e.introFile ? {name: e.introFile.name, type: e.introFile.type.startsWith('audio') ? 'audio' : 'video'} : (it.intro ? {name: it.intro.split('/').pop(), type: it.introType} : null));
   const editable = inQueue && st !== 'making';
-  const when = editable ? `<input type="datetime-local" data-id="${it.id}" data-k="when" value="${toLocal(it.publishAt)}">`
+  // made-but-not-on-YouTube and scheduled videos can be (re)scheduled too; YouTube needs >= 30 min ahead
+  const timeEditable = editable || (!inQueue && (st === 'made' || st === 'scheduled'));
+  const when = timeEditable ? `<input type="datetime-local" data-id="${it.id}" data-k="when" min="${toLocal(minPublish())}" value="${toLocal(it.publishAt)}" title="Publish time (at least 30 minutes from now)">`
     : (it.publishAt ? `🕒 ${fmt(it.publishAt)}` : '');
   const introHtml = intro ? `<span class="intro">${intro.type === 'audio' ? '🎵' : '🎞'} ${esc(intro.name)}${editable ? `<button data-id="${it.id}" data-k="unintro" title="Remove">×</button>` : ''}</span>`
     : (editable ? `<label class="file">＋ Intro<input type="file" accept="video/*,audio/*" data-id="${it.id}" data-k="intro"></label>` : '');
@@ -275,13 +279,19 @@ $('qMore').onclick = () => { shown += 50; render(); };
 
 $('save').onclick = async () => {
   if (!ready()) { $('settings').showModal(); return; }
+  const tooSoon = Object.entries(edits).find(([, e]) => e.publishAt && new Date(e.publishAt).getTime() < Date.now() + MIN_LEAD_MS);
+  if (tooSoon) {
+    const it = (queue.items || []).find((x) => x.id === tooSoon[0]);
+    msg(`"${(it?.myTitle || it?.title || tooSoon[0]).slice(0, 40)}": publish time must be at least 30 minutes from now (YouTube only schedules future times).`, true);
+    return;
+  }
   $('save').disabled = true; msg('Saving…');
   try {
     const latest = (await readJson('channel/queue.json')) || {items: []};   // merge onto the newest queue (the bot edits it too)
     const files = [];
     for (const [id, e] of Object.entries(edits)) {
       const it = latest.items.find((x) => x.id === id); if (!it) continue;
-      if (e.publishAt) it.publishAt = e.publishAt;
+      if (e.publishAt) { it.publishAt = e.publishAt; delete it.uploadTriedAt; }  // new time -> retry upload now
       if (e.status && ['queued', 'failed'].includes(it.status)) { it.status = e.status; it.note = ''; }
       const old = it.intro;
       if (e.introRemove || e.introFile) {

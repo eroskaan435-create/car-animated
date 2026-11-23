@@ -99,7 +99,7 @@ def next_slot(after: datetime, cfg: dict) -> datetime:
     return slot.astimezone(timezone.utc)
 
 
-def sync() -> str:
+def sync() -> tuple[str, list[str]]:
     cfg = load_cfg()
     q = load_queue()
     items = q.setdefault("items", [])
@@ -154,27 +154,26 @@ def sync() -> str:
             last = next_slot(last + timedelta(days=max(0, cfg["everyDays"] - 1)), cfg)
             it["publishAt"] = last.isoformat().replace("+00:00", "Z")
 
-    # 4) status housekeeping + reschedules on my channel
+    # 4) made videos vs. my channel: link the ones already there, list the missing ones for upload
+    uploads = check_my_channel(q, items) if youtube.configured() else []
+
+    # 5) status housekeeping + reschedules on my channel (publish times are kept >= 30 min from now)
     for it in items:
         t = parse_t(it.get("publishAt"))
         if it["status"] == "scheduled" and t and t <= now():
             it["status"] = "published"
         if it["status"] == "making" and parse_t(it.get("startedAt")) and now() - parse_t(it["startedAt"]) > timedelta(hours=5):
             it.update(status="failed", note="render did not finish (see Actions)")
-        if it["status"] == "scheduled" and it.get("myVideoId") and it.get("publishAt") != it.get("uploadedPublishAt"):
-            if youtube.configured():
-                youtube.reschedule(it["myVideoId"], it.get("publishAt"))
-                it["uploadedPublishAt"] = it.get("publishAt")
+        if (it["status"] in ("scheduled", "made") and it.get("myVideoId") and it.get("publishAt")
+                and it.get("publishAt") != it.get("uploadedPublishAt") and youtube.configured()):
+            try:
+                t = youtube.reschedule(it["myVideoId"], it.get("publishAt"))
+                it.update(status="scheduled", publishAt=t, uploadedPublishAt=t, note="")
+            except SystemExit as e:
+                it["note"] = f"reschedule failed: {e}"[:300]
+                it["uploadedPublishAt"] = it.get("publishAt")  # don't retry every run; change the time again to retry
 
-    if youtube.configured():
-        try:
-            me = youtube.my_channel()
-            if me.get("id"):
-                q["mine"] = me
-        except SystemExit as e:
-            log(f"my channel: {e}")
-
-    # 5) what to make next: a requested video, else the next queued one due within leadHours
+    # 6) what to make next: a requested video, else the next queued one due within leadHours
     nxt = ""
     if not any(it["status"] == "making" for it in items):
         req = [it for it in items if it["status"] == "requested"]
@@ -184,8 +183,67 @@ def sync() -> str:
         elif due and parse_t(due[0]["publishAt"]) - now() <= timedelta(hours=cfg["leadHours"]):
             nxt = due[0]["id"]
     save_queue(q)
-    log(f"next: {nxt or '-'}")
-    return nxt
+    log(f"next: {nxt or '-'}  upload: {' '.join(uploads) or '-'}")
+    return nxt, uploads
+
+
+def _norm(s: str | None) -> str:
+    return re.sub(r"[\W_]+", "", (s or "").lower())
+
+
+def _titles(it: dict) -> list[str]:
+    names = [it.get("myTitle"), it.get("title")]
+    jp = Path("jobs") / (it.get("job") or "-") / "job.json"
+    if jp.exists():
+        j = json.loads(jp.read_text(encoding="utf-8"))
+        names += [(j.get("youtube") or {}).get("title"), j.get("descriptionTitle"), (j.get("descriptionTitle") or "").split("|")[0]]
+    return [n for n in {_norm(x) for x in names} if len(n) >= 6]
+
+
+def check_my_channel(q: dict, items: list[dict]) -> list[str]:
+    """Made videos with no myVideoId: find them on my channel by title, else return them for upload."""
+    try:
+        me = youtube.my_channel()
+        if me.get("id"):
+            q["mine"] = me
+    except SystemExit as e:
+        log(f"my channel: {e}")
+        return []
+    pending = [it for it in items if it["status"] == "made" and not it.get("myVideoId")]
+    if not pending:
+        return []
+    try:
+        vids = youtube.my_videos()
+    except SystemExit as e:
+        log(f"my channel videos: {e}")
+        return []
+    taken = {it.get("myVideoId") for it in items if it.get("myVideoId")}
+    uploads = []
+    for it in pending:
+        keys = _titles(it)
+        v = next((v for v in vids if v["id"] not in taken and (t := _norm(v["title"])) and any(
+            k == t or (min(len(k), len(t)) >= 10 and (k in t or t in k)) for k in keys)), None)
+        if v:
+            taken.add(v["id"])
+            it["myVideoId"] = v["id"]
+            if v["privacy"] == "public":
+                it.update(status="published", publishAt=v.get("publishedAt"), uploadedPublishAt=v.get("publishedAt"), note="found on your channel")
+            elif v.get("publishAt"):
+                it.update(status="scheduled", publishAt=v["publishAt"], uploadedPublishAt=v["publishAt"], note="found on your channel")
+            else:  # private/unlisted, not scheduled: step 5 schedules it once a time is picked on the page
+                it.update(uploadedPublishAt=it.get("publishAt"), note=f"found on your channel ({v['privacy']}); set a time to schedule it")
+            log(f"{it['id']}: already on my channel as {v['id']} ({v['privacy']})")
+            continue
+        tried = parse_t(it.get("uploadTriedAt"))
+        if tried and now() - tried < timedelta(hours=1):
+            continue
+        if not it.get("job"):
+            continue
+        if not it.get("publishAt"):
+            it["note"] = "not on your channel yet: pick a publish time and save to upload it"
+            continue
+        uploads.append(it["id"])
+    return uploads
 
 
 # --------------------------------------------------------------------------- LLM (Ollama, free)
@@ -360,10 +418,10 @@ def make(vid: str):
 
 if __name__ == "__main__":
     if sys.argv[1] == "sync":
-        n = sync()
+        n, up = sync()
         if os.environ.get("GITHUB_OUTPUT"):
             with open(os.environ["GITHUB_OUTPUT"], "a") as f:
-                f.write(f"next={n}\n")
+                f.write(f"next={n}\nupload={' '.join(up)}\n")
     elif sys.argv[1] == "make":
         try:
             make(sys.argv[2])
